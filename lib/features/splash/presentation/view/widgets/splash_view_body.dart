@@ -21,6 +21,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initAnimations();
+    navigateToNextView();
   }
 
   @override
@@ -93,6 +94,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     ]).animate(controller);
 
     controller.forward();
+  }
+
+  void navigateToNextView() {
+    Future.delayed(const Duration(milliseconds: 2800), () {
+      // Navigator.pushReplacementNamed(context, '/onboarding');
+    });
   }
 
   @override
