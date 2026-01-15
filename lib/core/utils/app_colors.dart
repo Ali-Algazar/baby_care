@@ -8,6 +8,7 @@ class AppColors {
   static const Color graphic = Color(0xffE0E0E0);
   static const Color danger = Color(0xffC01304);
   static const Color success = Color(0xff4F9F52);
+  static const Color border = Color(0xffD5D7DA);
   static const LinearGradient primaryL = LinearGradient(
     colors: [Color(0xFF47B2B9), Color(0xFF70A97C)],
     begin: Alignment.topCenter,
