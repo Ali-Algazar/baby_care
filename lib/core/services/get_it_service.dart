@@ -1,8 +1,5 @@
 import 'package:get_it/get_it.dart';
 
-final sl = GetIt.instance; // sl = Service Locator
+final sl = GetIt.instance;
 
-void setupServiceLocator() {
-  // sl.registerSingleton<ApiHelper>(ApiHelper(Dio()));
-  // sl.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()));
-}
+void setupServiceLocator() {}
