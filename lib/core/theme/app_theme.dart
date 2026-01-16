@@ -6,7 +6,7 @@ class AppTheme {
   static final lightTheme = ThemeData(
     useMaterial3: true,
 
-    fontFamily: kfontFamily, // Set the default font family
+    fontFamily: Constants.kfontFamily, // Set the default font family
     scaffoldBackgroundColor: AppColors.bG, // Scaffold background color
     // Define the color scheme
     colorScheme: ColorScheme.light(
@@ -19,7 +19,9 @@ class AppTheme {
       filled: true, // Enable filled background
       fillColor: AppColors.bG, // Background color for text fields
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(ktextFieldRadius.toDouble()),
+        borderRadius: BorderRadius.circular(
+          Constants.ktextFieldRadius.toDouble(),
+        ),
         borderSide: BorderSide(color: AppColors.border, width: 1),
       ),
 
