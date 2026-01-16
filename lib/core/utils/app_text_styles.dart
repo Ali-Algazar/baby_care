@@ -1,44 +1,49 @@
+import 'package:baby_care/core/constants.dart';
+import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextStyles {
-  static const TextStyle headerBold = TextStyle(
-    fontSize: 22,
+  static TextStyle headerBold = TextStyle(
+    fontSize: 22.sp,
     fontWeight: FontWeight.bold,
   );
-  static const TextStyle headerRagular = TextStyle(
-    fontSize: 22,
+  static TextStyle headerRagular = TextStyle(
+    fontSize: 22.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle body1Bold = TextStyle(
-    fontSize: 16,
+  static TextStyle body1Bold = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.bold,
   );
-  static const TextStyle body1Ragular = TextStyle(
-    fontSize: 16,
+  static TextStyle body1Ragular = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle body2Bold = TextStyle(
-    fontSize: 14,
+  static TextStyle body2Bold = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeight.bold,
+    fontFamily: kfontFamily,
   );
-  static const TextStyle body2Ragular = TextStyle(
-    fontSize: 14,
+  static TextStyle body2Ragular = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle btnsBold = TextStyle(
-    fontSize: 15,
+  static TextStyle btnsBold = TextStyle(
+    fontSize: 15.sp,
     fontWeight: FontWeight.bold,
+    color: AppColors.bG,
   );
-  static const TextStyle btnsRagular = TextStyle(
-    fontSize: 15,
+  static TextStyle btnsRagular = TextStyle(
+    fontSize: 15.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle captionLight = TextStyle(
-    fontSize: 12,
+  static TextStyle captionLight = TextStyle(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w300,
   );
-  static const TextStyle captionRagular = TextStyle(
-    fontSize: 12,
+  static TextStyle captionRagular = TextStyle(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w400,
   );
 }

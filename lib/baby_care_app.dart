@@ -5,6 +5,7 @@ import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BabyCareApp extends StatelessWidget {
   const BabyCareApp({super.key});
@@ -15,18 +16,23 @@ class BabyCareApp extends StatelessWidget {
       create: (context) => LocaleCubit(),
       child: BlocBuilder<LocaleCubit, String>(
         builder: (context, state) {
-          return MaterialApp(
-            locale: Locale(state),
-            localizationsDelegates: [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: onGenerateRoute,
-            theme: AppTheme.lightTheme,
+          return ScreenUtilInit(
+            designSize: const Size(360, 690),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, child) => MaterialApp(
+              locale: Locale(state),
+              localizationsDelegates: [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              debugShowCheckedModeBanner: false,
+              onGenerateRoute: onGenerateRoute,
+              theme: AppTheme.lightTheme,
+            ),
           );
         },
       ),

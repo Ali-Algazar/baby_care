@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// 🧩 1. Space Extensions (اختصار SizedBox)
 extension SpaceExtension on num {
-  SizedBox get h => SizedBox(height: toDouble());
-  SizedBox get w => SizedBox(width: toDouble());
+  SizedBox get height => SizedBox(height: toDouble().h);
+  SizedBox get width => SizedBox(width: toDouble().w);
 }
 
 /// 🎯 2. Padding Extensions
