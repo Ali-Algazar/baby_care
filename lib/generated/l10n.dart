@@ -113,6 +113,21 @@ class S {
       args: [],
     );
   }
+
+  /// `تخطي`
+  String get skip {
+    return Intl.message('تخطي', name: 'skip', desc: '', args: []);
+  }
+
+  /// `التالي`
+  String get next {
+    return Intl.message('التالي', name: 'next', desc: '', args: []);
+  }
+
+  /// `ابدأ الآن`
+  String get startNow {
+    return Intl.message('ابدأ الآن', name: 'startNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
