@@ -2,8 +2,10 @@ import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
+import 'package:baby_care/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomOnBoardingAppBar extends StatelessWidget {
   const CustomOnBoardingAppBar({super.key, required this.index});
@@ -19,7 +21,11 @@ class CustomOnBoardingAppBar extends StatelessWidget {
           index == 0
               ? const SizedBox()
               : IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    BlocProvider.of<OnboardingCubit>(
+                      context,
+                    ).goToPreviousPage();
+                  },
                   icon: Icon(Icons.arrow_back_outlined),
                 ),
           Spacer(),
