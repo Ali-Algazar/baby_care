@@ -1,6 +1,9 @@
-const int khorizontalPadding = 16;
-const int kbottomPadding = 69;
-const int ktopPadding = 16;
-const int kbuttonRadius = 10;
-const int ktextFieldRadius = 8;
-const String kfontFamily = "Calibri";
+class Constants {
+  static const String onBoardingKey = 'onBoardingCompleted';
+  static const int khorizontalPadding = 16;
+  static const int kbottomPadding = 69;
+  static const int ktopPadding = 16;
+  static const int kbuttonRadius = 10;
+  static const int ktextFieldRadius = 8;
+  static const String kfontFamily = "Calibri";
+}

@@ -23,7 +23,7 @@ class AppTextStyles {
   static TextStyle body2Bold = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.bold,
-    fontFamily: kfontFamily,
+    fontFamily: Constants.kfontFamily,
   );
   static TextStyle body2Ragular = TextStyle(
     fontSize: 14.sp,

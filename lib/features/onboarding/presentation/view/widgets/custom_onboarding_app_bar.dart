@@ -1,5 +1,6 @@
 import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
+import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/features/onboarding/presentation/cubit/onboarding_cubit.dart';
@@ -15,7 +16,7 @@ class CustomOnBoardingAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: khorizontalPadding.horizontal,
+      padding: Constants.khorizontalPadding.horizontal,
       child: Row(
         children: [
           index == 0
@@ -33,7 +34,12 @@ class CustomOnBoardingAppBar extends StatelessWidget {
           index == 2
               ? const SizedBox()
               : TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    SharedPreferencesService.saveData(
+                      key: Constants.onBoardingKey,
+                      value: true,
+                    );
+                  },
                   child: Text(
                     S.of(context).skip,
                     style: AppTextStyles.body2Bold.copyWith(

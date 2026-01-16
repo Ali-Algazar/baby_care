@@ -1,5 +1,6 @@
 import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
+import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_button.dart';
@@ -25,7 +26,7 @@ class OnboardingPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ktopPadding.height,
+          Constants.ktopPadding.height,
           Stack(
             children: [
               Image.asset(
@@ -40,14 +41,14 @@ class OnboardingPage extends StatelessWidget {
           50.height,
 
           Padding(
-            padding: khorizontalPadding.horizontal,
+            padding: Constants.khorizontalPadding.horizontal,
             child: Column(
               children: [
                 Text(
                   onboardings.title,
                   style: AppTextStyles.headerBold.copyWith(
                     fontSize: 24,
-                    fontFamily: kfontFamily,
+                    fontFamily: Constants.kfontFamily,
                   ),
                 ),
                 16.height,
@@ -68,13 +69,18 @@ class OnboardingPage extends StatelessWidget {
                   onTap: () {
                     if (index < 2) {
                       BlocProvider.of<OnboardingCubit>(context).nextPage();
+                    } else {
+                      SharedPreferencesService.saveData(
+                        key: Constants.onBoardingKey,
+                        value: true,
+                      );
                     }
                   },
                 ),
               ],
             ),
           ),
-          kbottomPadding.height,
+          Constants.kbottomPadding.height,
         ],
       ),
     );

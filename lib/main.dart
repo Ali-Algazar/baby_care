@@ -6,5 +6,6 @@ import 'package:flutter/material.dart';
 void main() async {
   setupServiceLocator();
   await SharedPreferencesService.init();
+  await SharedPreferencesService.init();
   runApp(const BabyCareApp());
 }

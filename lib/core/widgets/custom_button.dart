@@ -19,7 +19,9 @@ class CustomButton extends StatelessWidget {
         height: 46.h,
         decoration: BoxDecoration(
           gradient: AppColors.primaryL,
-          borderRadius: BorderRadius.circular(kbuttonRadius.toDouble()),
+          borderRadius: BorderRadius.circular(
+            Constants.kbuttonRadius.toDouble(),
+          ),
         ),
         child: Center(child: Text(title, style: AppTextStyles.btnsBold)),
       ),
