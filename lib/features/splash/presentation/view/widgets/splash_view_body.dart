@@ -1,5 +1,6 @@
 import 'package:baby_care/core/app_svg.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
+import 'package:baby_care/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math';
@@ -98,7 +99,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToNextView() {
     Future.delayed(const Duration(milliseconds: 2800), () {
-      // Navigator.pushReplacementNamed(context, '/onboarding');
+      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
     });
   }
 
