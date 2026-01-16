@@ -53,6 +53,66 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `كل الرعاية في مكان واحد`
+  String get onboardingTitle1 {
+    return Intl.message(
+      'كل الرعاية في مكان واحد',
+      name: 'onboardingTitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `سجلي كل لحظة مهمة`
+  String get onboardingTitle2 {
+    return Intl.message(
+      'سجلي كل لحظة مهمة',
+      name: 'onboardingTitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أساس صحي لمستقبل أفضل`
+  String get onboardingTitle3 {
+    return Intl.message(
+      'أساس صحي لمستقبل أفضل',
+      name: 'onboardingTitle3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.`
+  String get onboardingDescription1 {
+    return Intl.message(
+      'دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.',
+      name: 'onboardingDescription1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `من مواعيد التطعيمات وسجلات النمو، إلى يومياته وذكرياته التي لا تنسى.`
+  String get onboardingDescription2 {
+    return Intl.message(
+      'من مواعيد التطعيمات وسجلات النمو، إلى يومياته وذكرياته التي لا تنسى.',
+      name: 'onboardingDescription2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `انضمي الآن وابدئي في بناء ملف طفلك الصحي. خطوتك الأولى نحو الاطمئنان على صحته.`
+  String get onboardingDescription3 {
+    return Intl.message(
+      'انضمي الآن وابدئي في بناء ملف طفلك الصحي. خطوتك الأولى نحو الاطمئنان على صحته.',
+      name: 'onboardingDescription3',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
