@@ -1,4 +1,6 @@
+import 'package:baby_care/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'widgets/onboarding_view_body.dart';
 
@@ -8,6 +10,9 @@ class OnboardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: OnboardingViewBody());
+    return BlocProvider(
+      create: (context) => OnboardingCubit(),
+      child: const Scaffold(body: OnboardingViewBody()),
+    );
   }
 }
