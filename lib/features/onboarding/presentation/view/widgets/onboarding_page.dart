@@ -4,6 +4,7 @@ import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_button.dart';
+import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:baby_care/features/onboarding/presentation/model/onboarding_model.dart';
 import 'package:baby_care/features/onboarding/presentation/view/widgets/custom_onboarding_app_bar.dart';
@@ -66,13 +67,18 @@ class OnboardingPage extends StatelessWidget {
                   title: index == 2
                       ? S.of(context).startNow
                       : S.of(context).next,
-                  onTap: () {
+                  onTap: () async {
                     if (index < 2) {
                       BlocProvider.of<OnboardingCubit>(context).nextPage();
                     } else {
-                      SharedPreferencesService.saveData(
+                      await SharedPreferencesService.saveData(
                         key: Constants.onBoardingKey,
                         value: true,
+                      );
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        SignInView.routeName,
+                        (route) => false,
                       );
                     }
                   },

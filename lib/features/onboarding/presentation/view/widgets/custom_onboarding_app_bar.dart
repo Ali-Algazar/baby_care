@@ -3,6 +3,7 @@ import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
+import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,15 @@ class CustomOnBoardingAppBar extends StatelessWidget {
           index == 2
               ? const SizedBox()
               : TextButton(
-                  onPressed: () {
-                    SharedPreferencesService.saveData(
+                  onPressed: () async {
+                    await SharedPreferencesService.saveData(
                       key: Constants.onBoardingKey,
                       value: true,
+                    );
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      SignInView.routeName,
+                      (route) => false,
                     );
                   },
                   child: Text(
