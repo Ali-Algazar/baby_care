@@ -19,3 +19,11 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+subprojects {
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.activity:activity:1.9.0")
+            force("androidx.activity:activity-ktx:1.9.0")
+        }
+    }
+}
