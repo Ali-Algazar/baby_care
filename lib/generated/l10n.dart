@@ -128,6 +128,251 @@ class S {
   String get startNow {
     return Intl.message('ابدأ الآن', name: 'startNow', desc: '', args: []);
   }
+
+  /// `أهلا بعودتك!`
+  String get welcomeBack {
+    return Intl.message(
+      'أهلا بعودتك!',
+      name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `سجلي دخولك لمتابعة ملف طفلك.`
+  String get loginSubtitle {
+    return Intl.message(
+      'سجلي دخولك لمتابعة ملف طفلك.',
+      name: 'loginSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `البريد الإلكتروني`
+  String get emailLabel {
+    return Intl.message(
+      'البريد الإلكتروني',
+      name: 'emailLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كلمة المرور`
+  String get passwordLabel {
+    return Intl.message(
+      'كلمة المرور',
+      name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تذكرني`
+  String get rememberMe {
+    return Intl.message('تذكرني', name: 'rememberMe', desc: '', args: []);
+  }
+
+  /// `أدخل البريد الإلكتروني`
+  String get emailHint {
+    return Intl.message(
+      'أدخل البريد الإلكتروني',
+      name: 'emailHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أدخل كلمة المرور`
+  String get passwordHint {
+    return Intl.message(
+      'أدخل كلمة المرور',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `نسيت كلمة المرور؟`
+  String get forgotPassword {
+    return Intl.message(
+      'نسيت كلمة المرور؟',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل الدخول`
+  String get loginAction {
+    return Intl.message(
+      'تسجيل الدخول',
+      name: 'loginAction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ليس لديك حساب؟`
+  String get dontHaveAccount {
+    return Intl.message(
+      'ليس لديك حساب؟',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أنشئي حساباً جديداً`
+  String get createAccount {
+    return Intl.message(
+      'أنشئي حساباً جديداً',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `إنشاء حساب جديد`
+  String get signUpTitle {
+    return Intl.message(
+      'إنشاء حساب جديد',
+      name: 'signUpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `خطوتك الأولى نحو متابعة صحة طفلك بكل سهولة`
+  String get signUpSubtitle {
+    return Intl.message(
+      'خطوتك الأولى نحو متابعة صحة طفلك بكل سهولة',
+      name: 'signUpSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الاسم الكامل`
+  String get fullNameLabel {
+    return Intl.message(
+      'الاسم الكامل',
+      name: 'fullNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أدخل الاسم`
+  String get fullNameHint {
+    return Intl.message('أدخل الاسم', name: 'fullNameHint', desc: '', args: []);
+  }
+
+  /// `يكتب هنا الاسم كما هو مدون في بطاقة الرقم القومي`
+  String get fullNameHelperText {
+    return Intl.message(
+      'يكتب هنا الاسم كما هو مدون في بطاقة الرقم القومي',
+      name: 'fullNameHelperText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الرقم القومي`
+  String get nationalIdLabel {
+    return Intl.message(
+      'الرقم القومي',
+      name: 'nationalIdLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أدخل الرقم`
+  String get nationalIdHint {
+    return Intl.message(
+      'أدخل الرقم',
+      name: 'nationalIdHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لماذا نطلب الرقم القومي؟`
+  String get whyNationalIdQuestion {
+    return Intl.message(
+      'لماذا نطلب الرقم القومي؟',
+      name: 'whyNationalIdQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `نستخدمه لربط حسابك ببيانات طفلك المسجلة في الوحدات الصحية التابعة لوزارة الصحة`
+  String get whyNationalIdAnswer {
+    return Intl.message(
+      'نستخدمه لربط حسابك ببيانات طفلك المسجلة في الوحدات الصحية التابعة لوزارة الصحة',
+      name: 'whyNationalIdAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أدخل كلمة مرور قوية`
+  String get strongPasswordHint {
+    return Intl.message(
+      'أدخل كلمة مرور قوية',
+      name: 'strongPasswordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `8 أحرف على الأقل`
+  String get passwordMinLength {
+    return Intl.message(
+      '8 أحرف على الأقل',
+      name: 'passwordMinLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `بالضغط على إنشاء حساب، أنتِ توافقين على شروط الاستخدام وسياسة الخصوصية`
+  String get termsAgreement {
+    return Intl.message(
+      'بالضغط على إنشاء حساب، أنتِ توافقين على شروط الاستخدام وسياسة الخصوصية',
+      name: 'termsAgreement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `إنشاء حساب`
+  String get createAccountAction {
+    return Intl.message(
+      'إنشاء حساب',
+      name: 'createAccountAction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لديك حساب بالفعل؟`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'لديك حساب بالفعل؟',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `سجل الآن`
+  String get signInNow {
+    return Intl.message('سجل الآن', name: 'signInNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

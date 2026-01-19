@@ -22,6 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "لديك حساب بالفعل؟",
+    ),
+    "createAccount": MessageLookupByLibrary.simpleMessage(
+      "أنشئي حساباً جديداً",
+    ),
+    "createAccountAction": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+    "emailHint": MessageLookupByLibrary.simpleMessage("أدخل البريد الإلكتروني"),
+    "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
+      "يكتب هنا الاسم كما هو مدون في بطاقة الرقم القومي",
+    ),
+    "fullNameHint": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
+    "fullNameLabel": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+    "loginAction": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "loginSubtitle": MessageLookupByLibrary.simpleMessage(
+      "سجلي دخولك لمتابعة ملف طفلك.",
+    ),
+    "nationalIdHint": MessageLookupByLibrary.simpleMessage("أدخل الرقم"),
+    "nationalIdLabel": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.",
@@ -41,7 +63,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitle3": MessageLookupByLibrary.simpleMessage(
       "أساس صحي لمستقبل أفضل",
     ),
+    "passwordHint": MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordMinLength": MessageLookupByLibrary.simpleMessage(
+      "8 أحرف على الأقل",
+    ),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+    "signInNow": MessageLookupByLibrary.simpleMessage("سجل الآن"),
+    "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
+      "خطوتك الأولى نحو متابعة صحة طفلك بكل سهولة",
+    ),
+    "signUpTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "strongPasswordHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة مرور قوية",
+    ),
+    "termsAgreement": MessageLookupByLibrary.simpleMessage(
+      "بالضغط على إنشاء حساب، أنتِ توافقين على شروط الاستخدام وسياسة الخصوصية",
+    ),
+    "welcomeBack": MessageLookupByLibrary.simpleMessage("أهلا بعودتك!"),
+    "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
+      "نستخدمه لربط حسابك ببيانات طفلك المسجلة في الوحدات الصحية التابعة لوزارة الصحة",
+    ),
+    "whyNationalIdQuestion": MessageLookupByLibrary.simpleMessage(
+      "لماذا نطلب الرقم القومي؟",
+    ),
   };
 }

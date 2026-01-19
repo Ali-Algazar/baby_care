@@ -22,6 +22,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
+    "createAccount": MessageLookupByLibrary.simpleMessage(
+      "Create a new account",
+    ),
+    "createAccountAction": MessageLookupByLibrary.simpleMessage(
+      "Create Account",
+    ),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
+    "emailHint": MessageLookupByLibrary.simpleMessage("Enter email"),
+    "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
+      "Enter the name exactly as it appears on the National ID card",
+    ),
+    "fullNameHint": MessageLookupByLibrary.simpleMessage("Enter name"),
+    "fullNameLabel": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "loginAction": MessageLookupByLibrary.simpleMessage("Log In"),
+    "loginSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Log in to track your child\'s profile.",
+    ),
+    "nationalIdHint": MessageLookupByLibrary.simpleMessage("Enter ID number"),
+    "nationalIdLabel": MessageLookupByLibrary.simpleMessage("National ID"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "Your trusted guide to track your child\'s vaccinations and healthy growth, simply and securely.",
@@ -41,7 +67,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitle3": MessageLookupByLibrary.simpleMessage(
       "A Healthy Foundation for a Better Future",
     ),
+    "passwordHint": MessageLookupByLibrary.simpleMessage("Enter password"),
+    "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordMinLength": MessageLookupByLibrary.simpleMessage(
+      "At least 8 characters",
+    ),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "signInNow": MessageLookupByLibrary.simpleMessage("Log In Now"),
+    "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Your first step towards tracking your child\'s health with ease",
+    ),
+    "signUpTitle": MessageLookupByLibrary.simpleMessage("Create New Account"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "strongPasswordHint": MessageLookupByLibrary.simpleMessage(
+      "Enter a strong password",
+    ),
+    "termsAgreement": MessageLookupByLibrary.simpleMessage(
+      "By clicking Create Account, you agree to the Terms of Use and Privacy Policy",
+    ),
+    "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+    "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
+      "We use it to link your account with your child\'s data registered at Ministry of Health units",
+    ),
+    "whyNationalIdQuestion": MessageLookupByLibrary.simpleMessage(
+      "Why do we ask for the National ID?",
+    ),
   };
 }
