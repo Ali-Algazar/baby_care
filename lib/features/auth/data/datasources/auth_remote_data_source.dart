@@ -1,10 +1,11 @@
 import 'package:baby_care/core/services/api_helper.dart';
 import 'package:baby_care/core/utils/end_points.dart';
 import 'package:baby_care/features/auth/data/model/user_model.dart';
+import 'package:dio/dio.dart';
 
 abstract class AuthRemoteDataSource {
-  Future<UserModel> login({required String email, required String password});
-  Future<UserModel> register({
+  Future<Response> login({required String email, required String password});
+  Future<Response> register({
     required String email,
     required String password,
     required String nationalId,
@@ -15,7 +16,7 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
   ApiHelper apiHelper;
   AuthRemoteDataSourceImpl(this.apiHelper);
   @override
-  Future<UserModel> login({
+  Future<Response> login({
     required String email,
     required String password,
   }) async {
@@ -24,11 +25,11 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
       data: {'email': email, 'password': password},
     );
 
-    return UserModel.fromJson(response.data);
+    return response;
   }
 
   @override
-  Future<UserModel> register({
+  Future<Response> register({
     required String email,
     required String password,
     required String nationalId,
@@ -38,6 +39,6 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
       data: {'email': email, 'password': password, 'nationalId': nationalId},
     );
 
-    return UserModel.fromJson(response.data);
+    return response;
   }
 }

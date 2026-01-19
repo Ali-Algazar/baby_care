@@ -45,5 +45,7 @@
 "errorNationalIdEmpty": "يرجى إدخال الرقم القومي",
 "errorNationalIdInvalid": "يجب أن يتكون الرقم القومي من 14 رقماً",
 "errorPasswordMatch": "كلمات المرور غير متطابقة",
-"errorGenderEmpty": "يرجى اختيار النوع"
+"errorGenderEmpty": "يرجى اختيار النوع",
+"errorLoginEmpty": "الرجاء إدخال البريد الإلكتروني وكلمة المرور",
+"errorLoginInvalid": "البريد الإلكتروني أو كلمة المرور غير صحيحة"
 }

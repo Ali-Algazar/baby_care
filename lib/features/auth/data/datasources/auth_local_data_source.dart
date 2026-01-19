@@ -2,14 +2,13 @@ import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/helper/hive_helper.dart';
 import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/features/auth/data/model/user_model.dart';
-import 'package:hive/hive.dart';
 
 abstract class AuthLocalDataSource {
   Future<void> cacheUser(UserModel user);
   Future<UserModel?> getCachedUser();
   Future<void> clearCachedUser();
   Future<void> cacheUserToken(String token);
-  Future<String> getCachedUserToken();
+  Future<String?> getCachedUserToken();
   Future<void> clearCachedUserToken();
 }
 

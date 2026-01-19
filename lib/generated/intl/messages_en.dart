@@ -45,6 +45,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorGenderEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter gender",
     ),
+    "errorLoginEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter email and password",
+    ),
+    "errorLoginInvalid": MessageLookupByLibrary.simpleMessage(
+      "Incorrect email or password",
+    ),
     "errorNameEmpty": MessageLookupByLibrary.simpleMessage(
       "Display name cannot be empty",
     ),

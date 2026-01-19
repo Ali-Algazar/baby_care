@@ -41,6 +41,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorGenderEmpty": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار النوع",
     ),
+    "errorLoginEmpty": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال البريد الإلكتروني وكلمة المرور",
+    ),
+    "errorLoginInvalid": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+    ),
     "errorNameEmpty": MessageLookupByLibrary.simpleMessage(
       "لا يمكن ترك اسم العرض فارغاً",
     ),

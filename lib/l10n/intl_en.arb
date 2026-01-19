@@ -45,5 +45,7 @@
 "errorNationalIdEmpty": "Please enter a national ID",
 "errorNationalIdInvalid": "National ID must be exactly 14 digits",
 "errorPasswordMatch": "Passwords do not match",
-"errorGenderEmpty": "Please enter gender"
+"errorGenderEmpty": "Please enter gender",
+"errorLoginEmpty": "Please enter email and password",
+"errorLoginInvalid": "Incorrect email or password"
 }

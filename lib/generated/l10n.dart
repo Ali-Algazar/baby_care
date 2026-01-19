@@ -493,6 +493,26 @@ class S {
       args: [],
     );
   }
+
+  /// `الرجاء إدخال البريد الإلكتروني وكلمة المرور`
+  String get errorLoginEmpty {
+    return Intl.message(
+      'الرجاء إدخال البريد الإلكتروني وكلمة المرور',
+      name: 'errorLoginEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `البريد الإلكتروني أو كلمة المرور غير صحيحة`
+  String get errorLoginInvalid {
+    return Intl.message(
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة',
+      name: 'errorLoginInvalid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
