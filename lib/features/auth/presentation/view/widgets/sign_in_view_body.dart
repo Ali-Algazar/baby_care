@@ -67,7 +67,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 hint: S.of(context).emailHint,
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
-                  return MyValidators.emailValidator(value);
+                  return MyValidators.emailValidator(value, context);
                 },
               ),
               24.height,
@@ -80,7 +80,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                   icon: SvgPicture.asset('assets/svg/eye.svg'),
                 ),
                 validator: (value) {
-                  return MyValidators.passwordValidator(value);
+                  return MyValidators.passwordValidator(value, context);
                 },
               ),
               14.height,

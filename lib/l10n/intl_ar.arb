@@ -33,5 +33,17 @@
 "termsAgreement": "بالضغط على إنشاء حساب، أنتِ توافقين على شروط الاستخدام وسياسة الخصوصية",
 "createAccountAction": "إنشاء حساب",
 "alreadyHaveAccount": "لديك حساب بالفعل؟",
-"signInNow": "سجل الآن"
+"signInNow": "سجل الآن",
+"errorNameEmpty": "لا يمكن ترك اسم العرض فارغاً",
+"errorNameLength": "يجب أن يكون الاسم بين 3 و 20 حرفاً",
+"errorEmailEmpty": "يرجى إدخال البريد الإلكتروني",
+"errorEmailInvalid": "يرجى إدخال بريد إلكتروني صحيح",
+"errorPhoneEmpty": "يرجى إدخال رقم الهاتف",
+"errorPhoneInvalid": "يرجى إدخال رقم هاتف مصري صحيح مكون من 11 رقماً",
+"errorPasswordEmpty": "يرجى إدخال كلمة المرور",
+"errorPasswordShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+"errorNationalIdEmpty": "يرجى إدخال الرقم القومي",
+"errorNationalIdInvalid": "يجب أن يتكون الرقم القومي من 14 رقماً",
+"errorPasswordMatch": "كلمات المرور غير متطابقة",
+"errorGenderEmpty": "يرجى اختيار النوع"
 }

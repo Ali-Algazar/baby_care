@@ -31,6 +31,7 @@ class LabeledTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -52,6 +53,7 @@ class LabeledTextField extends StatelessWidget {
 
         if (helper != null)
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               8.height,
               Text(

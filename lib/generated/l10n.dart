@@ -373,6 +373,126 @@ class S {
   String get signInNow {
     return Intl.message('سجل الآن', name: 'signInNow', desc: '', args: []);
   }
+
+  /// `لا يمكن ترك اسم العرض فارغاً`
+  String get errorNameEmpty {
+    return Intl.message(
+      'لا يمكن ترك اسم العرض فارغاً',
+      name: 'errorNameEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يجب أن يكون الاسم بين 3 و 20 حرفاً`
+  String get errorNameLength {
+    return Intl.message(
+      'يجب أن يكون الاسم بين 3 و 20 حرفاً',
+      name: 'errorNameLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى إدخال البريد الإلكتروني`
+  String get errorEmailEmpty {
+    return Intl.message(
+      'يرجى إدخال البريد الإلكتروني',
+      name: 'errorEmailEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى إدخال بريد إلكتروني صحيح`
+  String get errorEmailInvalid {
+    return Intl.message(
+      'يرجى إدخال بريد إلكتروني صحيح',
+      name: 'errorEmailInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى إدخال رقم الهاتف`
+  String get errorPhoneEmpty {
+    return Intl.message(
+      'يرجى إدخال رقم الهاتف',
+      name: 'errorPhoneEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى إدخال رقم هاتف مصري صحيح مكون من 11 رقماً`
+  String get errorPhoneInvalid {
+    return Intl.message(
+      'يرجى إدخال رقم هاتف مصري صحيح مكون من 11 رقماً',
+      name: 'errorPhoneInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى إدخال كلمة المرور`
+  String get errorPasswordEmpty {
+    return Intl.message(
+      'يرجى إدخال كلمة المرور',
+      name: 'errorPasswordEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يجب أن تتكون كلمة المرور من 8 أحرف على الأقل`
+  String get errorPasswordShort {
+    return Intl.message(
+      'يجب أن تتكون كلمة المرور من 8 أحرف على الأقل',
+      name: 'errorPasswordShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى إدخال الرقم القومي`
+  String get errorNationalIdEmpty {
+    return Intl.message(
+      'يرجى إدخال الرقم القومي',
+      name: 'errorNationalIdEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يجب أن يتكون الرقم القومي من 14 رقماً`
+  String get errorNationalIdInvalid {
+    return Intl.message(
+      'يجب أن يتكون الرقم القومي من 14 رقماً',
+      name: 'errorNationalIdInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كلمات المرور غير متطابقة`
+  String get errorPasswordMatch {
+    return Intl.message(
+      'كلمات المرور غير متطابقة',
+      name: 'errorPasswordMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `يرجى اختيار النوع`
+  String get errorGenderEmpty {
+    return Intl.message(
+      'يرجى اختيار النوع',
+      name: 'errorGenderEmpty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

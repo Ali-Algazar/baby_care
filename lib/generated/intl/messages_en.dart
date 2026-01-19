@@ -36,6 +36,42 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "emailHint": MessageLookupByLibrary.simpleMessage("Enter email"),
     "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+    "errorEmailEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter an email",
+    ),
+    "errorEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email",
+    ),
+    "errorGenderEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter gender",
+    ),
+    "errorNameEmpty": MessageLookupByLibrary.simpleMessage(
+      "Display name cannot be empty",
+    ),
+    "errorNameLength": MessageLookupByLibrary.simpleMessage(
+      "Display name must be between 3 and 20 characters",
+    ),
+    "errorNationalIdEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter a national ID",
+    ),
+    "errorNationalIdInvalid": MessageLookupByLibrary.simpleMessage(
+      "National ID must be exactly 14 digits",
+    ),
+    "errorPasswordEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter a password",
+    ),
+    "errorPasswordMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "errorPasswordShort": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 8 characters long",
+    ),
+    "errorPhoneEmpty": MessageLookupByLibrary.simpleMessage(
+      "Please enter a phone number",
+    ),
+    "errorPhoneInvalid": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid 11-digit Egyptian phone number",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
       "Enter the name exactly as it appears on the National ID card",

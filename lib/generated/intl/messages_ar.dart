@@ -32,6 +32,42 @@ class MessageLookup extends MessageLookupByLibrary {
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "emailHint": MessageLookupByLibrary.simpleMessage("أدخل البريد الإلكتروني"),
     "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "errorEmailEmpty": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال البريد الإلكتروني",
+    ),
+    "errorEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بريد إلكتروني صحيح",
+    ),
+    "errorGenderEmpty": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار النوع",
+    ),
+    "errorNameEmpty": MessageLookupByLibrary.simpleMessage(
+      "لا يمكن ترك اسم العرض فارغاً",
+    ),
+    "errorNameLength": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يكون الاسم بين 3 و 20 حرفاً",
+    ),
+    "errorNationalIdEmpty": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال الرقم القومي",
+    ),
+    "errorNationalIdInvalid": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يتكون الرقم القومي من 14 رقماً",
+    ),
+    "errorPasswordEmpty": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال كلمة المرور",
+    ),
+    "errorPasswordMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمات المرور غير متطابقة",
+    ),
+    "errorPasswordShort": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+    ),
+    "errorPhoneEmpty": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم الهاتف",
+    ),
+    "errorPhoneInvalid": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم هاتف مصري صحيح مكون من 11 رقماً",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
       "يكتب هنا الاسم كما هو مدون في بطاقة الرقم القومي",

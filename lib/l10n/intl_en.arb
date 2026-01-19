@@ -33,5 +33,17 @@
 "termsAgreement": "By clicking Create Account, you agree to the Terms of Use and Privacy Policy",
 "createAccountAction": "Create Account",
 "alreadyHaveAccount": "Already have an account?",
-"signInNow": "Log In Now"
+"signInNow": "Log In Now",
+"errorNameEmpty": "Display name cannot be empty",
+"errorNameLength": "Display name must be between 3 and 20 characters",
+"errorEmailEmpty": "Please enter an email",
+"errorEmailInvalid": "Please enter a valid email",
+"errorPhoneEmpty": "Please enter a phone number",
+"errorPhoneInvalid": "Please enter a valid 11-digit Egyptian phone number",
+"errorPasswordEmpty": "Please enter a password",
+"errorPasswordShort": "Password must be at least 8 characters long",
+"errorNationalIdEmpty": "Please enter a national ID",
+"errorNationalIdInvalid": "National ID must be exactly 14 digits",
+"errorPasswordMatch": "Passwords do not match",
+"errorGenderEmpty": "Please enter gender"
 }
