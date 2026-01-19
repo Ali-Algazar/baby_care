@@ -11,5 +11,5 @@ abstract class AuthRepository {
     String nationalId, {
     String? displayName,
   });
-  Future<Either<Failure, void>> logout();
+  Future<Either<Failure, Unit>> logout();
 }
