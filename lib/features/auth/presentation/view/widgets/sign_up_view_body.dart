@@ -15,6 +15,7 @@ class SignUpViewBody extends StatefulWidget {
 
 class _SignUpViewBodyState extends State<SignUpViewBody> {
   bool isCheck = false;
+  bool showPassword = false;
   GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -27,7 +28,17 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             Constants.ktopPadding.height,
             const SignUpHeader(),
             40.height,
-            Form(key: formKey, child: const SignUpFormFields()),
+            Form(
+              key: formKey,
+              child: SignUpFormFields(
+                obscureText: showPassword,
+                showPassword: (value) {
+                  setState(() {
+                    showPassword = value;
+                  });
+                },
+              ),
+            ),
             16.height,
             TermsAgreementRow(
               isChecked: isCheck,
