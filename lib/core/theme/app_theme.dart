@@ -24,6 +24,12 @@ class AppTheme {
         ),
         borderSide: BorderSide(color: AppColors.border, width: 1),
       ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(
+          Constants.ktextFieldRadius.toDouble(),
+        ),
+        borderSide: BorderSide(color: AppColors.border, width: 1),
+      ),
 
       // Padding inside the text fields
       contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
