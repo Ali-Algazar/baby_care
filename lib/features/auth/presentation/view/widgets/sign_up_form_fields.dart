@@ -10,10 +10,16 @@ class SignUpFormFields extends StatelessWidget {
     super.key,
     required this.obscureText,
     required this.showPassword,
+    required this.emailController,
+    required this.passwordController,
+    required this.nationalIdController,
   });
 
   final bool obscureText;
   final ValueChanged<bool> showPassword;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final TextEditingController nationalIdController;
 
   @override
   Widget build(BuildContext context) {
