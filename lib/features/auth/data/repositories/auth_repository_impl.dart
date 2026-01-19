@@ -82,4 +82,18 @@ class AuthRepositoryImpl extends AuthRepository {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, UserModel>> checkAuth() async {
+    try {
+      final token = await localDataSource.getCachedUserToken();
+      if (token == null) {
+        return Left(ServerFailure('No cached token found'));
+      }
+      final user = await localDataSource.getCachedUser();
+      return Right(user!);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

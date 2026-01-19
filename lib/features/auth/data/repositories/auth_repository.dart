@@ -12,4 +12,5 @@ abstract class AuthRepository {
     String? displayName,
   });
   Future<Either<Failure, Unit>> logout();
+  Future<Either<Failure, UserModel>> checkAuth();
 }
