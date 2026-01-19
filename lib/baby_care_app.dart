@@ -1,6 +1,9 @@
 import 'package:baby_care/core/cubit/cubit/locale_cubit.dart';
 import 'package:baby_care/core/helper_functions/on_generate_routes.dart';
+import 'package:baby_care/core/services/get_it_service.dart';
 import 'package:baby_care/core/theme/app_theme.dart';
+import 'package:baby_care/features/auth/data/repositories/auth_repository.dart';
+import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,8 +15,13 @@ class BabyCareApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LocaleCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => LocaleCubit()),
+        BlocProvider(
+          create: (context) => AuthCubit(authRepository: sl<AuthRepository>()),
+        ),
+      ],
       child: BlocBuilder<LocaleCubit, String>(
         builder: (context, state) {
           return ScreenUtilInit(
