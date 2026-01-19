@@ -6,7 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SignInFormFields extends StatelessWidget {
-  const SignInFormFields({super.key});
+  const SignInFormFields({
+    super.key,
+    required this.obscureText,
+    required this.showPassword,
+  });
+
+  final bool obscureText;
+  final ValueChanged<bool> showPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +27,14 @@ class SignInFormFields extends StatelessWidget {
         ),
         24.height,
         LabeledTextField(
+          obscureText: obscureText,
           label: S.of(context).passwordLabel,
           hint: S.of(context).passwordHint,
           keyboardType: TextInputType.visiblePassword,
           suffixIcon: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showPassword(!obscureText);
+            },
             icon: SvgPicture.asset('assets/svg/eye.svg'),
           ),
           validator: (value) => MyValidators.passwordValidator(value, context),

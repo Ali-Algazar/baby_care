@@ -18,6 +18,7 @@ class SignInViewBody extends StatefulWidget {
 class _SignInViewBodyState extends State<SignInViewBody> {
   bool isCheck = false;
   GlobalKey<FormState> formKey = GlobalKey();
+  bool showPassword = true;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -30,7 +31,17 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               onLanguagePressed: () => onLanguageButtonPressed(context),
             ),
             40.height,
-            Form(key: formKey, child: const SignInFormFields()),
+            Form(
+              key: formKey,
+              child: SignInFormFields(
+                obscureText: showPassword,
+                showPassword: (value) {
+                  setState(() {
+                    showPassword = value;
+                  });
+                },
+              ),
+            ),
             14.height,
             RememberMeRow(
               isChecked: isCheck,
