@@ -6,4 +6,7 @@ class Constants {
   static const int kbuttonRadius = 10;
   static const int ktextFieldRadius = 8;
   static const String kfontFamily = "Calibri";
+  static const String userBox = 'userBox';
+  static const String userHiveKey = 'userHiveKey';
+  static const String tokeneKey = 'tokenKey';
 }
