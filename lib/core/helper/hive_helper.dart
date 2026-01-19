@@ -1,3 +1,4 @@
+import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveHelper {
@@ -41,6 +42,10 @@ class HiveHelper {
   static Future<void> clearBox(String boxName) async {
     final box = await openBox(boxName);
     await box.clear();
+  }
+
+  static void registerAdapter() {
+    Hive.registerAdapter(UserModelAdapter());
   }
 
   static Future<bool> containsKey({
