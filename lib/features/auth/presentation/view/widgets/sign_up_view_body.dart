@@ -8,6 +8,7 @@ import 'package:baby_care/features/auth/presentation/view/widgets/sign_up_header
 import 'package:baby_care/features/auth/presentation/view/widgets/terms_agreement_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
@@ -62,62 +63,65 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           });
         }
       },
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: Constants.khorizontalPadding.horizontal,
-          child: Column(
-            children: [
-              Constants.ktopPadding.height,
-              const SignUpHeader(),
-              40.height,
-              Form(
-                key: formKey,
-                child: SignUpFormFields(
-                  displayNameController: displayNameController,
-                  emailController: emailController,
-                  passwordController: passwordController,
-                  nationalIdController: nationalIdController,
-                  obscureText: showPassword,
-                  passwordSuffixIcon: showPassword
-                      ? "assets/svg/eye-off.svg"
-                      : 'assets/svg/eye.svg',
-                  showPassword: (value) {
-                    setState(() {
-                      showPassword = !value;
-                    });
+      child: ModalProgressHUD(
+        inAsyncCall: isLoading,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: Constants.khorizontalPadding.horizontal,
+            child: Column(
+              children: [
+                Constants.ktopPadding.height,
+                const SignUpHeader(),
+                40.height,
+                Form(
+                  key: formKey,
+                  child: SignUpFormFields(
+                    displayNameController: displayNameController,
+                    emailController: emailController,
+                    passwordController: passwordController,
+                    nationalIdController: nationalIdController,
+                    obscureText: showPassword,
+                    passwordSuffixIcon: showPassword
+                        ? "assets/svg/eye-off.svg"
+                        : 'assets/svg/eye.svg',
+                    showPassword: (value) {
+                      setState(() {
+                        showPassword = !value;
+                      });
+                    },
+                  ),
+                ),
+                16.height,
+                TermsAgreementRow(
+                  isChecked: isCheck,
+                  onChanged: (value) {
+                    setState(() => isCheck = !value);
                   },
                 ),
-              ),
-              16.height,
-              TermsAgreementRow(
-                isChecked: isCheck,
-                onChanged: (value) {
-                  setState(() => isCheck = !value);
-                },
-              ),
-              30.height,
-              SignUpFooter(
-                onCreateAccount: () {
-                  if (formKey.currentState!.validate()) {
-                    if (isCheck) {
-                      BlocProvider.of<AuthCubit>(context).register(
-                        emailController.text,
-                        passwordController.text,
-                        nationalIdController.text,
-                        displayNameController.text,
-                      );
-                    } else {
-                      context.showSnack(
-                        'You must agree to the terms and conditions',
-                        color: Colors.red,
-                      );
+                30.height,
+                SignUpFooter(
+                  onCreateAccount: () {
+                    if (formKey.currentState!.validate()) {
+                      if (isCheck) {
+                        BlocProvider.of<AuthCubit>(context).register(
+                          emailController.text,
+                          passwordController.text,
+                          nationalIdController.text,
+                          displayNameController.text,
+                        );
+                      } else {
+                        context.showSnack(
+                          'You must agree to the terms and conditions',
+                          color: Colors.red,
+                        );
+                      }
                     }
-                  }
-                },
-                onSignIn: () => Navigator.pop(context),
-              ),
-              Constants.kbottomPadding.height,
-            ],
+                  },
+                  onSignIn: () => Navigator.pop(context),
+                ),
+                Constants.kbottomPadding.height,
+              ],
+            ),
           ),
         ),
       ),
