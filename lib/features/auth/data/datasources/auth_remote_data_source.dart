@@ -1,6 +1,5 @@
 import 'package:baby_care/core/services/api_helper.dart';
 import 'package:baby_care/core/utils/end_points.dart';
-import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 

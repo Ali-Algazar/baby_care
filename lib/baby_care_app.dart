@@ -1,6 +1,4 @@
-import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/cubit/cubit/locale_cubit.dart';
-import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/core/helper_functions/on_generate_routes.dart';
 import 'package:baby_care/core/services/get_it_service.dart';
 import 'package:baby_care/core/theme/app_theme.dart';
