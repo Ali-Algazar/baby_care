@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:baby_care/core/errors/failures.dart';
 import 'package:baby_care/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:baby_care/features/auth/data/datasources/auth_remote_data_source.dart';
@@ -24,18 +26,19 @@ class AuthRepositoryImpl extends AuthRepository {
         email: email,
         password: password,
       );
+      if (response.statusCode == 200) {
+        var user = UserModel.fromJson(response.data);
+        await localDataSource.cacheUserToken(response.data['token']);
+        await localDataSource.cacheUser(user);
 
-      if (response.statusCode == 400) {
-        return Left(ServerFailure(response.data['message']));
+        return Right(user);
+      } else {
+        return Left(
+          ServerFailure(
+            'Login failed with status code: ${response.statusCode}',
+          ),
+        );
       }
-      if (response.statusCode == 401) {
-        return Left(ServerFailure('INVALID_CREDENTIALS'));
-      }
-      var user = UserModel.fromJson(response.data);
-      await localDataSource.cacheUserToken(response.data['token']);
-      await localDataSource.cacheUser(user);
-
-      return Right(user);
     } on DioException catch (e) {
       return Left(ServerFailure.fromDioError(e));
     } catch (e) {
@@ -58,26 +61,31 @@ class AuthRepositoryImpl extends AuthRepository {
   Future<Either<Failure, UserModel>> register(
     String email,
     String password,
-    String nationalId, {
-    String? displayName,
-  }) async {
+    String nationalId,
+    String displayName,
+  ) async {
     try {
       var response = await remoteDataSource.register(
         email: email,
         password: password,
         nationalId: nationalId,
+        displayName: displayName,
       );
 
-      if (response.statusCode == 400) {
-        return Left(ServerFailure(response.data['message']));
-      }
-      var user = UserModel.fromJson(response.data);
-      await localDataSource.cacheUserToken(response.data['token']);
-      await localDataSource.cacheUser(user);
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        var user = UserModel.fromJson(response.data);
+        await localDataSource.cacheUserToken(response.data['token']);
+        await localDataSource.cacheUser(user);
 
-      return Right(user);
-    } on DioException catch (e) {
-      return Left(ServerFailure.fromDioError(e));
+        return Right(user);
+      } else {
+        log(response.data.toString());
+        return Left(
+          ServerFailure(
+            'Registration failed with status code: ${response.statusCode}',
+          ),
+        );
+      }
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }

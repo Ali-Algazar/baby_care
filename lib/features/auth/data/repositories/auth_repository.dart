@@ -8,9 +8,9 @@ abstract class AuthRepository {
   Future<Either<Failure, UserModel>> register(
     String email,
     String password,
-    String nationalId, {
-    String? displayName,
-  });
+    String nationalId,
+    String displayName,
+  );
   Future<Either<Failure, Unit>> logout();
   Future<Either<Failure, UserModel>> checkAuth();
 }

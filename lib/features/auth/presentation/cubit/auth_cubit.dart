@@ -27,9 +27,15 @@ class AuthCubit extends Cubit<AuthState> {
     String email,
     String password,
     String nationalId,
+    String displayName,
   ) async {
     emit(AuthLoading());
-    final result = await authRepository.register(email, password, nationalId);
+    final result = await authRepository.register(
+      email,
+      password,
+      nationalId,
+      displayName,
+    );
     result.fold((failure) => emit(AuthError(failure.message)), (user) {
       emit(AuthSuccess(user: user));
     });

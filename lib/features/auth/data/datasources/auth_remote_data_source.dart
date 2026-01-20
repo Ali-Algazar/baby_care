@@ -9,6 +9,7 @@ abstract class AuthRemoteDataSource {
     required String email,
     required String password,
     required String nationalId,
+    required String displayName,
   });
 }
 
@@ -33,10 +34,16 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
     required String email,
     required String password,
     required String nationalId,
+    required String displayName,
   }) async {
     var response = await apiHelper.post(
       ApiEndpoints.register,
-      data: {'email': email, 'password': password, 'nationalId': nationalId},
+      data: {
+        "name": displayName,
+        "email": email,
+        "password": password,
+        "nationalId": nationalId,
+      },
     );
 
     return response;

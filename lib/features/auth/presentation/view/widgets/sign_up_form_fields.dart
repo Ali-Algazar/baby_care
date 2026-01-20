@@ -14,6 +14,7 @@ class SignUpFormFields extends StatelessWidget {
     required this.passwordController,
     required this.nationalIdController,
     required this.passwordSuffixIcon,
+    required this.displayNameController,
   });
 
   final bool obscureText;
@@ -21,6 +22,7 @@ class SignUpFormFields extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController nationalIdController;
+  final TextEditingController displayNameController;
   final String passwordSuffixIcon;
 
   @override
@@ -28,6 +30,7 @@ class SignUpFormFields extends StatelessWidget {
     return Column(
       children: [
         LabeledTextField(
+          controller: displayNameController,
           label: S.of(context).fullNameLabel,
           hint: S.of(context).fullNameHint,
           keyboardType: TextInputType.name,
@@ -37,6 +40,7 @@ class SignUpFormFields extends StatelessWidget {
         ),
         24.height,
         LabeledTextField(
+          controller: nationalIdController,
           label: S.of(context).nationalIdLabel,
           hint: S.of(context).nationalIdHint,
           keyboardType: TextInputType.number,
@@ -47,6 +51,7 @@ class SignUpFormFields extends StatelessWidget {
         ),
         24.height,
         LabeledTextField(
+          controller: emailController,
           label: S.of(context).emailLabel,
           hint: S.of(context).emailHint,
           keyboardType: TextInputType.emailAddress,
@@ -54,6 +59,7 @@ class SignUpFormFields extends StatelessWidget {
         ),
         24.height,
         LabeledTextField(
+          controller: passwordController,
           obscureText: !obscureText,
           label: S.of(context).passwordLabel,
           hint: S.of(context).strongPasswordHint,

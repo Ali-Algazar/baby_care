@@ -24,6 +24,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nationalIdController = TextEditingController();
+  TextEditingController displayNameController = TextEditingController();
 
   @override
   void initState() {
@@ -36,6 +37,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
     emailController.dispose();
     passwordController.dispose();
     nationalIdController.dispose();
+    displayNameController.dispose();
     super.dispose();
   }
 
@@ -71,6 +73,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               Form(
                 key: formKey,
                 child: SignUpFormFields(
+                  displayNameController: displayNameController,
                   emailController: emailController,
                   passwordController: passwordController,
                   nationalIdController: nationalIdController,
@@ -101,6 +104,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                         emailController.text,
                         passwordController.text,
                         nationalIdController.text,
+                        displayNameController.text,
                       );
                     } else {
                       context.showSnack(
