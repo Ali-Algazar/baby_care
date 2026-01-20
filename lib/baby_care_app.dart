@@ -1,4 +1,6 @@
+import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/cubit/cubit/locale_cubit.dart';
+import 'package:baby_care/core/helper/shared_preferences_service.dart';
 import 'package:baby_care/core/helper_functions/on_generate_routes.dart';
 import 'package:baby_care/core/services/get_it_service.dart';
 import 'package:baby_care/core/theme/app_theme.dart';
@@ -10,6 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class BabyCareApp extends StatelessWidget {
   const BabyCareApp({super.key});
 
@@ -28,19 +31,22 @@ class BabyCareApp extends StatelessWidget {
             designSize: const Size(360, 690),
             minTextAdapt: true,
             splitScreenMode: true,
-            builder: (context, child) => MaterialApp(
-              locale: Locale(state),
-              localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              debugShowCheckedModeBanner: false,
-              onGenerateRoute: onGenerateRoute,
-              theme: AppTheme.lightTheme,
-            ),
+            builder: (context, child) {
+              return MaterialApp(
+                locale: Locale(state),
+
+                localizationsDelegates: [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: S.delegate.supportedLocales,
+                debugShowCheckedModeBanner: false,
+                onGenerateRoute: onGenerateRoute,
+                theme: AppTheme.lightTheme,
+              );
+            },
           );
         },
       ),
