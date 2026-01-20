@@ -1,6 +1,8 @@
 import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/cubit/cubit/locale_cubit.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
+import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:baby_care/features/auth/presentation/cubit/auth_state.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/remember_me_row.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_in_footer.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_in_form_fields.dart';
@@ -23,48 +25,66 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: Constants.khorizontalPadding.horizontal,
-        child: Column(
-          children: [
-            Constants.ktopPadding.height,
-            SignInHeader(
-              onLanguagePressed: () => onLanguageButtonPressed(context),
-            ),
-            40.height,
-            Form(
-              key: formKey,
-              child: SignInFormFields(
-                emailController: emailController,
-                passwordController: passwordController,
-                passwordSuffixIcon: showPassword
-                    ? 'assets/svg/eye-off.svg'
-                    : 'assets/svg/eye.svg',
-                obscureText: showPassword,
-                showPassword: (value) {
-                  setState(() {
-                    showPassword = !value;
-                  });
+    return BlocListener<AuthCubit, AuthState>(
+      listener: (context, state) {
+        if (state is AuthError) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(state.message)));
+        }
+        if (state is AuthSuccess) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text('Login Successful')));
+        }
+      },
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: Constants.khorizontalPadding.horizontal,
+          child: Column(
+            children: [
+              Constants.ktopPadding.height,
+              SignInHeader(
+                onLanguagePressed: () => onLanguageButtonPressed(context),
+              ),
+              40.height,
+              Form(
+                key: formKey,
+                child: SignInFormFields(
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  passwordSuffixIcon: showPassword
+                      ? 'assets/svg/eye-off.svg'
+                      : 'assets/svg/eye.svg',
+                  obscureText: showPassword,
+                  showPassword: (value) {
+                    setState(() {
+                      showPassword = !value;
+                    });
+                  },
+                ),
+              ),
+              14.height,
+              RememberMeRow(
+                isChecked: isCheck,
+                onChanged: (value) {
+                  setState(() => isCheck = !value);
+                },
+                onForgotPassword: () {},
+              ),
+              60.height,
+              SignInFooter(
+                onLogin: () {
+                  if (formKey.currentState!.validate()) {
+                    BlocProvider.of<AuthCubit>(
+                      context,
+                    ).login(emailController.text, passwordController.text);
+                  }
                 },
               ),
-            ),
-            14.height,
-            RememberMeRow(
-              isChecked: isCheck,
-              onChanged: (value) {
-                setState(() => isCheck = !value);
-              },
-              onForgotPassword: () {},
-            ),
-            60.height,
-            SignInFooter(
-              onLogin: () {
-                if (formKey.currentState!.validate()) {}
-              },
-            ),
-            Constants.kbottomPadding.height,
-          ],
+              Constants.kbottomPadding.height,
+            ],
+          ),
         ),
       ),
     );

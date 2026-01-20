@@ -9,7 +9,16 @@ import 'package:get_it/get_it.dart';
 final sl = GetIt.instance;
 
 void setupServiceLocator() {
-  sl.registerLazySingleton<Dio>(() => Dio());
+  sl.registerLazySingleton<Dio>(
+    () => Dio(
+      BaseOptions(
+        receiveDataWhenStatusError: true,
+        validateStatus: (status) {
+          return status! < 500;
+        },
+      ),
+    ),
+  );
   sl.registerLazySingleton<ApiHelper>(() => ApiHelper(sl<Dio>()));
 
   sl.registerLazySingleton<AuthLocalDataSource>(

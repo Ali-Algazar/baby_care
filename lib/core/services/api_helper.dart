@@ -3,7 +3,7 @@ import '../helper/shared_preferences_service.dart';
 
 class ApiHelper {
   Dio dio;
-  final String baseUrl = 'https://mom-hf4l.vercel.app/api/v1/';
+  final String baseUrl = 'https://mom-hf4l.vercel.app/api/v1';
 
   ApiHelper(this.dio);
 
