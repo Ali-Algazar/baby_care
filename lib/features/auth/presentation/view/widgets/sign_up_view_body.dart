@@ -75,9 +75,12 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   passwordController: passwordController,
                   nationalIdController: nationalIdController,
                   obscureText: showPassword,
+                  passwordSuffixIcon: showPassword
+                      ? "assets/svg/eye-off.svg"
+                      : 'assets/svg/eye.svg',
                   showPassword: (value) {
                     setState(() {
-                      showPassword = value;
+                      showPassword = !value;
                     });
                   },
                 ),

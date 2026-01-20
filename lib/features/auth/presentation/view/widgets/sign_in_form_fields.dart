@@ -10,16 +10,24 @@ class SignInFormFields extends StatelessWidget {
     super.key,
     required this.obscureText,
     required this.showPassword,
+    required this.emailController,
+    required this.passwordController,
+    required this.passwordSuffixIcon,
   });
 
   final bool obscureText;
   final ValueChanged<bool> showPassword;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+
+  final String passwordSuffixIcon;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         LabeledTextField(
+          controller: emailController,
           label: S.of(context).emailLabel,
           hint: S.of(context).emailHint,
           keyboardType: TextInputType.emailAddress,
@@ -27,15 +35,16 @@ class SignInFormFields extends StatelessWidget {
         ),
         24.height,
         LabeledTextField(
-          obscureText: obscureText,
+          controller: passwordController,
+          obscureText: !obscureText,
           label: S.of(context).passwordLabel,
           hint: S.of(context).passwordHint,
           keyboardType: TextInputType.visiblePassword,
           suffixIcon: IconButton(
             onPressed: () {
-              showPassword(!obscureText);
+              showPassword(obscureText);
             },
-            icon: SvgPicture.asset('assets/svg/eye.svg'),
+            icon: SvgPicture.asset(passwordSuffixIcon),
           ),
           validator: (value) => MyValidators.passwordValidator(value, context),
         ),

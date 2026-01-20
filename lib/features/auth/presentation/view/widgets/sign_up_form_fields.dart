@@ -13,6 +13,7 @@ class SignUpFormFields extends StatelessWidget {
     required this.emailController,
     required this.passwordController,
     required this.nationalIdController,
+    required this.passwordSuffixIcon,
   });
 
   final bool obscureText;
@@ -20,6 +21,7 @@ class SignUpFormFields extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController nationalIdController;
+  final String passwordSuffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -52,16 +54,16 @@ class SignUpFormFields extends StatelessWidget {
         ),
         24.height,
         LabeledTextField(
-          obscureText: obscureText,
+          obscureText: !obscureText,
           label: S.of(context).passwordLabel,
           hint: S.of(context).strongPasswordHint,
           helper: S.of(context).passwordMinLength,
           keyboardType: TextInputType.visiblePassword,
           suffixIcon: IconButton(
             onPressed: () {
-              showPassword(!obscureText);
+              showPassword(obscureText);
             },
-            icon: SvgPicture.asset('assets/svg/eye.svg'),
+            icon: SvgPicture.asset(passwordSuffixIcon),
           ),
           validator: (value) => MyValidators.passwordValidator(value, context),
         ),

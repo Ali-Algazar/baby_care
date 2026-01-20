@@ -18,7 +18,9 @@ class SignInViewBody extends StatefulWidget {
 class _SignInViewBodyState extends State<SignInViewBody> {
   bool isCheck = false;
   GlobalKey<FormState> formKey = GlobalKey();
-  bool showPassword = true;
+  bool showPassword = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -34,10 +36,15 @@ class _SignInViewBodyState extends State<SignInViewBody> {
             Form(
               key: formKey,
               child: SignInFormFields(
+                emailController: emailController,
+                passwordController: passwordController,
+                passwordSuffixIcon: showPassword
+                    ? 'assets/svg/eye-off.svg'
+                    : 'assets/svg/eye.svg',
                 obscureText: showPassword,
                 showPassword: (value) {
                   setState(() {
-                    showPassword = value;
+                    showPassword = !value;
                   });
                 },
               ),
