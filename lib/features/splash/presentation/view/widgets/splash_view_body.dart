@@ -28,13 +28,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initAnimations();
+    BlocProvider.of<AuthCubit>(context).checkAuth();
   }
 
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    BlocProvider.of<AuthCubit>(context).checkAuth();
   }
 
   @override
@@ -130,7 +130,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToNextView(String routeName) {
     Future.delayed(const Duration(milliseconds: 2800), () {
-      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+      controller.stop();
+      Navigator.pushReplacementNamed(context, routeName);
     });
   }
 
