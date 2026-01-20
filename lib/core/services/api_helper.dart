@@ -1,3 +1,4 @@
+import 'package:baby_care/core/constants.dart';
 import 'package:dio/dio.dart';
 import '../helper/shared_preferences_service.dart';
 
@@ -8,7 +9,7 @@ class ApiHelper {
   ApiHelper(this.dio);
 
   Future<String?> _getAuthToken() async {
-    return await SharedPreferencesService.getData(key: 'auth_token');
+    return await SharedPreferencesService.getData(key: Constants.tokeneKey);
   }
 
   Future<Options?> _createAuthOptions(bool requiresAuth) async {

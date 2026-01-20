@@ -30,7 +30,7 @@ class AuthRepositoryImpl extends AuthRepository {
         var user = UserModel.fromJson(response.data);
         await localDataSource.cacheUserToken(response.data['token']);
         await localDataSource.cacheUser(user);
-
+        await remoteDataSource.updateFcmToken();
         return Right(user);
       } else {
         return Left(
@@ -76,6 +76,8 @@ class AuthRepositoryImpl extends AuthRepository {
         var user = UserModel.fromJson(response.data);
         await localDataSource.cacheUserToken(response.data['token']);
         await localDataSource.cacheUser(user);
+
+        await remoteDataSource.updateFcmToken();
 
         return Right(user);
       } else {

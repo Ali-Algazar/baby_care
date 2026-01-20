@@ -2,6 +2,7 @@ import 'package:baby_care/core/services/api_helper.dart';
 import 'package:baby_care/core/utils/end_points.dart';
 import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Response> login({required String email, required String password});
@@ -11,6 +12,7 @@ abstract class AuthRemoteDataSource {
     required String nationalId,
     required String displayName,
   });
+  Future<Response> updateFcmToken();
 }
 
 class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
@@ -47,5 +49,15 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
     );
 
     return response;
+  }
+
+  @override
+  Future<Response<dynamic>> updateFcmToken() async {
+    var token = await FirebaseMessaging.instance.getToken();
+    return apiHelper.put(
+      ApiEndpoints.updateFcmToken,
+      data: {'fcmToken': token},
+      requiresAuth: true,
+    );
   }
 }
