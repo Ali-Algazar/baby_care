@@ -8,16 +8,18 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: HomeViewBody(),
-      floatingActionButton: IconButton(
-        onPressed: () {},
-        icon: CircleAvatarLinearColor(
-          radius: 28,
-          child: SvgPicture.asset(
-            'assets/svg/robot.svg',
-            width: 35,
-            height: 35,
+    return SafeArea(
+      child: Scaffold(
+        body: HomeViewBody(),
+        floatingActionButton: IconButton(
+          onPressed: () {},
+          icon: CircleAvatarLinearColor(
+            radius: 28,
+            child: SvgPicture.asset(
+              'assets/svg/robot.svg',
+              width: 35,
+              height: 35,
+            ),
           ),
         ),
       ),
