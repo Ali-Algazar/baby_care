@@ -47,5 +47,10 @@
 "errorPasswordMatch": "Passwords do not match",
 "errorGenderEmpty": "Please enter gender",
 "errorLoginEmpty": "Please enter email and password",
-"errorLoginInvalid": "Incorrect email or password"
+"errorLoginInvalid": "Incorrect email or password",
+"navHome": "Home",
+"navTracking": "Tracking",
+"navServices": "Services",
+"navCommunity": "Community",
+"navAccount": "Account"
 }

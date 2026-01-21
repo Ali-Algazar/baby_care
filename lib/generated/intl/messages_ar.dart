@@ -86,6 +86,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nationalIdHint": MessageLookupByLibrary.simpleMessage("أدخل الرقم"),
     "nationalIdLabel": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
+    "navAccount": MessageLookupByLibrary.simpleMessage("الحساب"),
+    "navCommunity": MessageLookupByLibrary.simpleMessage("المجتمع"),
+    "navHome": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "navServices": MessageLookupByLibrary.simpleMessage("الخدمات"),
+    "navTracking": MessageLookupByLibrary.simpleMessage("المتابعة"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.",

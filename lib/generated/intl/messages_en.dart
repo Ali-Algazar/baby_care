@@ -90,6 +90,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nationalIdHint": MessageLookupByLibrary.simpleMessage("Enter ID number"),
     "nationalIdLabel": MessageLookupByLibrary.simpleMessage("National ID"),
+    "navAccount": MessageLookupByLibrary.simpleMessage("Account"),
+    "navCommunity": MessageLookupByLibrary.simpleMessage("Community"),
+    "navHome": MessageLookupByLibrary.simpleMessage("Home"),
+    "navServices": MessageLookupByLibrary.simpleMessage("Services"),
+    "navTracking": MessageLookupByLibrary.simpleMessage("Tracking"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "Your trusted guide to track your child\'s vaccinations and healthy growth, simply and securely.",

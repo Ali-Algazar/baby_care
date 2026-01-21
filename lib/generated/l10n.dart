@@ -513,6 +513,31 @@ class S {
       args: [],
     );
   }
+
+  /// `الرئيسية`
+  String get navHome {
+    return Intl.message('الرئيسية', name: 'navHome', desc: '', args: []);
+  }
+
+  /// `المتابعة`
+  String get navTracking {
+    return Intl.message('المتابعة', name: 'navTracking', desc: '', args: []);
+  }
+
+  /// `الخدمات`
+  String get navServices {
+    return Intl.message('الخدمات', name: 'navServices', desc: '', args: []);
+  }
+
+  /// `المجتمع`
+  String get navCommunity {
+    return Intl.message('المجتمع', name: 'navCommunity', desc: '', args: []);
+  }
+
+  /// `الحساب`
+  String get navAccount {
+    return Intl.message('الحساب', name: 'navAccount', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
