@@ -1,3 +1,4 @@
+import 'package:baby_care/features/home/presentation/view/home_view.dart';
 import 'package:baby_care/features/main_layout/data/navbar_item_model.dart';
 import 'package:baby_care/features/main_layout/presentation/view/widgets/custom_nav_bar.dart';
 import 'package:baby_care/generated/l10n.dart';
@@ -13,6 +14,13 @@ class MainLayoutView extends StatefulWidget {
 
 class _MainLayoutViewState extends State<MainLayoutView> {
   late List<NavModel> navItems;
+  final List<Widget> pages = [
+    const HomeView(),
+    const Scaffold(body: Center(child: Text('Tracking Page'))),
+    const Scaffold(body: Center(child: Text('Services Page'))),
+    const Scaffold(body: Center(child: Text('Community Page'))),
+    const Scaffold(body: Center(child: Text('Account Page'))),
+  ];
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
@@ -47,7 +55,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(child: SizedBox()),
+          Expanded(child: pages[selectedIndex]),
           CustomNavBar(
             navItems: navItems,
             selectedIndex: selectedIndex,
