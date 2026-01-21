@@ -13,6 +13,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.dText,
   );
+  static TextStyle textStyle15 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.bold,
+    color: AppColors.mText,
+  );
   static TextStyle headerRagular = TextStyle(
     fontSize: 22.sp,
     fontWeight: FontWeight.w400,
