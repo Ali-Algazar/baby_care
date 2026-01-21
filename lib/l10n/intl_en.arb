@@ -52,5 +52,16 @@
 "navTracking": "Tracking",
 "navServices": "Services",
 "navCommunity": "Community",
-"navAccount": "Account"
+"navAccount": "Account",
+"nextVaccination": "Next Vaccination",
+"viewAll": "View All",
+"vaccinationDate": "Vaccination Date:",
+"viewDetails": "View Details",
+"remindMe": "Remind Me",
+"sleepSounds": "Sleep Sounds",
+"recentlyPlayed": "Recently Played",
+"favorites": "Favorites",
+"trending": "Trending",
+"recommendedForYou": "Recommended for You",
+"trendingInCommunity": "Trending in Community"
 }

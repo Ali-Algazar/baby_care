@@ -538,6 +538,96 @@ class S {
   String get navAccount {
     return Intl.message('الحساب', name: 'navAccount', desc: '', args: []);
   }
+
+  /// `التطعيم القادم`
+  String get nextVaccination {
+    return Intl.message(
+      'التطعيم القادم',
+      name: 'nextVaccination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `عرض الكل`
+  String get viewAll {
+    return Intl.message('عرض الكل', name: 'viewAll', desc: '', args: []);
+  }
+
+  /// `موعد التطعيم:`
+  String get vaccinationDate {
+    return Intl.message(
+      'موعد التطعيم:',
+      name: 'vaccinationDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `عرض التفاصيل`
+  String get viewDetails {
+    return Intl.message(
+      'عرض التفاصيل',
+      name: 'viewDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ذكرني`
+  String get remindMe {
+    return Intl.message('ذكرني', name: 'remindMe', desc: '', args: []);
+  }
+
+  /// `الأصوات المساعدة للنوم`
+  String get sleepSounds {
+    return Intl.message(
+      'الأصوات المساعدة للنوم',
+      name: 'sleepSounds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `سمعتها مؤخراً`
+  String get recentlyPlayed {
+    return Intl.message(
+      'سمعتها مؤخراً',
+      name: 'recentlyPlayed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المفضلة`
+  String get favorites {
+    return Intl.message('المفضلة', name: 'favorites', desc: '', args: []);
+  }
+
+  /// `الرائج`
+  String get trending {
+    return Intl.message('الرائج', name: 'trending', desc: '', args: []);
+  }
+
+  /// `مقترحة لك`
+  String get recommendedForYou {
+    return Intl.message(
+      'مقترحة لك',
+      name: 'recommendedForYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الرائج في المجتمع`
+  String get trendingInCommunity {
+    return Intl.message(
+      'الرائج في المجتمع',
+      name: 'trendingInCommunity',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

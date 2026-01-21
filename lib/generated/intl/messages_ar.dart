@@ -74,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorPhoneInvalid": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم هاتف مصري صحيح مكون من 11 رقماً",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
       "يكتب هنا الاسم كما هو مدون في بطاقة الرقم القومي",
@@ -92,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "navServices": MessageLookupByLibrary.simpleMessage("الخدمات"),
     "navTracking": MessageLookupByLibrary.simpleMessage("المتابعة"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "nextVaccination": MessageLookupByLibrary.simpleMessage("التطعيم القادم"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.",
     ),
@@ -115,13 +117,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordMinLength": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),
+    "recentlyPlayed": MessageLookupByLibrary.simpleMessage("سمعتها مؤخراً"),
+    "recommendedForYou": MessageLookupByLibrary.simpleMessage("مقترحة لك"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+    "remindMe": MessageLookupByLibrary.simpleMessage("ذكرني"),
     "signInNow": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
       "خطوتك الأولى نحو متابعة صحة طفلك بكل سهولة",
     ),
     "signUpTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "sleepSounds": MessageLookupByLibrary.simpleMessage(
+      "الأصوات المساعدة للنوم",
+    ),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "strongPasswordHint": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة مرور قوية",
@@ -129,6 +137,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAgreement": MessageLookupByLibrary.simpleMessage(
       "بالضغط على إنشاء حساب، أنتِ توافقين على شروط الاستخدام وسياسة الخصوصية",
     ),
+    "trending": MessageLookupByLibrary.simpleMessage("الرائج"),
+    "trendingInCommunity": MessageLookupByLibrary.simpleMessage(
+      "الرائج في المجتمع",
+    ),
+    "vaccinationDate": MessageLookupByLibrary.simpleMessage("موعد التطعيم:"),
+    "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "viewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("أهلا بعودتك!"),
     "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
       "نستخدمه لربط حسابك ببيانات طفلك المسجلة في الوحدات الصحية التابعة لوزارة الصحة",

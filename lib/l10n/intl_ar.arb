@@ -52,5 +52,16 @@
 "navTracking": "المتابعة",
 "navServices": "الخدمات",
 "navCommunity": "المجتمع",
-"navAccount": "الحساب"
+"navAccount": "الحساب",
+"nextVaccination": "التطعيم القادم",
+"viewAll": "عرض الكل",
+"vaccinationDate": "موعد التطعيم:",
+"viewDetails": "عرض التفاصيل",
+"remindMe": "ذكرني",
+"sleepSounds": "الأصوات المساعدة للنوم",
+"recentlyPlayed": "سمعتها مؤخراً",
+"favorites": "المفضلة",
+"trending": "الرائج",
+"recommendedForYou": "مقترحة لك",
+"trendingInCommunity": "الرائج في المجتمع"
 }

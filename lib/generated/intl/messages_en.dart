@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorPhoneInvalid": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid 11-digit Egyptian phone number",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
       "Enter the name exactly as it appears on the National ID card",
@@ -96,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "navServices": MessageLookupByLibrary.simpleMessage("Services"),
     "navTracking": MessageLookupByLibrary.simpleMessage("Tracking"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "nextVaccination": MessageLookupByLibrary.simpleMessage("Next Vaccination"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "Your trusted guide to track your child\'s vaccinations and healthy growth, simply and securely.",
     ),
@@ -119,13 +121,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordMinLength": MessageLookupByLibrary.simpleMessage(
       "At least 8 characters",
     ),
+    "recentlyPlayed": MessageLookupByLibrary.simpleMessage("Recently Played"),
+    "recommendedForYou": MessageLookupByLibrary.simpleMessage(
+      "Recommended for You",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "remindMe": MessageLookupByLibrary.simpleMessage("Remind Me"),
     "signInNow": MessageLookupByLibrary.simpleMessage("Log In Now"),
     "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
       "Your first step towards tracking your child\'s health with ease",
     ),
     "signUpTitle": MessageLookupByLibrary.simpleMessage("Create New Account"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "sleepSounds": MessageLookupByLibrary.simpleMessage("Sleep Sounds"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "strongPasswordHint": MessageLookupByLibrary.simpleMessage(
       "Enter a strong password",
@@ -133,6 +141,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Create Account, you agree to the Terms of Use and Privacy Policy",
     ),
+    "trending": MessageLookupByLibrary.simpleMessage("Trending"),
+    "trendingInCommunity": MessageLookupByLibrary.simpleMessage(
+      "Trending in Community",
+    ),
+    "vaccinationDate": MessageLookupByLibrary.simpleMessage(
+      "Vaccination Date:",
+    ),
+    "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+    "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
     "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
       "We use it to link your account with your child\'s data registered at Ministry of Health units",
