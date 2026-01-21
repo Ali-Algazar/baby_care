@@ -1,4 +1,4 @@
-import 'package:baby_care/core/widgets/widget_linear_color.dart';
+import 'package:baby_care/core/widgets/circle_avatar_linear_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'widgets/home_view_body.dart';
@@ -12,13 +12,13 @@ class HomeView extends StatelessWidget {
       body: HomeViewBody(),
       floatingActionButton: IconButton(
         onPressed: () {},
-        icon: Stack(
-          alignment: AlignmentGeometry.center,
-          children: [
-            WidgetLinearColor(widget: CircleAvatar(radius: 28)),
-
-            SvgPicture.asset('assets/svg/robot.svg', width: 35, height: 35),
-          ],
+        icon: CircleAvatarLinearColor(
+          radius: 28,
+          child: SvgPicture.asset(
+            'assets/svg/robot.svg',
+            width: 35,
+            height: 35,
+          ),
         ),
       ),
     );
