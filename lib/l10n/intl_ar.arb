@@ -63,5 +63,7 @@
 "favorites": "المفضلة",
 "trending": "الرائج",
 "recommendedForYou": "مقترحة لك",
-"trendingInCommunity": "الرائج في المجتمع"
+"trendingInCommunity": "الرائج في المجتمع",
+"timeAfter": "بعد",
+"unitDays": "أيام"
 }

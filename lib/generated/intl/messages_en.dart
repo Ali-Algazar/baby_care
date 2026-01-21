@@ -141,10 +141,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Create Account, you agree to the Terms of Use and Privacy Policy",
     ),
+    "timeAfter": MessageLookupByLibrary.simpleMessage("In"),
     "trending": MessageLookupByLibrary.simpleMessage("Trending"),
     "trendingInCommunity": MessageLookupByLibrary.simpleMessage(
       "Trending in Community",
     ),
+    "unitDays": MessageLookupByLibrary.simpleMessage("Days"),
     "vaccinationDate": MessageLookupByLibrary.simpleMessage(
       "Vaccination Date:",
     ),

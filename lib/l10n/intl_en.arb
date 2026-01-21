@@ -63,5 +63,7 @@
 "favorites": "Favorites",
 "trending": "Trending",
 "recommendedForYou": "Recommended for You",
-"trendingInCommunity": "Trending in Community"
+"trendingInCommunity": "Trending in Community",
+"timeAfter": "In",
+"unitDays": "Days"
 }

@@ -137,10 +137,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAgreement": MessageLookupByLibrary.simpleMessage(
       "بالضغط على إنشاء حساب، أنتِ توافقين على شروط الاستخدام وسياسة الخصوصية",
     ),
+    "timeAfter": MessageLookupByLibrary.simpleMessage("بعد"),
     "trending": MessageLookupByLibrary.simpleMessage("الرائج"),
     "trendingInCommunity": MessageLookupByLibrary.simpleMessage(
       "الرائج في المجتمع",
     ),
+    "unitDays": MessageLookupByLibrary.simpleMessage("أيام"),
     "vaccinationDate": MessageLookupByLibrary.simpleMessage("موعد التطعيم:"),
     "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),

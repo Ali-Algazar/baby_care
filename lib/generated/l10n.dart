@@ -628,6 +628,16 @@ class S {
       args: [],
     );
   }
+
+  /// `بعد`
+  String get timeAfter {
+    return Intl.message('بعد', name: 'timeAfter', desc: '', args: []);
+  }
+
+  /// `أيام`
+  String get unitDays {
+    return Intl.message('أيام', name: 'unitDays', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
