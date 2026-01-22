@@ -65,5 +65,53 @@
 "recommendedForYou": "Recommended for You",
 "trendingInCommunity": "Trending in Community",
 "timeAfter": "In",
-"unitDays": "Days"
+"unitDays": "Days",
+"accountTitle": "Account",
+  "settingsTitle": "Settings",
+  "myChildren": "My Children",
+  "language": "Language",
+  "darkMode": "Dark Mode",
+  
+  "securityTitle": "Security",
+  "changePassword": "Change Password",
+  "twoFactorAuth": "Two-Factor Authentication",
+  
+  "sectionOther": "Other",
+  "shareApp": "Share App",
+  "rateApp": "Rate App",
+  "helpAndSupport": "Help & Support",
+  "aboutUs": "About Us",
+  "logout": "Log Out",
+  "privacyPolicy": "Privacy Policy",
+  
+  "changePhoto": "Change Photo",
+  "takePhoto": "Take Photo",
+  "chooseFromGallery": "Choose from Gallery",
+  "chooseAvatar": "Choose Avatar",
+  
+  "langArabic": "Arabic",
+  "langEnglish": "English",
+  
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "confirmNewPassword": "Confirm New Password",
+  "reEnterPassword": "Re-enter password",
+  "passwordHintChars": "8 characters and letters",
+  "passwordHintSymbols": "Use at least one symbol",
+  "saveAndChangePassword": "Save and Change Password",
+  "errorIncorrectPassword": "Incorrect password",
+  "passwordChangedSuccess": "Password changed successfully",
+  
+  "enterCode": "Enter Code",
+  "otpSentMessage": "We sent a 4-digit code to your email",
+  "verifyAction": "Verify",
+  "codeNotReceived": "Didn't receive code?",
+  "resend": "Resend",
+  
+  "backToHome": "Back to Home",
+  "writeHerePlaceholder": "Write here",
+  "typingIndicator": "Typing...",
+  "logoutConfirmation": "Are you sure you want to log out?",
+  "yes": "Yes",
+  "cancel": "Cancel"
 }

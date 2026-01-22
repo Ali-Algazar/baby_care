@@ -22,8 +22,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
+    "accountTitle": MessageLookupByLibrary.simpleMessage("Account"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
+    ),
+    "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
+    "changePhoto": MessageLookupByLibrary.simpleMessage("Change Photo"),
+    "chooseAvatar": MessageLookupByLibrary.simpleMessage("Choose Avatar"),
+    "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
+      "Choose from Gallery",
+    ),
+    "codeNotReceived": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive code?",
+    ),
+    "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
+      "Confirm New Password",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage(
       "Create a new account",
@@ -31,11 +47,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "createAccountAction": MessageLookupByLibrary.simpleMessage(
       "Create Account",
     ),
+    "currentPassword": MessageLookupByLibrary.simpleMessage("Current Password"),
+    "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
     "emailHint": MessageLookupByLibrary.simpleMessage("Enter email"),
     "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+    "enterCode": MessageLookupByLibrary.simpleMessage("Enter Code"),
     "errorEmailEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter an email",
     ),
@@ -44,6 +63,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "errorGenderEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter gender",
+    ),
+    "errorIncorrectPassword": MessageLookupByLibrary.simpleMessage(
+      "Incorrect password",
     ),
     "errorLoginEmpty": MessageLookupByLibrary.simpleMessage(
       "Please enter email and password",
@@ -85,10 +107,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fullNameHint": MessageLookupByLibrary.simpleMessage("Enter name"),
     "fullNameLabel": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "helpAndSupport": MessageLookupByLibrary.simpleMessage("Help & Support"),
+    "langArabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "langEnglish": MessageLookupByLibrary.simpleMessage("English"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "loginAction": MessageLookupByLibrary.simpleMessage("Log In"),
     "loginSubtitle": MessageLookupByLibrary.simpleMessage(
       "Log in to track your child\'s profile.",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Log Out"),
+    "logoutConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out?",
+    ),
+    "myChildren": MessageLookupByLibrary.simpleMessage("My Children"),
     "nationalIdHint": MessageLookupByLibrary.simpleMessage("Enter ID number"),
     "nationalIdLabel": MessageLookupByLibrary.simpleMessage("National ID"),
     "navAccount": MessageLookupByLibrary.simpleMessage("Account"),
@@ -96,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "navHome": MessageLookupByLibrary.simpleMessage("Home"),
     "navServices": MessageLookupByLibrary.simpleMessage("Services"),
     "navTracking": MessageLookupByLibrary.simpleMessage("Tracking"),
+    "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "nextVaccination": MessageLookupByLibrary.simpleMessage("Next Vaccination"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
@@ -116,10 +148,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitle3": MessageLookupByLibrary.simpleMessage(
       "A Healthy Foundation for a Better Future",
     ),
+    "otpSentMessage": MessageLookupByLibrary.simpleMessage(
+      "We sent a 4-digit code to your email",
+    ),
+    "passwordChangedSuccess": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
     "passwordHint": MessageLookupByLibrary.simpleMessage("Enter password"),
+    "passwordHintChars": MessageLookupByLibrary.simpleMessage(
+      "8 characters and letters",
+    ),
+    "passwordHintSymbols": MessageLookupByLibrary.simpleMessage(
+      "Use at least one symbol",
+    ),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordMinLength": MessageLookupByLibrary.simpleMessage(
       "At least 8 characters",
+    ),
+    "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "rateApp": MessageLookupByLibrary.simpleMessage("Rate App"),
+    "reEnterPassword": MessageLookupByLibrary.simpleMessage(
+      "Re-enter password",
     ),
     "recentlyPlayed": MessageLookupByLibrary.simpleMessage("Recently Played"),
     "recommendedForYou": MessageLookupByLibrary.simpleMessage(
@@ -127,6 +176,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "remindMe": MessageLookupByLibrary.simpleMessage("Remind Me"),
+    "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+    "saveAndChangePassword": MessageLookupByLibrary.simpleMessage(
+      "Save and Change Password",
+    ),
+    "sectionOther": MessageLookupByLibrary.simpleMessage("Other"),
+    "securityTitle": MessageLookupByLibrary.simpleMessage("Security"),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
+    "shareApp": MessageLookupByLibrary.simpleMessage("Share App"),
     "signInNow": MessageLookupByLibrary.simpleMessage("Log In Now"),
     "signUpSubtitle": MessageLookupByLibrary.simpleMessage(
       "Your first step towards tracking your child\'s health with ease",
@@ -138,6 +195,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "strongPasswordHint": MessageLookupByLibrary.simpleMessage(
       "Enter a strong password",
     ),
+    "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
     "termsAgreement": MessageLookupByLibrary.simpleMessage(
       "By clicking Create Account, you agree to the Terms of Use and Privacy Policy",
     ),
@@ -146,10 +204,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "trendingInCommunity": MessageLookupByLibrary.simpleMessage(
       "Trending in Community",
     ),
+    "twoFactorAuth": MessageLookupByLibrary.simpleMessage(
+      "Two-Factor Authentication",
+    ),
+    "typingIndicator": MessageLookupByLibrary.simpleMessage("Typing..."),
     "unitDays": MessageLookupByLibrary.simpleMessage("Days"),
     "vaccinationDate": MessageLookupByLibrary.simpleMessage(
       "Vaccination Date:",
     ),
+    "verifyAction": MessageLookupByLibrary.simpleMessage("Verify"),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
@@ -159,5 +222,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "whyNationalIdQuestion": MessageLookupByLibrary.simpleMessage(
       "Why do we ask for the National ID?",
     ),
+    "writeHerePlaceholder": MessageLookupByLibrary.simpleMessage("Write here"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
   };
 }
