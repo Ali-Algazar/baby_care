@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:baby_care/core/constants.dart';
 import 'package:dio/dio.dart';
 import '../helper/shared_preferences_service.dart';
@@ -20,6 +22,27 @@ class ApiHelper {
       }
     }
     return null;
+  }
+
+  Future<Response> uploadFile(
+    String endpoint, {
+    required File file, 
+    String fieldName = 'file',  
+    bool requiresAuth = false, 
+  }) async {
+    Options? options = await _createAuthOptions(requiresAuth);
+
+    String fileName = file.path.split('/').last;
+
+    FormData formData = FormData.fromMap({
+      fieldName: await MultipartFile.fromFile(file.path, filename: fileName),
+    });
+
+    return await dio.post(
+      '$baseUrl$endpoint',
+      data: formData,
+      options: options,
+    );
   }
 
   Future<Response> get(
