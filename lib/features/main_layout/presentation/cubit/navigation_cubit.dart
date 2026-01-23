@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NavigationCubit extends Cubit<int> {
-  NavigationCubit() : super(0);
+  NavigationCubit() : super(1);
 
-  void navigateTo(int index) {
-    emit(index);
+  void navigateToHmoe() {
+    emit(state + 1);
   }
 }

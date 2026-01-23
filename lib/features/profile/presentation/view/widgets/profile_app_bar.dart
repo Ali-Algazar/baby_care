@@ -13,7 +13,7 @@ class ProfileAppBar extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            BlocProvider.of<NavigationCubit>(context).navigateTo(0);
+            BlocProvider.of<NavigationCubit>(context).navigateToHmoe();
           },
           child: Icon(Icons.arrow_back_ios),
         ),
