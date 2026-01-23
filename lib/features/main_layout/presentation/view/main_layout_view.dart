@@ -1,9 +1,11 @@
 import 'package:baby_care/features/home/presentation/view/home_view.dart';
 import 'package:baby_care/features/main_layout/data/navbar_item_model.dart';
+import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
 import 'package:baby_care/features/main_layout/presentation/view/widgets/custom_nav_bar.dart';
 import 'package:baby_care/features/profile/presentation/view/profile_view.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainLayoutView extends StatefulWidget {
   const MainLayoutView({super.key});
@@ -15,24 +17,18 @@ class MainLayoutView extends StatefulWidget {
 
 class _MainLayoutViewState extends State<MainLayoutView> {
   late List<NavModel> navItems;
-  late List<Widget> pages;
+  final List<Widget> pages = [
+    const HomeView(),
+    const Scaffold(body: Center(child: Text('Tracking Page'))),
+    const Scaffold(body: Center(child: Text('Services Page'))),
+    const Scaffold(body: Center(child: Text('Community Page'))),
+    ProfileView(),
+  ];
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    pages = [
-      const HomeView(),
-      const Scaffold(body: Center(child: Text('Tracking Page'))),
-      const Scaffold(body: Center(child: Text('Services Page'))),
-      const Scaffold(body: Center(child: Text('Community Page'))),
-      ProfileView(
-        onBackPress: () {
-          setState(() {
-            selectedIndex = 0;
-          });
-        },
-      ),
-    ];
+
     navItems = [
       NavModel(
         title: S.of(context).navHome,
@@ -60,20 +56,27 @@ class _MainLayoutViewState extends State<MainLayoutView> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(child: pages[selectedIndex]),
-          CustomNavBar(
-            navItems: navItems,
-            selectedIndex: selectedIndex,
-            onTap: (value) {
-              setState(() {
-                selectedIndex = value;
-              });
-            },
-          ),
-        ],
+    return BlocListener<NavigationCubit, int>(
+      listener: (context, state) {
+        setState(() {
+          selectedIndex = state;
+        });
+      },
+      child: Scaffold(
+        body: Column(
+          children: [
+            Expanded(child: pages[selectedIndex]),
+            CustomNavBar(
+              navItems: navItems,
+              selectedIndex: selectedIndex,
+              onTap: (value) {
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
