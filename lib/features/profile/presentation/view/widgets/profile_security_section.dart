@@ -2,6 +2,7 @@ import 'package:baby_care/core/widgets/custom_divider.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_container.dart';
+import 'package:baby_care/features/auth/presentation/view/change_password_view.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/settings_item.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,9 @@ class ProfileSecuritySection extends StatelessWidget {
           SettingsItem(
             icon: 'assets/svg/lock-key.svg',
             titel: S.of(context).changePassword,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ChangePasswordView.routeName);
+            },
           ),
           CustomDivider(),
           SettingsItem(

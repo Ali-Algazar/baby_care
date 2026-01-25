@@ -1,3 +1,4 @@
+import 'package:baby_care/features/auth/presentation/view/change_password_view.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_up_view.dart';
 import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
@@ -17,6 +18,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => SignInView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => SignUpView());
+    case ChangePasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => ChangePasswordView());
     case MainLayoutView.routeName:
       return MaterialPageRoute(builder: (context) => MainLayoutView());
 

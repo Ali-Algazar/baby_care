@@ -17,14 +17,17 @@ class SettingsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(icon),
-        8.width,
-        Text(titel, style: AppTextStyles.body2Bold),
-        Spacer(),
-        Icon(Icons.arrow_forward_ios, color: AppColors.dText),
-      ],
+    return InkWell(
+      onTap: onTap,
+      child: Row(
+        children: [
+          SvgPicture.asset(icon),
+          8.width,
+          Text(titel, style: AppTextStyles.body2Bold),
+          Spacer(),
+          Icon(Icons.arrow_forward_ios, color: AppColors.dText),
+        ],
+      ),
     );
   }
 }
