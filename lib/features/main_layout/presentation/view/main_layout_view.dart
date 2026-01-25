@@ -3,6 +3,7 @@ import 'package:baby_care/features/main_layout/data/navbar_item_model.dart';
 import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
 import 'package:baby_care/features/main_layout/presentation/view/widgets/custom_nav_bar.dart';
 import 'package:baby_care/features/profile/presentation/view/profile_view.dart';
+import 'package:baby_care/features/profile/presentation/view/widgets/profile_view_body.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +23,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
     const Scaffold(body: Center(child: Text('Tracking Page'))),
     const Scaffold(body: Center(child: Text('Services Page'))),
     const Scaffold(body: Center(child: Text('Community Page'))),
-    ProfileView(),
+    ProfileViewBody(),
   ];
   @override
   void didChangeDependencies() {
