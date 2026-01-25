@@ -17,6 +17,7 @@ class LabeledTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.validator,
+    this.onChanged,
   });
   final String label;
   final String? hint;
@@ -27,6 +28,7 @@ class LabeledTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final String? Function(String?)? validator;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class LabeledTextField extends StatelessWidget {
         8.height,
         CustomTextFormField(
           hint: hint,
+          onChanged: onChanged,
           keyboardType: keyboardType,
           controller: controller,
           obscureText: obscureText,
