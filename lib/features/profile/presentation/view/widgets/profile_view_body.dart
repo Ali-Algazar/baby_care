@@ -4,9 +4,14 @@ import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/circle_avatar_linear_color.dart';
 import 'package:baby_care/core/widgets/custom_container.dart';
+import 'package:baby_care/core/widgets/custom_divider.dart';
+import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/profile_app_bar.dart';
+import 'package:baby_care/features/profile/presentation/view/widgets/settings_item.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -184,15 +189,7 @@ class ProfileViewBody extends StatelessWidget {
               ),
             ),
             16.height,
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                S.of(context).logout,
-                style: AppTextStyles.body2Bold.copyWith(
-                  color: AppColors.danger,
-                ),
-              ),
-            ),
+            LogoutButton(),
             Constants.kbottomPadding.height,
           ],
         ),
@@ -201,36 +198,103 @@ class ProfileViewBody extends StatelessWidget {
   }
 }
 
-class CustomDivider extends StatelessWidget {
-  const CustomDivider({super.key});
+class LogoutButton extends StatelessWidget {
+  const LogoutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Divider(height: 1, color: AppColors.graphic);
+    return TextButton(
+      onPressed: () {
+        logoutDialog(context);
+      },
+      child: Text(
+        S.of(context).logout,
+        style: AppTextStyles.body2Bold.copyWith(color: AppColors.danger),
+      ),
+    );
   }
-}
 
-class SettingsItem extends StatelessWidget {
-  const SettingsItem({
-    super.key,
-    required this.icon,
-    required this.titel,
-    required this.onTap,
-  });
-  final String icon;
-  final String titel;
-  final VoidCallback onTap;
+  Future<dynamic> logoutDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          insetPadding: EdgeInsets.symmetric(horizontal: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20), // لتدوير الحواف
+          ),
+          child: Container(
+            height: 320,
+            width: double.infinity, // العرض الذي تريده
+            // الطول الذي تريده
+            padding: EdgeInsets.all(16),
+            child: Column(
+              spacing: 16,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset('assets/image/Being.png'),
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(icon),
-        8.width,
-        Text(titel, style: AppTextStyles.body2Bold),
-        Spacer(),
-        Icon(Icons.arrow_forward_ios, color: AppColors.dText),
-      ],
+                Text(
+                  S.of(context).logoutConfirmation,
+                  style: AppTextStyles.body1Bold,
+                ),
+                Row(
+                  spacing: 16,
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () async {
+                          await BlocProvider.of<AuthCubit>(context).logout();
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                            SignInView.routeName,
+                            (route) => false,
+                          );
+                        },
+                        child: Container(
+                          height: 46,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: AppColors.danger,
+                          ),
+                          child: Center(
+                            child: Text(
+                              S.of(context).yes,
+                              style: AppTextStyles.body2Bold.copyWith(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => Navigator.of(context).pop(),
+
+                        child: Container(
+                          height: 46,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: AppColors.danger),
+                          ),
+                          child: Center(
+                            child: Text(
+                              S.of(context).cancel,
+                              style: AppTextStyles.body2Bold.copyWith(
+                                color: AppColors.danger,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
