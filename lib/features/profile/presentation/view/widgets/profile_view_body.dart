@@ -1,4 +1,5 @@
 import 'package:baby_care/core/constants.dart';
+import 'package:baby_care/core/cubit/cubit/locale_cubit.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
@@ -7,6 +8,8 @@ import 'package:baby_care/core/widgets/custom_container.dart';
 import 'package:baby_care/core/widgets/custom_divider.dart';
 import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
+import 'package:baby_care/features/profile/presentation/view/widgets/logout_cancel_button.dart';
+import 'package:baby_care/features/profile/presentation/view/widgets/logout_confirm_button.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/profile_app_bar.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/settings_item.dart';
 import 'package:baby_care/generated/l10n.dart';
@@ -41,6 +44,7 @@ class ProfileViewBody extends StatelessWidget {
                   bottom: 3,
                   left: 10,
                   child: InkWell(
+                    onTap: () {},
                     child: CircleAvatar(
                       radius: 17,
                       backgroundColor: AppColors.mText,
@@ -83,7 +87,9 @@ class ProfileViewBody extends StatelessWidget {
                       ),
                       Spacer(),
                       Text(
-                        S.of(context).langArabic,
+                        context.read<LocaleCubit>().state == 'ar'
+                            ? S.of(context).langArabic
+                            : S.of(context).langEnglish,
                         style: AppTextStyles.body1Bold.copyWith(
                           color: AppColors.dText,
                         ),
@@ -103,7 +109,7 @@ class ProfileViewBody extends StatelessWidget {
                       ),
                       Spacer(),
                       Switch(
-                        value: true,
+                        value: false,
                         onChanged: (value) {},
                         activeThumbColor: Colors.white,
 
@@ -225,8 +231,7 @@ class LogoutButton extends StatelessWidget {
           ),
           child: Container(
             height: 320,
-            width: double.infinity, // العرض الذي تريده
-            // الطول الذي تريده
+
             padding: EdgeInsets.all(16),
             child: Column(
               spacing: 16,
@@ -241,53 +246,8 @@ class LogoutButton extends StatelessWidget {
                 Row(
                   spacing: 16,
                   children: [
-                    Expanded(
-                      child: InkWell(
-                        onTap: () async {
-                          await BlocProvider.of<AuthCubit>(context).logout();
-                          Navigator.of(context).pushNamedAndRemoveUntil(
-                            SignInView.routeName,
-                            (route) => false,
-                          );
-                        },
-                        child: Container(
-                          height: 46,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: AppColors.danger,
-                          ),
-                          child: Center(
-                            child: Text(
-                              S.of(context).yes,
-                              style: AppTextStyles.body2Bold.copyWith(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: InkWell(
-                        onTap: () => Navigator.of(context).pop(),
-
-                        child: Container(
-                          height: 46,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: AppColors.danger),
-                          ),
-                          child: Center(
-                            child: Text(
-                              S.of(context).cancel,
-                              style: AppTextStyles.body2Bold.copyWith(
-                                color: AppColors.danger,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    Expanded(child: LogoutConfirmButton()),
+                    Expanded(child: LogoutCancelButton()),
                   ],
                 ),
               ],
