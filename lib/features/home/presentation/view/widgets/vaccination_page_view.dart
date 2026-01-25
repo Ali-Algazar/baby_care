@@ -14,7 +14,7 @@ class VaccinationPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 270,
+      height: 210,
       child: PageView.builder(
         padEnds: false,
         controller: _controller,
@@ -23,7 +23,7 @@ class VaccinationPageView extends StatelessWidget {
         onPageChanged: onPageChanged,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+            padding: const EdgeInsets.symmetric(vertical: 3),
             child: VaccinationCard(),
           );
         },

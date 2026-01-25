@@ -58,8 +58,9 @@ class _MainLayoutViewState extends State<MainLayoutView> {
   Widget build(BuildContext context) {
     return BlocListener<NavigationCubit, int>(
       listener: (context, state) {
+        print(state);
         setState(() {
-          selectedIndex = state;
+          selectedIndex = 0;
         });
       },
       child: Scaffold(
