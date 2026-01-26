@@ -12,6 +12,10 @@ abstract class AuthRemoteDataSource {
     required String displayName,
   });
   Future<Response> updateFcmToken();
+  Future<Response> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  });
 }
 
 class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
@@ -58,5 +62,19 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
       data: {'fcmToken': token},
       requiresAuth: true,
     );
+  }
+
+  @override
+  Future<Response<dynamic>> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    var response = await apiHelper.put(
+      ApiEndpoints.changePassword,
+      data: {"currentPassword": currentPassword, "newPassword": newPassword},
+      requiresAuth: true,
+    );
+
+    return response;
   }
 }
