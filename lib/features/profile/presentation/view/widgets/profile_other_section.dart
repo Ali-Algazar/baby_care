@@ -4,6 +4,7 @@ import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_container.dart';
 import 'package:baby_care/core/widgets/custom_divider.dart';
+import 'package:baby_care/features/info/presentation/view/policy_view.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/settings_item.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,9 @@ class ProfileOtherSection extends StatelessWidget {
           SettingsItem(
             icon: 'assets/svg/file-unlocked.svg',
             titel: S.of(context).privacyPolicy,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, PolicyView.routeName);
+            },
           ),
           CustomDivider(),
           SettingsItem(
