@@ -5,6 +5,7 @@ import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:baby_care/features/auth/presentation/cubit/auth_state.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
+import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
 import 'package:baby_care/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,17 +33,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) async {
         if (state is AuthSuccess) {
-          navigateToNextView('');
+          navigateToNextView(MainLayoutView.routeName, state.user);
         }
         if (state is Unauthenticated) {
           bool onBoardingCompleted =
@@ -128,10 +123,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
     controller.repeat();
   }
 
-  void navigateToNextView(String routeName) {
+  void navigateToNextView(String routeName, [dynamic arguments]) {
     Future.delayed(const Duration(milliseconds: 2800), () {
       controller.stop();
-      Navigator.pushReplacementNamed(context, routeName);
+      Navigator.pushReplacementNamed(context, routeName, arguments: arguments);
     });
   }
 

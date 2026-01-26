@@ -7,6 +7,7 @@ import 'package:baby_care/features/auth/presentation/view/widgets/remember_me_ro
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_in_footer.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_in_form_fields.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_in_header.dart';
+import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -41,6 +42,11 @@ class _SignInViewBodyState extends State<SignInViewBody> {
             context,
           ).showSnackBar(SnackBar(content: Text('Login Successful')));
           setState(() => isLoading = false);
+          Navigator.pushReplacementNamed(
+            context,
+            MainLayoutView.routeName,
+            arguments: state.user,
+          );
         }
         if (state is AuthLoading) {
           setState(() {

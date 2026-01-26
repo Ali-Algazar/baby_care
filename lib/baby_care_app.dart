@@ -4,6 +4,7 @@ import 'package:baby_care/core/services/get_it_service.dart';
 import 'package:baby_care/core/theme/app_theme.dart';
 import 'package:baby_care/features/auth/data/repositories/auth_repository.dart';
 import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +23,7 @@ class BabyCareApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthCubit(authRepository: sl<AuthRepository>()),
         ),
+        BlocProvider(create: (context) => NavigationCubit()),
       ],
       child: BlocBuilder<LocaleCubit, String>(
         builder: (context, state) {

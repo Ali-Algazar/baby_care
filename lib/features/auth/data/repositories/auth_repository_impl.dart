@@ -106,4 +106,28 @@ class AuthRepositoryImpl extends AuthRepository {
       return Left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      var response = await remoteDataSource.changePassword(
+        currentPassword: currentPassword,
+        newPassword: newPassword,
+      );
+      if (response.statusCode == 200) {
+        return const Right(unit);
+      } else {
+        return Left(
+          ServerFailure(
+            'Change password failed with status code: ${response.statusCode}',
+          ),
+        );
+      }
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

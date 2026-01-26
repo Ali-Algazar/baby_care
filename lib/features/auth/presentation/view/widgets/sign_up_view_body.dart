@@ -6,6 +6,7 @@ import 'package:baby_care/features/auth/presentation/view/widgets/sign_up_footer
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_up_form_fields.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/sign_up_header.dart';
 import 'package:baby_care/features/auth/presentation/view/widgets/terms_agreement_row.dart';
+import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -55,6 +56,12 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             'Account created successfully',
             color: Colors.green,
           );
+          Navigator.pushReplacementNamed(
+            context,
+            MainLayoutView.routeName,
+            arguments: state.user,
+          );
+
           setState(() => isLoading = false);
         }
         if (state is AuthLoading) {

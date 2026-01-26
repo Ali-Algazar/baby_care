@@ -13,4 +13,8 @@ abstract class AuthRepository {
   );
   Future<Either<Failure, Unit>> logout();
   Future<Either<Failure, UserModel>> checkAuth();
+  Future<Either<Failure, Unit>> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  });
 }
