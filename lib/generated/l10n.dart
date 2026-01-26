@@ -513,8 +513,6 @@ class S {
       args: [],
     );
   }
-<<<<<<< Updated upstream
-=======
 
   /// `الرئيسية`
   String get navHome {
@@ -965,7 +963,6 @@ class S {
       args: [],
     );
   }
->>>>>>> Stashed changes
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
