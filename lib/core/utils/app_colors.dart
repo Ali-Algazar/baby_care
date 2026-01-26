@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xff93D8D4);
+  static const Color primary = Color(0xFF5CAD9A);
+  static final middleColor = Color.lerp(
+    const Color(0xFF47B2B9),
+    const Color(0xFF70A97C),
+    0.5,
+  )!;
+
   static const Color bG = Color(0xffFEFEFE);
   static const Color bG1 = Color(0xffF4F4F6);
   static const Color gray4 = Color(0xffFAFAFC);

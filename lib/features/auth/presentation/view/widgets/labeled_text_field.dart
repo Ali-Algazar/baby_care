@@ -18,6 +18,7 @@ class LabeledTextField extends StatelessWidget {
     this.prefixIcon,
     this.validator,
     this.onChanged,
+    this.errorText,
   });
   final String label;
   final String? hint;
@@ -29,6 +30,7 @@ class LabeledTextField extends StatelessWidget {
   final Widget? prefixIcon;
   final String? Function(String?)? validator;
   final Function(String)? onChanged;
+  final String? errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class LabeledTextField extends StatelessWidget {
         ),
         8.height,
         CustomTextFormField(
+          errorText: errorText,
           hint: hint,
           onChanged: onChanged,
           keyboardType: keyboardType,

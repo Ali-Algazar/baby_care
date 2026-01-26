@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.validator,
     this.onChanged,
+    this.errorText,
   });
 
   final String? hint;
@@ -24,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final String? Function(String?)? validator;
   final Function(String)? onChanged;
+  final String? errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +37,16 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
 
       decoration: InputDecoration(
+        errorText: errorText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hint,
         hintStyle: AppTextStyles.body2Ragular.copyWith(color: AppColors.dText),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+
+          borderSide: const BorderSide(color: AppColors.danger),
+        ),
       ),
     );
   }
