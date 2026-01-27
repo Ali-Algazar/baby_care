@@ -8,6 +8,7 @@ class Constants {
   static const String kfontFamily = "Calibri";
   static const String userBox = 'userBox';
   static const String userHiveKey = 'userHiveKey';
+  static const String kChildrenBox = 'childrenBox';
   static const String tokeneKey = 'tokenKey';
   static const String localizations = 'localizationsKey';
 }
