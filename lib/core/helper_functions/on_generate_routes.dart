@@ -1,6 +1,7 @@
 import 'package:baby_care/features/auth/presentation/view/change_password_view.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_up_view.dart';
+import 'package:baby_care/features/children/presentation/view/children_view.dart';
 import 'package:baby_care/features/info/presentation/view/about_us_view.dart';
 import 'package:baby_care/features/info/presentation/view/policy_view.dart';
 import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
@@ -28,6 +29,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => PolicyView());
     case AboutUsView.routeName:
       return MaterialPageRoute(builder: (context) => AboutUsView());
+    case ChildrenView.routeName:
+      return MaterialPageRoute(builder: (context) => ChildrenView());
 
     default:
       return MaterialPageRoute(
