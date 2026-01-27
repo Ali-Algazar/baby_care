@@ -2,6 +2,7 @@ import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_container.dart';
 import 'package:baby_care/core/widgets/custom_divider.dart';
+import 'package:baby_care/features/children/presentation/view/children_view.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/dark_mode_setting_row.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/language_setting_row.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/settings_item.dart';
@@ -29,7 +30,9 @@ class ProfileSettingsSection extends StatelessWidget {
           SettingsItem(
             icon: 'assets/svg/child.svg',
             titel: S.of(context).myChildren,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ChildrenView.routeName);
+            },
           ),
           Divider(height: 1, color: AppColors.graphic),
           LanguageSettingRow(),

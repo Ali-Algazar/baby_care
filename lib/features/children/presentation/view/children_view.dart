@@ -3,6 +3,7 @@ import 'widgets/children_view_body.dart';
 
 class ChildrenView extends StatelessWidget {
   const ChildrenView({super.key});
+  static const routeName = 'children';
 
   @override
   Widget build(BuildContext context) {
