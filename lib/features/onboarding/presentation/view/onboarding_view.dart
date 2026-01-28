@@ -12,7 +12,7 @@ class OnboardingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => OnboardingCubit(),
-      child: const Scaffold(body: OnboardingViewBody()),
+      child: const Scaffold(body: SafeArea(child: OnboardingViewBody())),
     );
   }
 }
