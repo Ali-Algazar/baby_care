@@ -1,5 +1,7 @@
 import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:baby_care/features/children/data/model/child_model.dart';
+import 'package:baby_care/features/vaccination/data/model/vaccine_model.dart';
+import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveHelper {
@@ -48,6 +50,8 @@ class HiveHelper {
   static void registerAdapter() {
     Hive.registerAdapter(UserModelAdapter());
     Hive.registerAdapter(ChildModelAdapter());
+    Hive.registerAdapter(VaccineModelAdapter());
+    Hive.registerAdapter(VaccineRecordModelAdapter());
   }
 
   static Future<bool> containsKey({
