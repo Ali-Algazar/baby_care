@@ -7,6 +7,10 @@ import 'package:baby_care/features/children/data/datasources/children_local_data
 import 'package:baby_care/features/children/data/datasources/children_remote_data_source.dart';
 import 'package:baby_care/features/children/data/repositories/children_repository.dart';
 import 'package:baby_care/features/children/data/repositories/children_repository_impl.dart';
+import 'package:baby_care/features/vaccination/data/datasources/vaccination_local_data_source.dart';
+import 'package:baby_care/features/vaccination/data/datasources/vaccination_remote_data_source.dart';
+import 'package:baby_care/features/vaccination/data/repositories/vaccination_repository.dart';
+import 'package:baby_care/features/vaccination/data/repositories/vaccination_repository_impl.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -53,6 +57,21 @@ void setupServiceLocator() {
     () => ChildrenRepositoryImpl(
       localDataSource: sl<ChildrenLocalDataSource>(),
       remoteDataSource: sl<ChildrenRemoteDataSource>(),
+      connectivity: sl<Connectivity>(),
+    ),
+  );
+  sl.registerLazySingleton<VaccinationLocalDataSource>(
+    () => VaccinationLocalDataSourceImpl(),
+  );
+
+  sl.registerLazySingleton<VaccinationRemoteDataSource>(
+    () => VaccinationRemoteDataSourceImpl(apiHelper: sl<ApiHelper>()),
+  );
+
+  sl.registerLazySingleton<VaccinationRepository>(
+    () => VaccinationRepositoryImpl(
+      localDataSource: sl<VaccinationLocalDataSource>(),
+      remoteDataSource: sl<VaccinationRemoteDataSource>(),
       connectivity: sl<Connectivity>(),
     ),
   );
