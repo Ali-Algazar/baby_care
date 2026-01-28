@@ -10,17 +10,11 @@ class VaccineModel {
   final String name;
   @HiveField(3)
   final String description;
-  @HiveField(4)
-  final int ageInMonths;
-  @HiveField(5)
-  final String doseInfo;
 
   VaccineModel({
     required this.id,
     required this.name,
     required this.description,
-    required this.ageInMonths,
-    required this.doseInfo,
   });
 
   factory VaccineModel.fromJson(Map<String, dynamic> json) {
@@ -28,18 +22,10 @@ class VaccineModel {
       id: json['_id'],
       name: json['name'],
       description: json['description'],
-      ageInMonths: json['ageInMonths'],
-      doseInfo: json['doseInfo'],
     );
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      '_id': id,
-      'name': name,
-      'description': description,
-      'ageInMonths': ageInMonths,
-      'doseInfo': doseInfo,
-    };
+    return {'_id': id, 'name': name, 'description': description};
   }
 }

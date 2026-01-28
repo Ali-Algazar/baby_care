@@ -20,25 +20,19 @@ class VaccineModelAdapter extends TypeAdapter<VaccineModel> {
       id: fields[0] as String,
       name: fields[1] as String,
       description: fields[3] as String,
-      ageInMonths: fields[4] as int,
-      doseInfo: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, VaccineModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.name)
       ..writeByte(3)
-      ..write(obj.description)
-      ..writeByte(4)
-      ..write(obj.ageInMonths)
-      ..writeByte(5)
-      ..write(obj.doseInfo);
+      ..write(obj.description);
   }
 
   @override
