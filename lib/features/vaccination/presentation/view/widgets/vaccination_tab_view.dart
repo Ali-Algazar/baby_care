@@ -1,7 +1,9 @@
 import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
 import 'package:baby_care/features/vaccination/presentation/cubit/vaccination_cubit.dart';
 import 'package:baby_care/features/vaccination/presentation/cubit/vaccination_state.dart';
-import 'package:baby_care/features/vaccination/presentation/view/widgets/vaccination_view_body.dart';
+import 'package:baby_care/features/vaccination/presentation/view/widgets/vaccination_previous_list_view.dart';
+import 'package:baby_care/features/vaccination/presentation/view/widgets/vaccination_upcoming_list_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
