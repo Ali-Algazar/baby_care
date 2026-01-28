@@ -6,6 +6,7 @@ import 'package:baby_care/features/home/presentation/view/widgets/custom_home_ap
 import 'package:baby_care/features/home/presentation/view/widgets/vaccination_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -23,7 +24,15 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ChildrenCubit, ChildrenState>(
+    return BlocConsumer<ChildrenCubit, ChildrenState>(
+      listener: (context, state) {
+        if (state is ChildrenLoaded) {
+          context.showSnack(
+            'Children loaded successfully',
+            color: Colors.green,
+          );
+        }
+      },
       builder: (context, state) {
         if (state is ChildrenLoaded) {
           return Column(
@@ -43,7 +52,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ],
           );
         }
-        return SizedBox();
+        if (state is ChildrenLoading) {
+          return Center(child: Lottie.asset('assets/animation/loading.json'));
+        }
+        return const SizedBox();
       },
     );
   }
