@@ -4,8 +4,11 @@ import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/widget_linear_color.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_dots_indicator.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/vaccination_page_view.dart';
+import 'package:baby_care/features/vaccination/presentation/cubit/vaccination_cubit.dart';
+import 'package:baby_care/features/vaccination/presentation/view/vaccination_view.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class VaccinationSection extends StatelessWidget {
   const VaccinationSection({
@@ -32,7 +35,9 @@ class VaccinationSection extends StatelessWidget {
               ),
               const Spacer(),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, VaccinationView.routeName);
+                },
                 child: WidgetLinearColor(
                   widget: Text(
                     S.of(context).viewAll,
