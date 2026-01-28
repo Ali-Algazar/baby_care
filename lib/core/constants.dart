@@ -12,4 +12,5 @@ class Constants {
   static const String tokeneKey = 'tokenKey';
   static const String localizations = 'localizationsKey';
   static const String currentChildId = 'current_child_id';
+  static const String kVaccineRecordBox = 'vaccineRecordBox';
 }

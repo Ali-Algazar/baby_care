@@ -35,6 +35,8 @@ class ApiEndpoints {
   // ==============================================================================
   static String childVaccinationSchedule(String childId) =>
       "/records/child/$childId"; // GET: عرض الجدول
+  static String childVaccinationScheduleHome(String childId) =>
+      "/records/child/$childId?mode=home"; // GET: عرض الجدول
   static String updateVaccineStatus(String scheduleId) =>
       "/records/$scheduleId"; // PUT: تأكيد التطعيم (ممرضة)
 
