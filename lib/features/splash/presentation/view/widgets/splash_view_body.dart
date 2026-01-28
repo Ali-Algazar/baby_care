@@ -7,6 +7,7 @@ import 'package:baby_care/features/auth/presentation/cubit/auth_state.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
 import 'package:baby_care/features/onboarding/presentation/view/onboarding_view.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -30,6 +31,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     initAnimations();
     BlocProvider.of<AuthCubit>(context).checkAuth();
+    requestPermission();
+    setupInteractedMessage();
   }
 
   @override
@@ -72,6 +75,25 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ),
       ),
     );
+  }
+
+  Future<void> requestPermission() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+    NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
+
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      print('🔔 المستخدم وافق على الإشعارات');
+    } else if (settings.authorizationStatus ==
+        AuthorizationStatus.provisional) {
+      print('🔔 المستخدم وافق بشكل مؤقت (للايفون)');
+    } else {
+      print('🔕 المستخدم رفض الإشعارات');
+    }
   }
 
   void initAnimations() {
@@ -128,6 +150,28 @@ class _SplashViewBodyState extends State<SplashViewBody>
       controller.stop();
       Navigator.pushReplacementNamed(context, routeName, arguments: arguments);
     });
+  }
+
+  Future<void> setupInteractedMessage() async {
+    // 1. حالة التطبيق كان مقفول تماماً (Terminated)
+    RemoteMessage? initialMessage = await FirebaseMessaging.instance
+        .getInitialMessage();
+
+    if (initialMessage != null) {
+      _handleMessage(initialMessage);
+    }
+
+    // 2. حالة التطبيق كان في الخلفية (Background)
+    FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
+  }
+
+  void _handleMessage(RemoteMessage message) {
+    // هنا بتكتب اللوجيك بتاعك
+    // مثلاً لو فيه data بتقول روح لصفحة التطعيمات
+    if (message.data['screen'] == 'vaccination') {
+      // navigateTo...
+      print("المستخدم ضغط على الإشعار وعايز يروح صفحة التطعيمات");
+    }
   }
 
   @override
