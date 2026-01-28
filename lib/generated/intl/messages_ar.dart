@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordMinLength": MessageLookupByLibrary.simpleMessage(
       "8 أحرف على الأقل",
     ),
+    "previous": MessageLookupByLibrary.simpleMessage("السابقة"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "privacyPolicyText": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في تطبيق **خطوة**.\n\nنحن نلتزم بحماية خصوصيتك وضمان أمان بياناتك الشخصية وبيانات أطفالك. توضح سياسة الخصوصية هذه أنواع المعلومات التي نجمعها، وكيفية استخدامها، وحقوقك فيما يتعلق بهذه البيانات.\n\n## 1. المعلومات التي نجمعها\n\nنجمع المعلومات التالية لتقديم خدمات الرعاية الصحية والتتبع:\n\n### أ. المعلومات الشخصية\n* **بيانات الوالدين:** الاسم الكامل، البريد الإلكتروني، كلمة المرور (مشفرة)، و**الرقم القومي** (لأغراض التحقق من الهوية وربط البيانات بالوحدات الصحية).\n* **بيانات الطفل:** الاسم، تاريخ الميلاد، النوع، والرقم القومي للطفل (لتكوين الملف الطبي).\n\n### ب. البيانات الصحية\n* سجلات التطعيمات (المواعيد، الحالة، والتواريخ الفعلية).\n* سجلات النمو (الوزن، الطول، ومحيط الرأس).\n* السجلات اليومية (النوم، الرضاعة، وتغيير الحفاضات).\n\n### ج. أذونات الجهاز\n* **الكاميرا ومعرض الصور:** لتمكينك من رفع صورة الملف الشخصي أو صور للمقالات واليوميات.\n* **الموقع الجغرافي (Location):** نستخدمه فقط عند طلبك للبحث عن أقرب طبيب أو وحدة صحية في منطقتك.\n\n## 2. كيف نستخدم معلوماتك\n\nنستخدم البيانات للأغراض التالية:\n1.  **إنشاء وإدارة الحساب:** لتمكينك من الدخول واستخدام التطبيق.\n2.  **التتبع الصحي:** لعرض جداول التطعيمات ومنحنيات النمو الخاصة بطفلك.\n3.  **الإشعارات:** لإرسال تذكيرات بمواعيد التطعيمات الهامة أو التحديثات الصحية.\n4.  **الربط الحكومي:** (إن وجد) لمزامنة سجلات التطعيم مع قاعدة بيانات الوحدات الصحية.\n\n## 3. حماية ومشاركة البيانات\n\n* **الأمان:** نستخدم تقنيات تشفير متقدمة (مثل تشفير كلمات المرور وبروتوكول HTTPS) لحماية بياناتك أثناء النقل والتخزين.\n* **المشاركة:** نحن لا نبيع بياناتك لأطراف ثالثة. قد نشارك البيانات فقط مع:\n    * مقدمي الخدمات السحابية (مثل استضافة الصور وقواعد البيانات) لتشغيل التطبيق.\n    * الجهات الصحية الرسمية (في حال كان التطبيق يتطلب ذلك لتوثيق التطعيمات).\n\n## 4. حذف الحساب والبيانات\n\nلديك الحق الكامل في التحكم ببياناتك:\n* يمكنك تعديل بياناتك من خلال صفحة \"الملف الشخصي\".\n* يمكنك طلب **حذف الحساب نهائياً** من خلال إعدادات التطبيق. عند الحذف، سيتم محو بيانات الدخول الخاصة بك، وفك ارتباط سجلات الطفل بحسابك.\n\n## 5. خدمات الطرف الثالث\n\nقد يستخدم التطبيق مكتبات خارجية لتحسين الأداء، مثل:\n* Google Firebase (للإشعارات والتحليلات).\n* Cloudinary (لتخزين الصور).\n\n## 6. اتصل بنا\n\nإذا كان لديك أي استفسار بخصوص سياسة الخصوصية، يرجى التواصل معنا عبر:\n* **البريد الإلكتروني:** [ilamohamed7@gmail.com]",
@@ -192,6 +193,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "الأصوات المساعدة للنوم",
     ),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "statusNotVaccinated": MessageLookupByLibrary.simpleMessage(
+      "لم يتم التطعيم",
+    ),
+    "statusVaccinated": MessageLookupByLibrary.simpleMessage("تم التطعيم"),
     "strongPasswordHint": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة مرور قوية",
     ),
@@ -207,7 +212,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "twoFactorAuth": MessageLookupByLibrary.simpleMessage("المصادقة الثنائية"),
     "typingIndicator": MessageLookupByLibrary.simpleMessage("يكتب....."),
     "unitDays": MessageLookupByLibrary.simpleMessage("أيام"),
+    "upcoming": MessageLookupByLibrary.simpleMessage("القادمة"),
     "vaccinationDate": MessageLookupByLibrary.simpleMessage("موعد التطعيم:"),
+    "vaccinations": MessageLookupByLibrary.simpleMessage("التطعيمات"),
     "verifyAction": MessageLookupByLibrary.simpleMessage("تحقق"),
     "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),

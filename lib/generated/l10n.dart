@@ -973,6 +973,41 @@ class S {
       args: [],
     );
   }
+
+  /// `التطعيمات`
+  String get vaccinations {
+    return Intl.message('التطعيمات', name: 'vaccinations', desc: '', args: []);
+  }
+
+  /// `القادمة`
+  String get upcoming {
+    return Intl.message('القادمة', name: 'upcoming', desc: '', args: []);
+  }
+
+  /// `السابقة`
+  String get previous {
+    return Intl.message('السابقة', name: 'previous', desc: '', args: []);
+  }
+
+  /// `لم يتم التطعيم`
+  String get statusNotVaccinated {
+    return Intl.message(
+      'لم يتم التطعيم',
+      name: 'statusNotVaccinated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تم التطعيم`
+  String get statusVaccinated {
+    return Intl.message(
+      'تم التطعيم',
+      name: 'statusVaccinated',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
