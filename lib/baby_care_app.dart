@@ -1,3 +1,4 @@
+import 'package:baby_care/core/cubit/cubit/current_child_cubit.dart';
 import 'package:baby_care/core/cubit/cubit/locale_cubit.dart';
 import 'package:baby_care/core/helper_functions/on_generate_routes.dart';
 import 'package:baby_care/core/services/get_it_service.dart';
@@ -28,8 +29,10 @@ class BabyCareApp extends StatelessWidget {
         BlocProvider(create: (context) => NavigationCubit()),
         BlocProvider(
           create: (context) =>
-              ChildrenCubit(repository: sl<ChildrenRepository>()),
+              ChildrenCubit(repository: sl<ChildrenRepository>())
+                ..getChildren(),
         ),
+        BlocProvider(create: (context) => CurrentChildCubit()),
       ],
       child: BlocBuilder<LocaleCubit, String>(
         builder: (context, state) {

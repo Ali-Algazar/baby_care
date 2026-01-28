@@ -21,21 +21,22 @@ class ChildrenRepositoryImpl implements ChildrenRepository {
   Future<Either<Failure, List<ChildModel>>> getChildren() async {
     try {
       final hasConnection1 = await hasConnection();
-      if (hasConnection1) {
-        var response = await remoteDataSource.getChildren();
-        if (response.statusCode == 200) {
-          List<ChildModel> children = (response.data as List).map((child) {
-            return ChildModel.fromJson(child);
-          }).toList();
-          await localDataSource.cacheChildrenList(children);
-
-          return right(await localDataSource.getCachedChildrenList());
-        } else {
-          return left(ServerFailure('error '));
-        }
-      } else {
+      if (!hasConnection1) {
         var listChildren = await localDataSource.getCachedChildrenList();
+
         return right(listChildren);
+      } else {
+        var respons = await remoteDataSource.getChildren();
+        if (respons.statusCode == 200) {
+          List<ChildModel> children = [];
+          for (var element in (respons.data as List<dynamic>)) {
+            children.add(ChildModel.fromJson(element));
+          }
+          await localDataSource.cacheChildrenList(children);
+          return right(children);
+        } else {
+          return left(ServerFailure('there was ${respons.statusCode}'));
+        }
       }
     } catch (e) {
       return left(ServerFailure(e.toString()));

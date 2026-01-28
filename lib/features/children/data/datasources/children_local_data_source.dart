@@ -12,6 +12,7 @@ class ChildrenLocalDataSourceImpl implements ChildrenLocalDataSource {
   @override
   Future<void> cacheChildrenList(List<ChildModel> children) async {
     for (var child in children) {
+      print(child);
       HiveHelper.putData(
         boxName: Constants.kChildrenBox,
         key: child.id,
@@ -27,7 +28,10 @@ class ChildrenLocalDataSourceImpl implements ChildrenLocalDataSource {
 
   @override
   Future<List<ChildModel>> getCachedChildrenList() async {
-    return await HiveHelper.getAllValues(Constants.kChildrenBox)
-        as List<ChildModel>;
+    var list =
+        await HiveHelper.getAllValues(Constants.kChildrenBox)
+            as List<ChildModel>;
+    print(list);
+    return list;
   }
 }

@@ -41,75 +41,77 @@ class _ChangePasswordViewBodyState extends State<ChangePasswordViewBody> {
   Widget build(BuildContext context) {
     return BlocListener<ChangePasswordCubit, ChangePasswordState>(
       listener: _blocListener,
-      child: ModalProgressHUD(
-        inAsyncCall: isLoading,
-        child: Padding(
-          padding: Constants.khorizontalPadding.horizontal,
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                Constants.ktopPadding.height,
-                const ChangePasswordHeader(),
-                40.height,
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: ModalProgressHUD(
+            inAsyncCall: isLoading,
+            child: Padding(
+              padding: Constants.khorizontalPadding.horizontal,
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    Constants.ktopPadding.height,
+                    const ChangePasswordHeader(),
+                    40.height,
 
-                CurrentPasswordField(
-                  controller: currentPasswordController,
-                  showPassword: showCurrentPassword,
-                  errorText: errorText,
-                  onToggle: () => setState(
-                    () => showCurrentPassword = !showCurrentPassword,
-                  ),
+                    CurrentPasswordField(
+                      controller: currentPasswordController,
+                      showPassword: showCurrentPassword,
+                      errorText: errorText,
+                      onToggle: () => setState(
+                        () => showCurrentPassword = !showCurrentPassword,
+                      ),
+                    ),
+
+                    24.height,
+
+                    NewPasswordField(
+                      controller: newPasswordController,
+                      showPassword: showNewPassword,
+                      onToggle: () =>
+                          setState(() => showNewPassword = !showNewPassword),
+                      onChanged: (value) {
+                        setState(() {
+                          has8Chars = value.length >= 8;
+                          hasSpecialChar = RegExp(
+                            r'[!@#$%^&*(),.?":{}|<>]',
+                          ).hasMatch(value);
+                        });
+                      },
+                    ),
+
+                    24.height,
+
+                    ConfirmPasswordField(
+                      controller: confirmPasswordController,
+                      newPasswordController: newPasswordController,
+                      showPassword: showConfirmPassword,
+                      onToggle: () => setState(
+                        () => showConfirmPassword = !showConfirmPassword,
+                      ),
+                    ),
+
+                    16.height,
+                    PasswordHintRow(
+                      isValid: has8Chars,
+                      text: S.of(context).passwordHintChars,
+                    ),
+                    12.height,
+                    PasswordHintRow(
+                      isValid: hasSpecialChar,
+                      text: S.of(context).passwordHintSymbols,
+                    ),
+                    40.height,
+                    CustomButton(
+                      title: S.of(context).saveAndChangePassword,
+                      onTap: _onSubmit,
+                    ),
+
+                    Constants.kbottomPadding.height,
+                  ],
                 ),
-
-                24.height,
-
-                NewPasswordField(
-                  controller: newPasswordController,
-                  showPassword: showNewPassword,
-                  onToggle: () =>
-                      setState(() => showNewPassword = !showNewPassword),
-                  onChanged: (value) {
-                    setState(() {
-                      has8Chars = value.length >= 8;
-                      hasSpecialChar = RegExp(
-                        r'[!@#$%^&*(),.?":{}|<>]',
-                      ).hasMatch(value);
-                    });
-                  },
-                ),
-
-                24.height,
-
-                ConfirmPasswordField(
-                  controller: confirmPasswordController,
-                  newPasswordController: newPasswordController,
-                  showPassword: showConfirmPassword,
-                  onToggle: () => setState(
-                    () => showConfirmPassword = !showConfirmPassword,
-                  ),
-                ),
-
-                16.height,
-                PasswordHintRow(
-                  isValid: has8Chars,
-                  text: S.of(context).passwordHintChars,
-                ),
-                12.height,
-                PasswordHintRow(
-                  isValid: hasSpecialChar,
-                  text: S.of(context).passwordHintSymbols,
-                ),
-
-                const Spacer(),
-
-                CustomButton(
-                  title: S.of(context).saveAndChangePassword,
-                  onTap: _onSubmit,
-                ),
-
-                Constants.kbottomPadding.height,
-              ],
+              ),
             ),
           ),
         ),
