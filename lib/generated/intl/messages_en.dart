@@ -133,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "nextVaccination": MessageLookupByLibrary.simpleMessage("Next Vaccination"),
+    "ok": MessageLookupByLibrary.simpleMessage("Okay"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "Your trusted guide to track your child\'s vaccinations and healthy growth, simply and securely.",
     ),
@@ -183,6 +184,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "remindMe": MessageLookupByLibrary.simpleMessage("Remind Me"),
+    "reminderActivated": MessageLookupByLibrary.simpleMessage(
+      "Reminder Activated",
+    ),
+    "reminderActivatedMessage": MessageLookupByLibrary.simpleMessage(
+      "Great 👌\nWe will automatically remind you of vaccination dates in advance so you can ensure your child\'s health and never miss a vaccination.",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "saveAndChangePassword": MessageLookupByLibrary.simpleMessage(
       "Save and Change Password",

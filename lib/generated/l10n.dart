@@ -1008,6 +1008,31 @@ class S {
       args: [],
     );
   }
+
+  /// `تم تفعيل التذكير`
+  String get reminderActivated {
+    return Intl.message(
+      'تم تفعيل التذكير',
+      name: 'reminderActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `رائع 👌\nسنقوم بتذكيرك تلقائياً بمواعيد التطعيمات مسبقاً حتى تتمكني من ضمان صحة طفلك وعدم تفويت أي تطعيم.`
+  String get reminderActivatedMessage {
+    return Intl.message(
+      'رائع 👌\nسنقوم بتذكيرك تلقائياً بمواعيد التطعيمات مسبقاً حتى تتمكني من ضمان صحة طفلك وعدم تفويت أي تطعيم.',
+      name: 'reminderActivatedMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `حسناً`
+  String get ok {
+    return Intl.message('حسناً', name: 'ok', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

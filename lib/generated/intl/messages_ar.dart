@@ -129,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "nextVaccination": MessageLookupByLibrary.simpleMessage("التطعيم القادم"),
+    "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.",
     ),
@@ -175,6 +176,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "recommendedForYou": MessageLookupByLibrary.simpleMessage("مقترحة لك"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "remindMe": MessageLookupByLibrary.simpleMessage("ذكرني"),
+    "reminderActivated": MessageLookupByLibrary.simpleMessage(
+      "تم تفعيل التذكير",
+    ),
+    "reminderActivatedMessage": MessageLookupByLibrary.simpleMessage(
+      "رائع 👌\nسنقوم بتذكيرك تلقائياً بمواعيد التطعيمات مسبقاً حتى تتمكني من ضمان صحة طفلك وعدم تفويت أي تطعيم.",
+    ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة إرسال"),
     "saveAndChangePassword": MessageLookupByLibrary.simpleMessage(
       "حفظ وتغيير كلمة المرور",
