@@ -3,6 +3,8 @@ import 'package:baby_care/core/cubit/cubit/current_child_cubit.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
+import 'package:baby_care/features/home/presentation/view/widgets/articles_section.dart';
+import 'package:baby_care/features/home/presentation/view/widgets/community_section.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_home_app_bar.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/sounds_section.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/vaccination_section.dart';
@@ -19,10 +21,18 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-  int _currentIndex = 0;
+  int vaccinationCurrentIndex = 0;
+  int communityCurrentIndex = 0;
+  int articlesCurrentIndex = 0;
 
   final PageController vaccinationController = PageController(
     viewportFraction: 0.67,
+  );
+  final PageController communityController = PageController(
+    viewportFraction: 0.90,
+  );
+  final PageController articlesController = PageController(
+    viewportFraction: 0.90,
   );
 
   @override
@@ -36,23 +46,46 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       child: BlocBuilder<ChildrenCubit, ChildrenState>(
         builder: (context, state) {
           if (state is ChildrenLoaded) {
-            return Column(
-              children: [
-                Constants.ktopPadding.height,
-                CustomHomeAppBar(child: state.children),
-                22.height,
-                VaccinationSection(
-                  currentIndex: _currentIndex,
-                  controller: vaccinationController,
-                  onPageChanged: (index) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
-                ),
-                24.height,
-                SoundsSection(),
-              ],
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Constants.ktopPadding.height,
+                  CustomHomeAppBar(child: state.children),
+                  22.height,
+                  VaccinationSection(
+                    currentIndex: vaccinationCurrentIndex,
+                    controller: vaccinationController,
+                    onPageChanged: (index) {
+                      setState(() {
+                        vaccinationCurrentIndex = index;
+                      });
+                    },
+                  ),
+                  24.height,
+                  SoundsSection(),
+                  24.height,
+                  CommunitySection(
+                    controller: communityController,
+                    currentIndex: communityCurrentIndex,
+                    onPageChanged: (value) {
+                      setState(() {
+                        communityCurrentIndex = value;
+                      });
+                    },
+                  ),
+                  24.height,
+                  ArticlesSection(
+                    controller: articlesController,
+                    currentIndex: articlesCurrentIndex,
+                    onPageChanged: (value) {
+                      setState(() {
+                        articlesCurrentIndex = value;
+                      });
+                    },
+                  ),
+                  25.height,
+                ],
+              ),
             );
           }
           if (state is ChildrenLoading) {
@@ -62,5 +95,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    vaccinationController.dispose();
+    communityController.dispose();
+    articlesController.dispose();
   }
 }
