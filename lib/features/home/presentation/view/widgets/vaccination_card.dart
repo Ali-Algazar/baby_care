@@ -1,13 +1,20 @@
 import 'package:baby_care/core/extensions/extensions.dart';
+import 'package:baby_care/core/helper_functions/days_between_from_today.dart';
+import 'package:baby_care/core/helper_functions/format_arabic_date.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_button.dart';
+import 'package:baby_care/core/widgets/widget_linear_color.dart';
+import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
+import 'package:baby_care/features/vaccination/presentation/view/widgets/view_details_button.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class VaccinationCard extends StatelessWidget {
-  const VaccinationCard({super.key});
-
+  const VaccinationCard({super.key, required this.vaccineRecord});
+  final VaccineRecordModel vaccineRecord;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,7 +42,12 @@ class VaccinationCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('BCG – الدرن', style: AppTextStyles.textStyle15),
+            Text(
+              vaccineRecord.vaccine.name,
+              style: AppTextStyles.textStyle15,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
             8.height,
             Row(
               children: [
@@ -46,7 +58,13 @@ class VaccinationCard extends StatelessWidget {
                   ),
                 ),
                 4.width,
-                Text('٢٥ يناير ٢٠٢٦', style: AppTextStyles.body2Ragular),
+                Text(
+                  formatArabicDate(
+                    vaccineRecord.dueDate.toIso8601String(),
+                    context,
+                  ),
+                  style: AppTextStyles.body2Ragular,
+                ),
               ],
             ),
             8.height,
@@ -54,7 +72,7 @@ class VaccinationCard extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
               color: Colors.yellow.withValues(alpha: 0.45),
               child: Text(
-                '${S.of(context).timeAfter} 10 ${S.of(context).unitDays}',
+                '${S.of(context).timeAfter} ${daysBetweenFromToday(vaccineRecord.dueDate)} ${S.of(context).unitDays}',
                 style: AppTextStyles.captionRagular,
               ),
             ),
@@ -65,14 +83,69 @@ class VaccinationCard extends StatelessWidget {
                 Expanded(
                   child: CustomButton(
                     title: S.of(context).remindMe,
-                    onTap: () {},
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                          insetPadding: EdgeInsets.symmetric(horizontal: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Container(
+                            height: 370,
+
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              spacing: 8,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  S.of(context).reminderActivated,
+                                  style: AppTextStyles.headerBold,
+                                ),
+                                SvgPicture.asset(
+                                  'assets/svg/check-verified.svg',
+                                  height: 90,
+                                ),
+
+                                Text(
+                                  S.of(context).reminderActivatedMessage,
+                                  style: AppTextStyles.body1Ragular,
+                                ),
+                                CustomButton(
+                                  title: S.of(context).ok,
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 8.width,
                 Expanded(
-                  child: CustomButton(
-                    title: S.of(context).remindMe,
+                  child: InkWell(
                     onTap: () {},
+                    child: Container(
+                      height: 46.h,
+                      decoration: BoxDecoration(
+                        color: AppColors.bG,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.primary, width: 1),
+                      ),
+                      child: Center(
+                        child: WidgetLinearColor(
+                          widget: Text(
+                            S.of(context).view,
+                            style: AppTextStyles.btnsRagular,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],

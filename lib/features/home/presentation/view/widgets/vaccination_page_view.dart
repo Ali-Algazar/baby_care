@@ -1,15 +1,18 @@
 import 'package:baby_care/features/home/presentation/view/widgets/vaccination_card.dart';
+import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
 import 'package:flutter/material.dart';
 
 class VaccinationPageView extends StatelessWidget {
   const VaccinationPageView({
     super.key,
-    required PageController controller,
+    required this.controller,
     required this.onPageChanged,
-  }) : _controller = controller;
+    required this.vaccineRecords,
+  });
 
-  final PageController _controller;
+  final PageController controller;
   final ValueChanged<int> onPageChanged;
+  final List<VaccineRecordModel> vaccineRecords;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +20,14 @@ class VaccinationPageView extends StatelessWidget {
       height: 210,
       child: PageView.builder(
         padEnds: false,
-        controller: _controller,
-        itemCount: 3,
+        controller: controller,
+        itemCount: vaccineRecords.length,
 
         onPageChanged: onPageChanged,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 3),
-            child: VaccinationCard(),
+            child: VaccinationCard(vaccineRecord: vaccineRecords[index]),
           );
         },
       ),

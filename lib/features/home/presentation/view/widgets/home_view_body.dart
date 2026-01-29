@@ -1,9 +1,11 @@
 import 'package:baby_care/core/constants.dart';
+import 'package:baby_care/core/cubit/cubit/current_child_cubit.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_home_app_bar.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/vaccination_section.dart';
+import 'package:baby_care/features/vaccination/presentation/cubit/vaccination_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -24,39 +26,38 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ChildrenCubit, ChildrenState>(
+    return BlocListener<CurrentChildCubit, String?>(
       listener: (context, state) {
-        if (state is ChildrenLoaded) {
-          context.showSnack(
-            'Children loaded successfully',
-            color: Colors.green,
-          );
+        if (state != null) {
+          context.read<VaccinationCubit>().getVaccinationHome(state);
         }
       },
-      builder: (context, state) {
-        if (state is ChildrenLoaded) {
-          return Column(
-            children: [
-              Constants.ktopPadding.height,
-              CustomHomeAppBar(child: state.children),
-              22.height,
-              VaccinationSection(
-                currentIndex: _currentIndex,
-                controller: vaccinationController,
-                onPageChanged: (index) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-              ),
-            ],
-          );
-        }
-        if (state is ChildrenLoading) {
-          return Center(child: Lottie.asset('assets/animation/loading.json'));
-        }
-        return const SizedBox();
-      },
+      child: BlocBuilder<ChildrenCubit, ChildrenState>(
+        builder: (context, state) {
+          if (state is ChildrenLoaded) {
+            return Column(
+              children: [
+                Constants.ktopPadding.height,
+                CustomHomeAppBar(child: state.children),
+                22.height,
+                VaccinationSection(
+                  currentIndex: _currentIndex,
+                  controller: vaccinationController,
+                  onPageChanged: (index) {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
+                ),
+              ],
+            );
+          }
+          if (state is ChildrenLoading) {
+            return Center(child: Lottie.asset('assets/animation/loading.json'));
+          }
+          return const SizedBox();
+        },
+      ),
     );
   }
 }
