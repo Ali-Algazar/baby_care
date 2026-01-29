@@ -9,7 +9,7 @@ class VaccineModel {
   @HiveField(1)
   final String name;
   @HiveField(3)
-  final String description;
+  final String? description;
 
   VaccineModel({
     required this.id,

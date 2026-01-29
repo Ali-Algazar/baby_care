@@ -19,7 +19,7 @@ class VaccineModelAdapter extends TypeAdapter<VaccineModel> {
     return VaccineModel(
       id: fields[0] as String,
       name: fields[1] as String,
-      description: fields[3] as String,
+      description: fields[3] as String?,
     );
   }
 
