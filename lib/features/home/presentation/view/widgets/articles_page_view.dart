@@ -1,0 +1,30 @@
+import 'package:baby_care/features/home/presentation/view/widgets/articles_care_widget.dart';
+import 'package:flutter/material.dart';
+
+class ArticlesPageView extends StatelessWidget {
+  const ArticlesPageView({
+    super.key,
+    required this.controller,
+    required this.onPageChanged,
+  });
+  final PageController controller;
+  final ValueChanged<int> onPageChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 190,
+      child: PageView.builder(
+        padEnds: false,
+        controller: controller,
+        itemCount: 3,
+
+        onPageChanged: onPageChanged,
+
+        itemBuilder: (context, index) {
+          return ArticlesCareWidget();
+        },
+      ),
+    );
+  }
+}
