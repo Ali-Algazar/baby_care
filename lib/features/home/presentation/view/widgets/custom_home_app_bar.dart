@@ -32,17 +32,13 @@ class _CustomHomeAppBarState extends State<CustomHomeAppBar> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CurrentChildCubit, String?>(
-      listener: (context, state) async {
-        if (state.isNotNull) {
-          currentChild =
-              await HiveHelper.getData(
-                boxName: Constants.kChildrenBox,
-                key: state!,
-              ) ??
-              widget.child[0];
-        }
-      },
+      listener: (context, state) async {},
       builder: (context, state) {
+        if (state.isNotNull) {
+          currentChild = widget.child.firstWhere((child) => child.id == state);
+          print('currentChild ${currentChild.name}');
+        }
+        print('currentChild ${currentChild.name}');
         return Padding(
           padding: Constants.khorizontalPadding.horizontal,
           child: Row(

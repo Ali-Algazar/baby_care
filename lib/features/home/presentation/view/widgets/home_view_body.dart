@@ -34,6 +34,16 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   final PageController articlesController = PageController(
     viewportFraction: 0.90,
   );
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration(microseconds: 1), () {
+      context.read<VaccinationCubit>().getVaccinationHome(
+        context.read<CurrentChildCubit>().state!,
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
