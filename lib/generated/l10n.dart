@@ -1033,6 +1033,11 @@ class S {
   String get ok {
     return Intl.message('حسناً', name: 'ok', desc: '', args: []);
   }
+
+  /// `عرض`
+  String get view {
+    return Intl.message('عرض', name: 'view', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

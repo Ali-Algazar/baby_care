@@ -223,6 +223,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "vaccinationDate": MessageLookupByLibrary.simpleMessage("موعد التطعيم:"),
     "vaccinations": MessageLookupByLibrary.simpleMessage("التطعيمات"),
     "verifyAction": MessageLookupByLibrary.simpleMessage("تحقق"),
+    "view": MessageLookupByLibrary.simpleMessage("عرض"),
     "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("أهلا بعودتك!"),

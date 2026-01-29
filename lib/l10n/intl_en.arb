@@ -123,5 +123,6 @@
 "statusVaccinated": "Vaccinated",
 "reminderActivated": "Reminder Activated",
 "reminderActivatedMessage": "Great 👌\nWe will automatically remind you of vaccination dates in advance so you can ensure your child's health and never miss a vaccination.",
-"ok": "Okay"
+"ok": "Okay",
+"view": "View"
 }

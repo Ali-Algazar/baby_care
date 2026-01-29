@@ -233,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "vaccinations": MessageLookupByLibrary.simpleMessage("Vaccinations"),
     "verifyAction": MessageLookupByLibrary.simpleMessage("Verify"),
+    "view": MessageLookupByLibrary.simpleMessage("View"),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
