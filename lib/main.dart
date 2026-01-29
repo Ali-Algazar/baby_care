@@ -16,9 +16,6 @@ void main() async {
   HiveHelper.registerAdapter();
 
   await NotificationService.init();
-  FirebaseMessaging.instance.getToken().then((token) {
-    print("📢 My Device Token: $token");
-  });
 
   runApp(const BabyCareApp());
 }
