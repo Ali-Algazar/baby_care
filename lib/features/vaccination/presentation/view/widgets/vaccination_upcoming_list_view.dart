@@ -11,14 +11,21 @@ class VaccinationUpcomingListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: vaccinationUpcomingData.length,
-      itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.only(bottom: 10, top: 6, left: 3, right: 3),
-        child: VaccinationCardUpcoming(
-          vaccineRecordModel: vaccinationUpcomingData[index],
-        ),
-      ),
-    );
+    return vaccinationUpcomingData.isEmpty
+        ? Center(child: Text('لا توجد تطعيمات قادمة'))
+        : ListView.builder(
+            itemCount: vaccinationUpcomingData.length,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.only(
+                bottom: 10,
+                top: 6,
+                left: 3,
+                right: 3,
+              ),
+              child: VaccinationCardUpcoming(
+                vaccineRecordModel: vaccinationUpcomingData[index],
+              ),
+            ),
+          );
   }
 }

@@ -35,60 +35,64 @@ class VaccinationCardPrevious extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                vaccineRecordModel.vaccine.name,
-                style: AppTextStyles.textStyle15,
-              ),
-              8.height,
-              Row(
-                children: [
-                  Text(
-                    S.of(context).vaccinationDate,
-                    style: AppTextStyles.body2Ragular.copyWith(
-                      color: AppColors.dText,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  vaccineRecordModel.vaccine.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.textStyle15,
+                ),
+                8.height,
+                Row(
+                  children: [
+                    Text(
+                      S.of(context).vaccinationDate,
+                      style: AppTextStyles.body2Ragular.copyWith(
+                        color: AppColors.dText,
+                      ),
                     ),
-                  ),
-                  4.width,
-                  Text(
-                    formatArabicDate(
-                      vaccineRecordModel.dueDate.toIso8601String(),
-                      context,
-                    ),
+                    4.width,
+                    Text(
+                      formatArabicDate(
+                        vaccineRecordModel.dueDate.toIso8601String(),
+                        context,
+                      ),
 
-                    style: AppTextStyles.body2Ragular,
-                  ),
-                ],
-              ),
-              8.height,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    S.of(context).viewDetails,
-                    style: AppTextStyles.btnsRagular.copyWith(
+                      style: AppTextStyles.body2Ragular,
+                    ),
+                  ],
+                ),
+                8.height,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      S.of(context).viewDetails,
+                      style: AppTextStyles.btnsRagular.copyWith(
+                        color: vaccineRecordModel.status == 'completed'
+                            ? AppColors.primary
+                            : AppColors.danger,
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_outward_sharp,
                       color: vaccineRecordModel.status == 'completed'
                           ? AppColors.primary
                           : AppColors.danger,
-                      fontSize: 13,
+                      weight: 16,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
-                  Icon(
-                    Icons.arrow_outward_sharp,
-                    color: vaccineRecordModel.status == 'completed'
-                        ? AppColors.primary
-                        : AppColors.danger,
-                    weight: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
-          Spacer(),
+
           Column(
             children: [
               SvgPicture.asset(

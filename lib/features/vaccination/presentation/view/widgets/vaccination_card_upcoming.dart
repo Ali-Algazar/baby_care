@@ -56,7 +56,7 @@ class VaccinationCardUpcoming extends StatelessWidget {
                       style: AppTextStyles.headerBold,
                     ),
                     content: Text(
-                      vaccineRecordModel.vaccine.description,
+                      vaccineRecordModel.vaccine.description ?? '',
                       style: AppTextStyles.body1Ragular,
                     ),
                     actions: [
