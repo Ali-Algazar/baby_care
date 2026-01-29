@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
+    "articles": MessageLookupByLibrary.simpleMessage("Articles"),
     "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
@@ -235,6 +236,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verifyAction": MessageLookupByLibrary.simpleMessage("Verify"),
     "view": MessageLookupByLibrary.simpleMessage("View"),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+    "viewArticle": MessageLookupByLibrary.simpleMessage("View Article"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
     "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(

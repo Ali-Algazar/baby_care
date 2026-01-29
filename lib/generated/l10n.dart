@@ -1038,6 +1038,16 @@ class S {
   String get view {
     return Intl.message('عرض', name: 'view', desc: '', args: []);
   }
+
+  /// `مقالات`
+  String get articles {
+    return Intl.message('مقالات', name: 'articles', desc: '', args: []);
+  }
+
+  /// `عرض المقالة`
+  String get viewArticle {
+    return Intl.message('عرض المقالة', name: 'viewArticle', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

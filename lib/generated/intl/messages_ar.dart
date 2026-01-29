@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
+    "articles": MessageLookupByLibrary.simpleMessage("مقالات"),
     "backToHome": MessageLookupByLibrary.simpleMessage("العودة إلى الرئيسية"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير الرقم السري"),
@@ -225,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verifyAction": MessageLookupByLibrary.simpleMessage("تحقق"),
     "view": MessageLookupByLibrary.simpleMessage("عرض"),
     "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "viewArticle": MessageLookupByLibrary.simpleMessage("عرض المقالة"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("أهلا بعودتك!"),
     "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
