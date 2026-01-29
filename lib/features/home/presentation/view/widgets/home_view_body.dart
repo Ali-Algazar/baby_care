@@ -4,6 +4,7 @@ import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_home_app_bar.dart';
+import 'package:baby_care/features/home/presentation/view/widgets/sounds_section.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/vaccination_section.dart';
 import 'package:baby_care/features/vaccination/presentation/cubit/vaccination_cubit.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     });
                   },
                 ),
+                24.height,
+                SoundsSection(),
               ],
             );
           }

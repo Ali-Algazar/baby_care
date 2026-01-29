@@ -6,7 +6,6 @@ import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_button.dart';
 import 'package:baby_care/core/widgets/widget_linear_color.dart';
 import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
-import 'package:baby_care/features/vaccination/presentation/view/widgets/view_details_button.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
