@@ -1048,6 +1048,31 @@ class S {
   String get viewArticle {
     return Intl.message('عرض المقالة', name: 'viewArticle', desc: '', args: []);
   }
+
+  /// `المساعد الذكي`
+  String get smartAssistant {
+    return Intl.message(
+      'المساعد الذكي',
+      name: 'smartAssistant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `مرحباً`
+  String get chatHello {
+    return Intl.message('مرحباً', name: 'chatHello', desc: '', args: []);
+  }
+
+  /// `أقدر أساعدك إزاي؟`
+  String get howCanIHelp {
+    return Intl.message(
+      'أقدر أساعدك إزاي؟',
+      name: 'howCanIHelp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

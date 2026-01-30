@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير الرقم السري"),
     "changePhoto": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
+    "chatHello": MessageLookupByLibrary.simpleMessage("مرحباً"),
     "chooseAvatar": MessageLookupByLibrary.simpleMessage("اختار أفاتار"),
     "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
       "اختار من الألبوم",
@@ -108,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullNameHint": MessageLookupByLibrary.simpleMessage("أدخل الاسم"),
     "fullNameLabel": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "helpAndSupport": MessageLookupByLibrary.simpleMessage("المساعدة والدعم"),
+    "howCanIHelp": MessageLookupByLibrary.simpleMessage("أقدر أساعدك إزاي؟"),
     "langArabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "langEnglish": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -200,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepSounds": MessageLookupByLibrary.simpleMessage(
       "الأصوات المساعدة للنوم",
     ),
+    "smartAssistant": MessageLookupByLibrary.simpleMessage("المساعد الذكي"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "statusNotVaccinated": MessageLookupByLibrary.simpleMessage(
       "لم يتم التطعيم",

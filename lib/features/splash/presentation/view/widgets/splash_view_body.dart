@@ -87,13 +87,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
 
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      print('🔔 المستخدم وافق على الإشعارات');
     } else if (settings.authorizationStatus ==
         AuthorizationStatus.provisional) {
-      print('🔔 المستخدم وافق بشكل مؤقت (للايفون)');
-    } else {
-      print('🔕 المستخدم رفض الإشعارات');
-    }
+    } else {}
   }
 
   void initAnimations() {

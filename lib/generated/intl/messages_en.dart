@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "changePhoto": MessageLookupByLibrary.simpleMessage("Change Photo"),
+    "chatHello": MessageLookupByLibrary.simpleMessage("Hello"),
     "chooseAvatar": MessageLookupByLibrary.simpleMessage("Choose Avatar"),
     "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
       "Choose from Gallery",
@@ -112,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullNameHint": MessageLookupByLibrary.simpleMessage("Enter name"),
     "fullNameLabel": MessageLookupByLibrary.simpleMessage("Full Name"),
     "helpAndSupport": MessageLookupByLibrary.simpleMessage("Help & Support"),
+    "howCanIHelp": MessageLookupByLibrary.simpleMessage("How can I help you?"),
     "langArabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "langEnglish": MessageLookupByLibrary.simpleMessage("English"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -206,6 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUpTitle": MessageLookupByLibrary.simpleMessage("Create New Account"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "sleepSounds": MessageLookupByLibrary.simpleMessage("Sleep Sounds"),
+    "smartAssistant": MessageLookupByLibrary.simpleMessage("Smart Assistant"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "statusNotVaccinated": MessageLookupByLibrary.simpleMessage(
       "Not Vaccinated",

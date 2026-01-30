@@ -126,5 +126,8 @@
 "ok": "Okay",
 "view": "View",
 "articles": "Articles",
-"viewArticle": "View Article"
+"viewArticle": "View Article",
+"smartAssistant": "Smart Assistant",
+"chatHello": "Hello",
+"howCanIHelp": "How can I help you?"
 }

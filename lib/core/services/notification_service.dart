@@ -39,9 +39,7 @@ class NotificationService {
     // 3. تهيئة البلاجن (مع التصحيح الجديد settings:)
     await _localNotificationsPlugin.initialize(
       settings: initializationSettings, // ✅ هنا التعديل المهم
-      onDidReceiveNotificationResponse: (NotificationResponse response) {
-        print("User tapped on notification: ${response.payload}");
-      },
+      onDidReceiveNotificationResponse: (NotificationResponse response) {},
     );
 
     // 4. إنشاء القناة

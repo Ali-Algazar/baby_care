@@ -129,6 +129,9 @@
 "ok": "حسناً",
 "view": "عرض",
 "articles": "مقالات",
-"viewArticle": "عرض المقالة"
+"viewArticle": "عرض المقالة",
+"smartAssistant": "المساعد الذكي",
+"chatHello": "مرحباً",
+"howCanIHelp": "أقدر أساعدك إزاي؟"
 
 }

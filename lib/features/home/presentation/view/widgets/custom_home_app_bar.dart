@@ -1,7 +1,6 @@
 import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/cubit/cubit/current_child_cubit.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
-import 'package:baby_care/core/helper/hive_helper.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/features/children/data/model/child_model.dart';
@@ -36,9 +35,8 @@ class _CustomHomeAppBarState extends State<CustomHomeAppBar> {
       builder: (context, state) {
         if (state.isNotNull) {
           currentChild = widget.child.firstWhere((child) => child.id == state);
-          print('currentChild ${currentChild.name}');
         }
-        print('currentChild ${currentChild.name}');
+
         return Padding(
           padding: Constants.khorizontalPadding.horizontal,
           child: Row(
