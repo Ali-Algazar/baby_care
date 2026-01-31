@@ -1,5 +1,6 @@
 import 'package:baby_care/core/services/get_it_service.dart';
 import 'package:baby_care/core/widgets/circle_avatar_linear_color.dart';
+import 'package:baby_care/features/chat_bot/presentation/view/chat_bot_view.dart';
 import 'package:baby_care/features/vaccination/data/repositories/vaccination_repository.dart';
 import 'package:baby_care/features/vaccination/presentation/cubit/vaccination_cubit.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,9 @@ class HomeView extends StatelessWidget {
         child: Scaffold(
           body: HomeViewBody(),
           floatingActionButton: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, ChatBotView.routeName);
+            },
             icon: CircleAvatarLinearColor(
               radius: 28,
               child: SvgPicture.asset(
