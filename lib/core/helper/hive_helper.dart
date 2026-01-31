@@ -1,4 +1,5 @@
 import 'package:baby_care/features/auth/data/model/user_model.dart';
+import 'package:baby_care/features/chat_bot/data/model/chat_bot_model.dart';
 import 'package:baby_care/features/children/data/model/child_model.dart';
 import 'package:baby_care/features/vaccination/data/model/vaccine_model.dart';
 import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
@@ -52,6 +53,7 @@ class HiveHelper {
     Hive.registerAdapter(ChildModelAdapter());
     Hive.registerAdapter(VaccineModelAdapter());
     Hive.registerAdapter(VaccineRecordModelAdapter());
+    Hive.registerAdapter(ChatBotModelAdapter());
   }
 
   static Future<bool> containsKey({
@@ -65,5 +67,15 @@ class HiveHelper {
   static Future<List> getAllValues(String boxName) async {
     final box = await openBox(boxName);
     return box.values.toList();
+  }
+
+  static Future<void> deletAt(String boxName, int index) async {
+    final box = await openBox(boxName);
+    box.deleteAt(index);
+  }
+
+  static Future<String> getKeyAt(String boxName, int index) async {
+    final box = await openBox(boxName);
+    return box.keyAt(index);
   }
 }
