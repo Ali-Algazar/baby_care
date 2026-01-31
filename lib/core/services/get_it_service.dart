@@ -3,6 +3,10 @@ import 'package:baby_care/features/auth/data/datasources/auth_local_data_source.
 import 'package:baby_care/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:baby_care/features/auth/data/repositories/auth_repository.dart';
 import 'package:baby_care/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:baby_care/features/chat_bot/data/datasources/chat_bot_local_data_source.dart';
+import 'package:baby_care/features/chat_bot/data/datasources/chat_bot_remote_data_source.dart';
+import 'package:baby_care/features/chat_bot/data/repositories/chat_bot_repository.dart';
+import 'package:baby_care/features/chat_bot/data/repositories/chat_bot_repository_impl.dart';
 import 'package:baby_care/features/children/data/datasources/children_local_data_source.dart';
 import 'package:baby_care/features/children/data/datasources/children_remote_data_source.dart';
 import 'package:baby_care/features/children/data/repositories/children_repository.dart';
@@ -73,6 +77,21 @@ void setupServiceLocator() {
       localDataSource: sl<VaccinationLocalDataSource>(),
       remoteDataSource: sl<VaccinationRemoteDataSource>(),
       connectivity: sl<Connectivity>(),
+    ),
+  );
+
+  sl.registerLazySingleton<ChatBotLocalDataSource>(
+    () => ChatBotLocalDataSourceImpl(),
+  );
+
+  sl.registerLazySingleton<ChatBotRemoteDataSource>(
+    () => ChatBotRemoteDataSourceImpl(apiHelper: sl<ApiHelper>()),
+  );
+
+  sl.registerLazySingleton<ChatBotRepository>(
+    () => ChatBotRepositoryImpl(
+      localDataSource: sl<ChatBotLocalDataSource>(),
+      remoteDataSource: sl<ChatBotRemoteDataSource>(),
     ),
   );
 }
