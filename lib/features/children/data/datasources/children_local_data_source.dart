@@ -12,7 +12,6 @@ class ChildrenLocalDataSourceImpl implements ChildrenLocalDataSource {
   @override
   Future<void> cacheChildrenList(List<ChildModel> children) async {
     for (var child in children) {
-      print(child);
       HiveHelper.putData(
         boxName: Constants.kChildrenBox,
         key: child.id,
