@@ -17,7 +17,11 @@ class GetChatHistoryCubit extends Cubit<GetChatHistoryState> {
         emit(GetChatHistoryError(message: l.message));
       },
       (r) {
-        emit(GetChatHistoryLoaded(chatHistory: r));
+        if (r.isEmpty) {
+          emit(GetChatHistoryEmpty());
+        } else {
+          emit(GetChatHistoryLoaded(chatHistory: r));
+        }
       },
     );
   }
@@ -30,7 +34,11 @@ class GetChatHistoryCubit extends Cubit<GetChatHistoryState> {
         emit(GetChatHistoryError(message: l.message));
       },
       (r) {
-        emit(GetChatHistoryDeleted());
+        if (r.isEmpty) {
+          emit(GetChatHistoryEmpty());
+        } else {
+          emit(GetChatHistoryLoaded(chatHistory: r));
+        }
       },
     );
   }

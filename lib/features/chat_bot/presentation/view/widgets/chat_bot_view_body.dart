@@ -36,30 +36,32 @@ class _ChatBotViewBodyState extends State<ChatBotViewBody> {
       listener: _chatListener,
       child: ModalProgressHUD(
         inAsyncCall: isLoading,
-        child: Padding(
-          padding: Constants.khorizontalPadding.horizontal,
-          child: Column(
-            children: [
-              Constants.ktopPadding.height,
-              ChatBotHeader(messages: messages, keyRecord: widget.keyRecord),
-              38.height,
+        child: SafeArea(
+          child: Padding(
+            padding: Constants.khorizontalPadding.horizontal,
+            child: Column(
+              children: [
+                Constants.ktopPadding.height,
+                ChatBotHeader(messages: messages, keyRecord: widget.keyRecord),
+                38.height,
 
-              Expanded(
-                child: messages.isEmpty
-                    ? const ChatEmptyState()
-                    : ChatMessagesList(messages: messages),
-              ),
+                Expanded(
+                  child: messages.isEmpty
+                      ? const ChatEmptyState()
+                      : ChatMessagesList(messages: messages),
+                ),
 
-              ChatBotInputField(
-                onSend: (value) {
-                  setState(() {
-                    messages.add(ChatBotModel(tixt: value, isAnswer: true));
-                  });
-                  context.read<ChatBotCubit>().getanswer(value);
-                },
-              ),
-              16.height,
-            ],
+                ChatBotInputField(
+                  onSend: (value) {
+                    setState(() {
+                      messages.add(ChatBotModel(tixt: value, isAnswer: true));
+                    });
+                    context.read<ChatBotCubit>().getanswer(value);
+                  },
+                ),
+                16.height,
+              ],
+            ),
           ),
         ),
       ),

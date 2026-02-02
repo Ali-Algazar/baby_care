@@ -1,5 +1,6 @@
 import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
+import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/features/chat_bot/presentation/view/widgets/chat_bot_input_button.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +28,16 @@ class _ChatBotInputFieldState extends State<ChatBotInputField> {
         children: [
           TextField(
             controller: controller,
+
             onChanged: (v) => setState(() => isEmpty = v.isEmpty),
             onTap: () => setState(() => isTyping = true),
             decoration: InputDecoration(
+              fillColor: Colors.transparent,
               hintText: S.of(context).howCanIHelp,
+              hintStyle: AppTextStyles.body2Ragular.copyWith(
+                color: AppColors.dText,
+              ),
+              enabledBorder: InputBorder.none,
               border: InputBorder.none,
             ),
           ),
@@ -46,13 +53,16 @@ class _ChatBotInputFieldState extends State<ChatBotInputField> {
               ChatBotInputButton(
                 color: Colors.white,
                 onTap: () {},
-                child: SvgPicture.asset('assets/svg/microphone.svg'),
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: SvgPicture.asset('assets/svg/microphone.svg'),
+                ),
               ),
               const Spacer(),
               ChatBotInputButton(
                 color: Colors.white,
                 onTap: () {},
-                child: const Icon(Icons.add),
+                child: Icon(Icons.add),
               ),
             ],
           ),
@@ -63,8 +73,26 @@ class _ChatBotInputFieldState extends State<ChatBotInputField> {
 
   BoxDecoration _decoration() {
     return BoxDecoration(
-      color: const Color(0xffF0F0F0),
+      color: Color(0xffF0F0F0),
       borderRadius: BorderRadius.circular(16),
+      border: Border.all(
+        color: AppColors.primary.withValues(alpha: isTyping ? 1 : 0.17),
+        width: 1.5,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Color(0xFF000000).withValues(alpha: 0.04),
+          spreadRadius: 2,
+          blurRadius: 4,
+          offset: const Offset(0, 0),
+        ),
+        BoxShadow(
+          color: Color(0xFF000000).withValues(alpha: 0.04),
+          spreadRadius: 2,
+          blurRadius: 8,
+          offset: const Offset(0, 6),
+        ),
+      ],
     );
   }
 

@@ -10,7 +10,7 @@ abstract class ChatBotRepository {
   Future<Either<Failure, void>> cacheChatInHistory(
     List<ChatBotModel> chatHistory,
   );
-  Future<Either<Failure, void>> deleteChatRecord(int index);
+  Future<Either<Failure, List>> deleteChatRecord(int index);
   Future<Either<Failure, List>> upDataChatHistory({
     required String key,
     required List<ChatBotModel> chatHistory,

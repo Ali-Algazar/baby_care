@@ -22,9 +22,9 @@ class ChatBotHeader extends StatelessWidget {
           onTap: () async {
             final cubit = context.read<GetChatHistoryCubit>();
 
-            if (messages.isNotEmpty && keyRecord == null) {
+            if (messages.length > 1 && keyRecord == null) {
               await cubit.cacheChatHistory(messages);
-            } else if (messages.isNotEmpty && keyRecord != null) {
+            } else if (messages.length > 1 && keyRecord != null) {
               await cubit.upDataChatHistory(
                 key: keyRecord!,
                 chatHistory: messages,

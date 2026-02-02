@@ -181,10 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "reEnterPassword": MessageLookupByLibrary.simpleMessage(
       "Re-enter password",
     ),
-    "recentlyPlayed": MessageLookupByLibrary.simpleMessage("Recently Played"),
-    "recommendedForYou": MessageLookupByLibrary.simpleMessage(
-      "Recommended for You",
-    ),
+    "recentlyPlayed": MessageLookupByLibrary.simpleMessage("Recents"),
+    "recommendedForYou": MessageLookupByLibrary.simpleMessage("For You"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "remindMe": MessageLookupByLibrary.simpleMessage("Remind Me"),
     "reminderActivated": MessageLookupByLibrary.simpleMessage(

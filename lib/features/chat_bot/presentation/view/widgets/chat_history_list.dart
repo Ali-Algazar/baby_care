@@ -16,15 +16,6 @@ class ChatHistoryList extends StatelessWidget {
         }
 
         if (state is GetChatHistoryLoaded) {
-          if (state.chatHistory.isEmpty) {
-            return Center(
-              child: Text(
-                'No chat history available.',
-                style: AppTextStyles.body2Bold,
-              ),
-            );
-          }
-
           return ListView.builder(
             itemCount: state.chatHistory.length,
             itemBuilder: (context, index) {
@@ -39,6 +30,14 @@ class ChatHistoryList extends StatelessWidget {
         if (state is GetChatHistoryError) {
           return Center(
             child: Text(state.message, style: AppTextStyles.body2Bold),
+          );
+        }
+        if (state is GetChatHistoryEmpty) {
+          return Center(
+            child: Text(
+              'No chat history available.',
+              style: AppTextStyles.body2Bold,
+            ),
           );
         }
 

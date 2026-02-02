@@ -18,5 +18,3 @@ final class GetChatHistoryError extends GetChatHistoryState {
 }
 
 final class GetChatHistoryEmpty extends GetChatHistoryState {}
-
-final class GetChatHistoryDeleted extends GetChatHistoryState {}

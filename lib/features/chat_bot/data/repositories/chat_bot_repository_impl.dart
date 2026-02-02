@@ -5,6 +5,7 @@ import 'package:baby_care/features/chat_bot/data/datasources/chat_bot_remote_dat
 import 'package:baby_care/features/chat_bot/data/model/chat_bot_model.dart';
 
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 import 'chat_bot_repository.dart';
 
@@ -28,8 +29,10 @@ class ChatBotRepositoryImpl implements ChatBotRepository {
       } else {
         return left(ServerFailure(''));
       }
-    } on Exception catch (e) {
-      return left(ServerFailure(e.toString()));
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
     }
   }
 
@@ -38,8 +41,10 @@ class ChatBotRepositoryImpl implements ChatBotRepository {
     try {
       final list = await localDataSource.getChatHistory();
       return right(list);
-    } on Exception catch (e) {
-      return left(ServerFailure(e.toString()));
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
     }
   }
 
@@ -50,18 +55,23 @@ class ChatBotRepositoryImpl implements ChatBotRepository {
     try {
       await localDataSource.cacheChatHistory(chatHistory);
       return right(null);
-    } on Exception catch (e) {
-      return left(ServerFailure(e.toString()));
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, void>> deleteChatRecord(int index) async {
+  Future<Either<Failure, List>> deleteChatRecord(int index) async {
     try {
       await localDataSource.deleteChatHistory(index: index);
-      return right(null);
-    } on Exception catch (e) {
-      return left(ServerFailure(e.toString()));
+      var list = await localDataSource.getChatHistory();
+      return right(list);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
     }
   }
 
@@ -77,8 +87,10 @@ class ChatBotRepositoryImpl implements ChatBotRepository {
       );
       var list = await localDataSource.getChatHistory();
       return right(list);
-    } on Exception catch (e) {
-      return left(ServerFailure(e.toString()));
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
     }
   }
 }
