@@ -1,5 +1,7 @@
+import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/community_care_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommunityPageView extends StatelessWidget {
   const CommunityPageView({
@@ -13,7 +15,7 @@ class CommunityPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 220.h,
       child: PageView.builder(
         padEnds: false,
         controller: controller,

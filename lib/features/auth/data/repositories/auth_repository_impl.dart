@@ -52,6 +52,8 @@ class AuthRepositoryImpl extends AuthRepository {
       await localDataSource.clearCachedUser();
       await localDataSource.clearCachedUserToken();
       return const Right(unit);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
@@ -88,6 +90,8 @@ class AuthRepositoryImpl extends AuthRepository {
           ),
         );
       }
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
@@ -102,6 +106,8 @@ class AuthRepositoryImpl extends AuthRepository {
       }
       final user = await localDataSource.getCachedUser();
       return Right(user!);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
@@ -126,6 +132,8 @@ class AuthRepositoryImpl extends AuthRepository {
           ),
         );
       }
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }

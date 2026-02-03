@@ -1073,6 +1073,26 @@ class S {
       args: [],
     );
   }
+
+  /// `الأطباء`
+  String get doctors {
+    return Intl.message('الأطباء', name: 'doctors', desc: '', args: []);
+  }
+
+  /// `الأدوية`
+  String get medicines {
+    return Intl.message('الأدوية', name: 'medicines', desc: '', args: []);
+  }
+
+  /// `كل المقالات`
+  String get allArticles {
+    return Intl.message('كل المقالات', name: 'allArticles', desc: '', args: []);
+  }
+
+  /// `الأصوات`
+  String get sounds {
+    return Intl.message('الأصوات', name: 'sounds', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

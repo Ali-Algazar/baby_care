@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "# About Us\n\n**Welcome to Khatwa**\n\nAt **Khatwa**, we believe that your child\'s health is your most precious asset. We are here to be your smart partner in the journey of motherhood, making it easier for you to track your child\'s healthcare with precision and peace of mind.\n\n## 🎯 Our Vision\nWe aim to replace the \"paper vaccination certificate\" and traditional tracking systems with a smart, integrated digital ecosystem connecting mothers with Health Units.\n\n## 💡 What does Khatwa offer?\n* **Smart Alerts:** Reminders for upcoming vaccination dates.\n* **Growth Tracking:** Tools to record and monitor your child\'s weight and height.\n* **Government Integration:** Data integration with Health Units to officially record vaccinations.\n* **Trusted Content:** Medical articles to help you understand your child\'s growth stages.\n\nThank you for trusting us, and we are happy to accompany you step by step.",
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("Account"),
+    "allArticles": MessageLookupByLibrary.simpleMessage("All Articles"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
@@ -54,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "currentPassword": MessageLookupByLibrary.simpleMessage("Current Password"),
     "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+    "doctors": MessageLookupByLibrary.simpleMessage("Doctors"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -125,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logoutConfirmation": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to log out?",
     ),
+    "medicines": MessageLookupByLibrary.simpleMessage("Medicines"),
     "myChildren": MessageLookupByLibrary.simpleMessage("My Children"),
     "nationalIdHint": MessageLookupByLibrary.simpleMessage("Enter ID number"),
     "nationalIdLabel": MessageLookupByLibrary.simpleMessage("National ID"),
@@ -207,6 +210,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "sleepSounds": MessageLookupByLibrary.simpleMessage("Sleep Sounds"),
     "smartAssistant": MessageLookupByLibrary.simpleMessage("Smart Assistant"),
+    "sounds": MessageLookupByLibrary.simpleMessage("Sounds"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
     "statusNotVaccinated": MessageLookupByLibrary.simpleMessage(
       "Not Vaccinated",

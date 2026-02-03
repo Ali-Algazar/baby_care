@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "# من نحن\n\n**مرحباً بكم في خطوة**\n\nفي **خطوة**، نؤمن أن صحة طفلك هي أغلى ما تملكين. نحن هنا لنكون شريكك الذكي في رحلة الأمومة، ولنسهل عليكِ متابعة الرعاية الصحية لطفلك بدقة واطمئنان.\n\n## 🎯 رؤيتنا\nنسعى لاستبدال \"شهادة التطعيم الورقية\" ونظام المتابعة التقليدي بمنظومة رقمية ذكية ومتكاملة تربط بين الأم والوحدة الصحية.\n\n## 💡 ماذا يقدم تطبيق خطوة؟\n* **تنبيهات ذكية:** تذكير بمواعيد التطعيمات القادمة.\n* **متابعة النمو:** أدوات لتسجيل ومراقبة وزن وطول طفلك.\n* **ربط حكومي:** تكامل البيانات مع الوحدات الصحية لتسجيل التطعيمات رسمياً.\n* **محتوى موثوق:** مقالات طبية لمساعدتك في فهم مراحل نمو طفلك.\n\nشكراً لثقتكم بنا، ونسعد دائماً بمرافقتكم خطوة بخطوة.",
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("الحساب"),
+    "allArticles": MessageLookupByLibrary.simpleMessage("كل المقالات"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
@@ -52,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور الحالية",
     ),
     "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
+    "doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "emailHint": MessageLookupByLibrary.simpleMessage("أدخل البريد الإلكتروني"),
     "emailLabel": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -121,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logoutConfirmation": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من أنك تريد تسجيل الخروج؟",
     ),
+    "medicines": MessageLookupByLibrary.simpleMessage("الأدوية"),
     "myChildren": MessageLookupByLibrary.simpleMessage("أطفالي"),
     "nationalIdHint": MessageLookupByLibrary.simpleMessage("أدخل الرقم"),
     "nationalIdLabel": MessageLookupByLibrary.simpleMessage("الرقم القومي"),
@@ -203,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الأصوات المساعدة للنوم",
     ),
     "smartAssistant": MessageLookupByLibrary.simpleMessage("المساعد الذكي"),
+    "sounds": MessageLookupByLibrary.simpleMessage("الأصوات"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "statusNotVaccinated": MessageLookupByLibrary.simpleMessage(
       "لم يتم التطعيم",

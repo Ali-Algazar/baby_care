@@ -3,6 +3,7 @@ import 'package:baby_care/features/main_layout/data/navbar_item_model.dart';
 import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
 import 'package:baby_care/features/main_layout/presentation/view/widgets/custom_nav_bar.dart';
 import 'package:baby_care/features/profile/presentation/view/widgets/profile_view_body.dart';
+import 'package:baby_care/features/services/presentation/view/services_view.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,13 +21,12 @@ class _MainLayoutViewState extends State<MainLayoutView> {
   final List<Widget> pages = [
     const HomeView(),
     const Scaffold(body: Center(child: Text('Tracking Page'))),
-    const Scaffold(body: Center(child: Text('Services Page'))),
+    const ServicesView(),
     const Scaffold(body: Center(child: Text('Community Page'))),
     ProfileViewBody(),
   ];
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
 
     navItems = [
@@ -53,32 +53,21 @@ class _MainLayoutViewState extends State<MainLayoutView> {
     ];
   }
 
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return BlocListener<NavigationCubit, int>(
-      listener: (context, state) {
-        print(state);
-        setState(() {
-          selectedIndex = 0;
-        });
+    return BlocBuilder<NavigationCubit, int>(
+      builder: (context, state) {
+        return Scaffold(
+          body: pages[state],
+          bottomNavigationBar: CustomNavBar(
+            navItems: navItems,
+            selectedIndex: state,
+            onTap: (value) {
+              context.read<NavigationCubit>().changeIndex(value);
+            },
+          ),
+        );
       },
-      child: Scaffold(
-        body: Column(
-          children: [
-            Expanded(child: pages[selectedIndex]),
-            CustomNavBar(
-              navItems: navItems,
-              selectedIndex: selectedIndex,
-              onTap: (value) {
-                setState(() {
-                  selectedIndex = value;
-                });
-              },
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

@@ -26,7 +26,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   int articlesCurrentIndex = 0;
 
   final PageController vaccinationController = PageController(
-    viewportFraction: 0.67,
+    viewportFraction: 0.75,
   );
   final PageController communityController = PageController(
     viewportFraction: 0.90,

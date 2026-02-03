@@ -19,7 +19,7 @@ class VaccinationCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 16.0),
       child: Container(
-        width: context.width / 1.9,
+        // width: context.width / 2,
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: AppColors.gray4,
@@ -57,12 +57,17 @@ class VaccinationCard extends StatelessWidget {
                   ),
                 ),
                 4.width,
-                Text(
-                  formatArabicDate(
-                    vaccineRecord.dueDate.toIso8601String(),
-                    context,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Expanded(
+                    child: Text(
+                      formatArabicDate(
+                        vaccineRecord.dueDate.toIso8601String(),
+                        context,
+                      ),
+                      style: AppTextStyles.body2Ragular,
+                    ),
                   ),
-                  style: AppTextStyles.body2Ragular,
                 ),
               ],
             ),

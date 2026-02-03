@@ -13,7 +13,10 @@ class ArticlesCareWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(
+          left: Localizations.localeOf(context).languageCode == 'ar' ? 0 : 16,
+          right: Localizations.localeOf(context).languageCode == 'ar' ? 0 : 16,
+        ),
 
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -80,10 +83,16 @@ class ArticlesCareWidget extends StatelessWidget {
               width: context.width * 0.3,
               height: 190,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(8),
-                  bottomLeft: Radius.circular(8),
-                ),
+                borderRadius:
+                    Localizations.localeOf(context).languageCode == 'ar'
+                    ? BorderRadius.only(
+                        topLeft: Radius.circular(8),
+                        bottomLeft: Radius.circular(8),
+                      )
+                    : BorderRadius.only(
+                        topRight: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                      ),
                 color: Colors.grey,
                 image: const DecorationImage(
                   image: AssetImage('assets/image/onboarding_image1.png'),

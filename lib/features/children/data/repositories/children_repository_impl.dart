@@ -4,6 +4,7 @@ import 'package:baby_care/features/children/data/datasources/children_remote_dat
 import 'package:baby_care/features/children/data/model/child_model.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 import 'children_repository.dart';
 
@@ -38,8 +39,10 @@ class ChildrenRepositoryImpl implements ChildrenRepository {
           return left(ServerFailure('there was ${respons.statusCode}'));
         }
       }
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
     } catch (e) {
-      return left(ServerFailure(e.toString()));
+      return Left(ServerFailure(e.toString()));
     }
   }
 

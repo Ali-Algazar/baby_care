@@ -12,7 +12,10 @@ class CommunityCareWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(
+          left: Localizations.localeOf(context).languageCode == 'ar' ? 0 : 16,
+          right: Localizations.localeOf(context).languageCode == 'ar' ? 8 : 16,
+        ),
         padding: 16.all,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
