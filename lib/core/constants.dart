@@ -14,4 +14,5 @@ class Constants {
   static const String currentChildId = 'current_child_id';
   static const String kVaccineRecordBox = 'vaccineRecordBox';
   static const String kChatHistoryBox = 'chatHistoryBox';
+  static const String kArticlesBox = 'articlesBox';
 }
