@@ -10,10 +10,7 @@ class BlogViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // نستخدم CustomScrollView عادي جداً
-    // الـ NestedScrollView سيتعرف عليه تلقائياً بفضل الـ PrimaryScrollController
     return CustomScrollView(
-      // key: PageStorageKey('blog_view'), // اختياري: لحفظ مكان السكرول عند التنقل بين التابات
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
@@ -38,16 +35,14 @@ class BlogViewBody extends StatelessWidget {
           ),
         ),
 
-        // قائمة المقالات
         SliverList.builder(
-          itemCount: 15, // مثال
+          itemCount: 15,
           itemBuilder: (context, index) => const Padding(
             padding: EdgeInsets.only(bottom: 16.0, left: 16.0, right: 16.0),
             child: ArticlesCareWidget(),
           ),
         ),
 
-        // مسافة أمان في الأسفل
         const SliverToBoxAdapter(child: SizedBox(height: 80)),
       ],
     );

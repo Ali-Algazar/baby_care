@@ -1,4 +1,3 @@
-import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/community_care_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

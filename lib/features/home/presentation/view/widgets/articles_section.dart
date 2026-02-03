@@ -5,7 +5,6 @@ import 'package:baby_care/core/widgets/widget_linear_color.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/articles_page_view.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_dots_indicator.dart';
 import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
-import 'package:baby_care/features/services/presentation/view/services_view.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/services_view_body.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
