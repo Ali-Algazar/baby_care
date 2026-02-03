@@ -3,6 +3,10 @@ import 'package:baby_care/features/auth/data/datasources/auth_local_data_source.
 import 'package:baby_care/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:baby_care/features/auth/data/repositories/auth_repository.dart';
 import 'package:baby_care/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:baby_care/features/blog/data/datasources/blog_local_data_source.dart';
+import 'package:baby_care/features/blog/data/datasources/blog_remote_data_source.dart';
+import 'package:baby_care/features/blog/data/repositories/blog_repository.dart';
+import 'package:baby_care/features/blog/data/repositories/blog_repository_impl.dart';
 import 'package:baby_care/features/chat_bot/data/datasources/chat_bot_local_data_source.dart';
 import 'package:baby_care/features/chat_bot/data/datasources/chat_bot_remote_data_source.dart';
 import 'package:baby_care/features/chat_bot/data/repositories/chat_bot_repository.dart';
@@ -92,6 +96,20 @@ void setupServiceLocator() {
     () => ChatBotRepositoryImpl(
       localDataSource: sl<ChatBotLocalDataSource>(),
       remoteDataSource: sl<ChatBotRemoteDataSource>(),
+    ),
+  );
+
+  sl.registerLazySingleton<BlogLocalDataSource>(
+    () => BlogLocalDataSourceImpl(),
+  );
+  sl.registerLazySingleton<BlogRemoteDataSource>(
+    () => BlogRemoteDataSourceImpl(apiHelper: sl<ApiHelper>()),
+  );
+  sl.registerLazySingleton<BlogRepository>(
+    () => BlogRepositoryImpl(
+      localDataSource: sl<BlogLocalDataSource>(),
+      remoteDataSource: sl<BlogRemoteDataSource>(),
+      connectivity: sl<Connectivity>(),
     ),
   );
 }
