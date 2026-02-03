@@ -7,6 +7,7 @@ import 'package:baby_care/features/info/presentation/view/about_us_view.dart';
 import 'package:baby_care/features/info/presentation/view/policy_view.dart';
 import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
 import 'package:baby_care/features/onboarding/presentation/view/onboarding_view.dart';
+import 'package:baby_care/features/services/presentation/view/services_view.dart';
 import 'package:baby_care/features/splash/presentation/view/splash_view.dart';
 import 'package:baby_care/features/vaccination/presentation/view/vaccination_view.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => VaccinationView());
     case ChatBotView.routeName:
       return MaterialPageRoute(builder: (context) => ChatBotView());
+    case ServicesView.routeName:
+      return MaterialPageRoute(builder: (context) => ServicesView());
 
     default:
       return MaterialPageRoute(
