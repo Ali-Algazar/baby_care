@@ -13,7 +13,10 @@ class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
 
   @override
   Future<Response> fetchBlogArticles() async {
-    final response = await apiHelper.get(ApiEndpoints.articles);
+    final response = await apiHelper.get(
+      ApiEndpoints.articles,
+      requiresAuth: true,
+    );
     return response;
   }
 }

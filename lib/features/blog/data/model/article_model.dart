@@ -19,6 +19,8 @@ class ArticleModel {
   final DateTime createdAt;
   @HiveField(7)
   final DateTime updatedAt;
+  @HiveField(8)
+  final String description;
 
   ArticleModel({
     required this.id,
@@ -29,6 +31,7 @@ class ArticleModel {
     required this.author,
     required this.createdAt,
     required this.updatedAt,
+    required this.description,
   });
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) {
@@ -38,9 +41,10 @@ class ArticleModel {
       content: json['content'],
       category: json['category'],
       imageUrl: json['imageUrl'],
-      author: json['author'],
+      author: json['author']['name'],
       createdAt: DateTime.parse(json['createdAt']),
       updatedAt: DateTime.parse(json['updatedAt']),
+      description: json['description'],
     );
   }
 }
