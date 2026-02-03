@@ -2,11 +2,14 @@ import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/widget_linear_color.dart';
+import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/generated/l10n.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ArticlesCareWidget extends StatelessWidget {
-  const ArticlesCareWidget({super.key});
+  const ArticlesCareWidget({super.key, required this.articleModel});
+  final ArticleModel articleModel;
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +51,14 @@ class ArticlesCareWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'كيف تساعدين طفلك على تطوير مهاراته الاجتماعية؟',
+                      articleModel.title,
                       style: AppTextStyles.body2Bold,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                     8.height,
                     Text(
-                      'تلعب المهارات الاجتماعية دورًا حيويًا في نمو الطفل وتطوره. إليك بعض النصائح لمساعدته على تطوير هذه المهارات المهمة.',
+                      articleModel.content,
                       style: AppTextStyles.captionRagular.copyWith(
                         color: Color(0xff8C8C8C),
                       ),
@@ -94,8 +97,8 @@ class ArticlesCareWidget extends StatelessWidget {
                         bottomRight: Radius.circular(8),
                       ),
                 color: Colors.grey,
-                image: const DecorationImage(
-                  image: AssetImage('assets/image/onboarding_image1.png'),
+                image: DecorationImage(
+                  image: CachedNetworkImageProvider(articleModel.imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
