@@ -1,4 +1,5 @@
 import 'package:baby_care/features/auth/data/model/user_model.dart';
+import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/features/chat_bot/data/model/chat_bot_model.dart';
 import 'package:baby_care/features/children/data/model/child_model.dart';
 import 'package:baby_care/features/vaccination/data/model/vaccine_model.dart';
@@ -54,6 +55,7 @@ class HiveHelper {
     Hive.registerAdapter(VaccineModelAdapter());
     Hive.registerAdapter(VaccineRecordModelAdapter());
     Hive.registerAdapter(ChatBotModelAdapter());
+    Hive.registerAdapter(ArticleModelAdapter());
   }
 
   static Future<bool> containsKey({
