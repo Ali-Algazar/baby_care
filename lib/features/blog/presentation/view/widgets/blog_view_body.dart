@@ -50,7 +50,7 @@ class BlogViewBody extends StatelessWidget {
               ),
 
               SliverList.builder(
-                itemCount: 15,
+                itemCount: state.articles.length,
                 itemBuilder: (context, index) => Padding(
                   padding: EdgeInsets.only(
                     bottom: 16.0,

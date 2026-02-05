@@ -41,6 +41,7 @@ class ArticlesCareWidget extends StatelessWidget {
           ],
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: Padding(
@@ -49,6 +50,7 @@ class ArticlesCareWidget extends StatelessWidget {
                   vertical: 16,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       articleModel.title,
@@ -58,7 +60,7 @@ class ArticlesCareWidget extends StatelessWidget {
                     ),
                     8.height,
                     Text(
-                      articleModel.content,
+                      articleModel.description,
                       style: AppTextStyles.captionRagular.copyWith(
                         color: Color(0xff8C8C8C),
                       ),
