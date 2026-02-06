@@ -4,4 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class BlogRepository {
   Future<Either<Failure, List<ArticleModel>>> fetchBlogArticles();
+  Future<Either<Failure, List<ArticleModel>>> fetchBlogArticlesHome();
 }

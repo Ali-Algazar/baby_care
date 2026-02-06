@@ -17,4 +17,16 @@ class BlogCubit extends Cubit<BlogState> {
       }
     });
   }
+
+  Future<void> fetchBlogArticlesHome() async {
+    emit(BlogLoading());
+    final result = await blogRepository.fetchBlogArticlesHome();
+    result.fold((failure) => emit(BlogError(failure.message)), (articles) {
+      if (articles.isEmpty) {
+        emit(BlogEmpty());
+      } else {
+        emit(BlogLoaded(articles));
+      }
+    });
+  }
 }

@@ -52,4 +52,28 @@ class BlogRepositoryImpl implements BlogRepository {
 
     return hasConnection;
   }
+
+  @override
+  Future<Either<Failure, List<ArticleModel>>> fetchBlogArticlesHome() async {
+    try {
+      if (await hasConnection()) {
+        final respons = await remoteDataSource.fetchBlogArticlesHome();
+        if (respons.statusCode == 200) {
+          final remoteArticles = (respons.data['data'] as List)
+              .map((e) => ArticleModel.fromJson(e))
+              .toList();
+          return right(remoteArticles);
+        } else {
+          return left(ServerFailure('there was ${respons.statusCode} error'));
+        }
+      } else {
+        final localArticles = await localDataSource.getCachedBlogArticles();
+        return right(localArticles as List<ArticleModel>);
+      }
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
 }

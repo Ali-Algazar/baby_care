@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 
 abstract class BlogRemoteDataSource {
   Future<Response> fetchBlogArticles();
+  Future<Response> fetchBlogArticlesHome();
 }
 
 class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
@@ -15,6 +16,15 @@ class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
   Future<Response> fetchBlogArticles() async {
     final response = await apiHelper.get(
       ApiEndpoints.articles,
+      requiresAuth: true,
+    );
+    return response;
+  }
+
+  @override
+  Future<Response<dynamic>> fetchBlogArticlesHome() async {
+    final response = await apiHelper.get(
+      '${ApiEndpoints.articles}?limit=3',
       requiresAuth: true,
     );
     return response;
