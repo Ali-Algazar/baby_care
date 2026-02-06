@@ -1,6 +1,7 @@
 import 'package:baby_care/features/auth/presentation/view/change_password_view.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_in_view.dart';
 import 'package:baby_care/features/auth/presentation/view/sign_up_view.dart';
+import 'package:baby_care/features/blog/presentation/view/articles_view.dart';
 import 'package:baby_care/features/chat_bot/presentation/view/chat_bot_view.dart';
 import 'package:baby_care/features/children/presentation/view/children_view.dart';
 import 'package:baby_care/features/info/presentation/view/about_us_view.dart';
@@ -40,6 +41,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => ChatBotView());
     case ServicesView.routeName:
       return MaterialPageRoute(builder: (context) => ServicesView());
+    case ArticlesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => ArticlesView(),
+        settings: settings,
+      );
 
     default:
       return MaterialPageRoute(

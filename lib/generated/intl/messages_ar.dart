@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
+    "article": MessageLookupByLibrary.simpleMessage("مقالة"),
     "articles": MessageLookupByLibrary.simpleMessage("مقالات"),
     "backToHome": MessageLookupByLibrary.simpleMessage("العودة إلى الرئيسية"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
