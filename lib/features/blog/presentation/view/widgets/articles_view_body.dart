@@ -6,7 +6,6 @@ import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_home_app_bar.dart';
-import 'package:baby_care/generated/l10n.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
