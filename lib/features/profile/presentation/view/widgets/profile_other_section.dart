@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/core/widgets/custom_container.dart';

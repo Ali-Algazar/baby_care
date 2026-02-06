@@ -4,6 +4,7 @@ import 'package:baby_care/core/services/get_it_service.dart';
 import 'package:baby_care/core/services/notification_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,7 @@ void main() async {
   setupServiceLocator();
   await HiveHelper.init();
   HiveHelper.registerAdapter();
+  await Hive.close();
 
   await NotificationService.init();
 
