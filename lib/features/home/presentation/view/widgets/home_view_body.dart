@@ -39,9 +39,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(microseconds: 1), () {
-      context.read<VaccinationCubit>().getVaccinationHome(
-        context.read<CurrentChildCubit>().state!,
-      );
+      context.read<CurrentChildCubit>().state!.isEmpty
+          ? null
+          : context.read<VaccinationCubit>().getVaccinationHome(
+              context.read<CurrentChildCubit>().state!,
+            );
     });
   }
 
