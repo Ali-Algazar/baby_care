@@ -1,7 +1,10 @@
 import 'package:baby_care/features/home/data/model/sleep_sounds_card.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/sleep_sounds_card.dart';
+import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
+import 'package:baby_care/features/services/presentation/view/widgets/services_view_body.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SleepSoundsCardGridView extends StatelessWidget {
   const SleepSoundsCardGridView({super.key});
@@ -25,22 +28,34 @@ class SleepSoundsCardGridView extends StatelessWidget {
           SleepSoundsCardModel(
             title: S.of(context).recentlyPlayed,
             icon: 'assets/svg/iconsax-clock.svg',
-            ontap: () {},
+            ontap: () {
+              ServicesViewBody.initialTabIndex = 0;
+              context.read<NavigationCubit>().changeIndex(2);
+            },
           ),
           SleepSoundsCardModel(
             title: S.of(context).favorites,
             icon: 'assets/svg/heart-rounded.svg',
-            ontap: () {},
+            ontap: () {
+              ServicesViewBody.initialTabIndex = 0;
+              context.read<NavigationCubit>().changeIndex(2);
+            },
           ),
           SleepSoundsCardModel(
             title: S.of(context).trending,
             icon: 'assets/svg/line-chart-up-02.svg',
-            ontap: () {},
+            ontap: () {
+              ServicesViewBody.initialTabIndex = 0;
+              context.read<NavigationCubit>().changeIndex(2);
+            },
           ),
           SleepSoundsCardModel(
             title: S.of(context).recommendedForYou,
             icon: 'assets/svg/sparkles.svg',
-            ontap: () {},
+            ontap: () {
+              ServicesViewBody.initialTabIndex = 0;
+              context.read<NavigationCubit>().changeIndex(2);
+            },
           ),
         ];
         return SleepSoundsCard(
