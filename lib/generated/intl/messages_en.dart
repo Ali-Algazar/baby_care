@@ -144,6 +144,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet Connection",
     ),
+    "noMedicinesAvailable": MessageLookupByLibrary.simpleMessage(
+      "No medicines available currently",
+    ),
     "noSoundsCurrently": MessageLookupByLibrary.simpleMessage(
       "No sounds available currently",
     ),

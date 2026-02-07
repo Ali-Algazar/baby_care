@@ -1128,6 +1128,16 @@ class S {
   String get allMedicines {
     return Intl.message('كل الأدوية', name: 'allMedicines', desc: '', args: []);
   }
+
+  /// `لا توجد أي أدوية متاحة`
+  String get noMedicinesAvailable {
+    return Intl.message(
+      'لا توجد أي أدوية متاحة',
+      name: 'noMedicinesAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

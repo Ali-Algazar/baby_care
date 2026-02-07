@@ -141,6 +141,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
     ),
+    "noMedicinesAvailable": MessageLookupByLibrary.simpleMessage(
+      "لا توجد أي أدوية متاحة",
+    ),
     "noSoundsCurrently": MessageLookupByLibrary.simpleMessage(
       "لا توجد أي أصوات حالياً",
     ),
