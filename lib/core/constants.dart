@@ -15,4 +15,5 @@ class Constants {
   static const String kVaccineRecordBox = 'vaccineRecordBox';
   static const String kChatHistoryBox = 'chatHistoryBox';
   static const String kArticlesBox = 'articlesBox';
+  static const String kSoundsBox = 'soundsBox';
 }
