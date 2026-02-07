@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 abstract class Failure {
@@ -28,7 +30,7 @@ class ServerFailure extends Failure {
         return ServerFailure('Request to ApiServer was canceld');
 
       case DioExceptionType.connectionError:
-        return ServerFailure('No Internet Connection');
+        return ServerFailure('No internet connection');
 
       case DioExceptionType.unknown:
         return ServerFailure('Unexpected Error, Please try again!');
@@ -46,6 +48,22 @@ class ServerFailure extends Failure {
       return ServerFailure('Internal Server error, Please try later');
     } else {
       return ServerFailure('Opps There was an Error, Please try again');
+    }
+  }
+
+  factory ServerFailure.fromSocketException(SocketException e) {
+    final message = e.message.toLowerCase();
+
+    if (message.contains('failed host lookup')) {
+      return ServerFailure('No internet connection');
+    } else if (message.contains('network is unreachable')) {
+      return ServerFailure('Network is unreachable');
+    } else if (message.contains('connection refused')) {
+      return ServerFailure('Cannot connect to the server');
+    } else if (message.contains('no route to host')) {
+      return ServerFailure('No route to host');
+    } else {
+      return ServerFailure('No internet connection');
     }
   }
 }
