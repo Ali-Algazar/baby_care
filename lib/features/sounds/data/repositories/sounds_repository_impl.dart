@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:baby_care/core/errors/failures.dart';
 import 'package:baby_care/features/sounds/data/datasources/sounds_local_data_source.dart';
 import 'package:baby_care/features/sounds/data/datasources/sounds_remote_data_source.dart';
@@ -28,7 +30,7 @@ class SoundsRepositoryImpl implements SoundsRepository {
           final remoteSounds = (response.data['data'] as List)
               .map((e) => SoundModel.fromJson(e))
               .toList();
-          localDataSource.cacheSounds(remoteSounds);
+          await localDataSource.cacheSounds(remoteSounds);
           return right(remoteSounds);
         } else {
           return left(ServerFailure('Server error: ${response.statusCode}'));
@@ -36,8 +38,10 @@ class SoundsRepositoryImpl implements SoundsRepository {
       } else {
         return left(NetworkFailure('No internet connection'));
       }
+    } on SocketException catch (e) {
+      return left(ServerFailure.fromSocketException(e));
     } on DioException catch (e) {
-      return left(ServerFailure(e.toString()));
+      return left(ServerFailure.fromDioError(e));
     } catch (e) {
       return left(ServerFailure(e.toString()));
     }

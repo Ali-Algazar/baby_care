@@ -1,4 +1,3 @@
-import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/features/blog/presentation/cubit/blog_cubit.dart';
 import 'package:baby_care/features/blog/presentation/cubit/blog_state.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/articles_care_widget.dart';
@@ -19,7 +18,6 @@ class ArticlesPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BlogCubit, BlogState>(
       builder: (context, state) {
-        print('BlogState: $state');
         if (state is BlogLoaded) {
           return SizedBox(
             height: 190,
