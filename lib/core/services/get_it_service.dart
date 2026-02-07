@@ -15,6 +15,10 @@ import 'package:baby_care/features/children/data/datasources/children_local_data
 import 'package:baby_care/features/children/data/datasources/children_remote_data_source.dart';
 import 'package:baby_care/features/children/data/repositories/children_repository.dart';
 import 'package:baby_care/features/children/data/repositories/children_repository_impl.dart';
+import 'package:baby_care/features/sounds/data/datasources/sounds_local_data_source.dart';
+import 'package:baby_care/features/sounds/data/datasources/sounds_remote_data_source.dart';
+import 'package:baby_care/features/sounds/data/repositories/sounds_repository.dart';
+import 'package:baby_care/features/sounds/data/repositories/sounds_repository_impl.dart';
 import 'package:baby_care/features/vaccination/data/datasources/vaccination_local_data_source.dart';
 import 'package:baby_care/features/vaccination/data/datasources/vaccination_remote_data_source.dart';
 import 'package:baby_care/features/vaccination/data/repositories/vaccination_repository.dart';
@@ -109,6 +113,20 @@ void setupServiceLocator() {
     () => BlogRepositoryImpl(
       localDataSource: sl<BlogLocalDataSource>(),
       remoteDataSource: sl<BlogRemoteDataSource>(),
+      connectivity: sl<Connectivity>(),
+    ),
+  );
+  sl.registerLazySingleton<SoundsLocalDataSource>(
+    () => SoundsLocalDataSourceImpl(),
+  );
+  sl.registerLazySingleton<SoundsRemoteDataSource>(
+    () => SoundsRemoteDataSourceImpl(apiHelper: sl<ApiHelper>()),
+  );
+
+  sl.registerLazySingleton<SoundsRepository>(
+    () => SoundsRepositoryImpl(
+      localDataSource: sl<SoundsLocalDataSource>(),
+      remoteDataSource: sl<SoundsRemoteDataSource>(),
       connectivity: sl<Connectivity>(),
     ),
   );
