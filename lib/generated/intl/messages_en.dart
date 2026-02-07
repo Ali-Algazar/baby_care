@@ -141,6 +141,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "nextVaccination": MessageLookupByLibrary.simpleMessage("Next Vaccination"),
+    "noArticlesAvailable": MessageLookupByLibrary.simpleMessage(
+      "No articles available currently",
+    ),
     "noInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet Connection",
     ),

@@ -142,6 +142,7 @@
 "noInternetConnection": "لا يوجد اتصال بالإنترنت",
 "noSoundsCurrently": "لا توجد أي أصوات حالياً",
 "allMedicines": "كل الأدوية",
-"noMedicinesAvailable": "لا توجد أي أدوية متاحة"
+"noMedicinesAvailable": "لا توجد أي أدوية متاحة",
+"noArticlesAvailable": "لا توجد أي مقالات متاحة"
 
 }

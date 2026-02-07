@@ -1138,6 +1138,16 @@ class S {
       args: [],
     );
   }
+
+  /// `لا توجد أي مقالات متاحة`
+  String get noArticlesAvailable {
+    return Intl.message(
+      'لا توجد أي مقالات متاحة',
+      name: 'noArticlesAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
