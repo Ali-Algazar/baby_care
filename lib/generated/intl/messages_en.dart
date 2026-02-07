@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("Account"),
     "allArticles": MessageLookupByLibrary.simpleMessage("All Articles"),
+    "allMedicines": MessageLookupByLibrary.simpleMessage("All Medicines"),
     "allSounds": MessageLookupByLibrary.simpleMessage("All Sounds"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",

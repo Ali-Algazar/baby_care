@@ -136,5 +136,6 @@
 "sounds": "Sounds",
 "allSounds": "All Sounds",
 "noInternetConnection": "No Internet Connection",
-"noSoundsCurrently": "No sounds available currently"
+"noSoundsCurrently": "No sounds available currently",
+"allMedicines": "All Medicines"
 }

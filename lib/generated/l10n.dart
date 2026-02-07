@@ -1123,6 +1123,11 @@ class S {
       args: [],
     );
   }
+
+  /// `كل الأدوية`
+  String get allMedicines {
+    return Intl.message('كل الأدوية', name: 'allMedicines', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
