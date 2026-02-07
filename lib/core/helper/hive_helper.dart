@@ -2,6 +2,7 @@ import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/features/chat_bot/data/model/chat_bot_model.dart';
 import 'package:baby_care/features/children/data/model/child_model.dart';
+import 'package:baby_care/features/sounds/data/model/sound_model.dart';
 import 'package:baby_care/features/vaccination/data/model/vaccine_model.dart';
 import 'package:baby_care/features/vaccination/data/model/vaccine_record_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -56,6 +57,7 @@ class HiveHelper {
     Hive.registerAdapter(VaccineRecordModelAdapter());
     Hive.registerAdapter(ChatBotModelAdapter());
     Hive.registerAdapter(ArticleModelAdapter());
+    Hive.registerAdapter(SoundModelAdapter());
   }
 
   static Future<bool> containsKey({
