@@ -7,6 +7,7 @@ import 'package:baby_care/features/children/presentation/view/children_view.dart
 import 'package:baby_care/features/info/presentation/view/about_us_view.dart';
 import 'package:baby_care/features/info/presentation/view/policy_view.dart';
 import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
+import 'package:baby_care/features/medicine/presentation/view/medicine_details_view.dart';
 import 'package:baby_care/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:baby_care/features/services/presentation/view/services_view.dart';
 import 'package:baby_care/features/splash/presentation/view/splash_view.dart';
@@ -44,6 +45,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ArticlesView.routeName:
       return MaterialPageRoute(
         builder: (context) => ArticlesView(),
+        settings: settings,
+      );
+    case MedicineDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => MedicineDetailsView(),
         settings: settings,
       );
 

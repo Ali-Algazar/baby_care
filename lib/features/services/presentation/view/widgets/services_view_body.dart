@@ -3,6 +3,7 @@ import 'package:baby_care/features/blog/presentation/view/blog_view.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_home_app_bar.dart';
+import 'package:baby_care/features/medicine/presentation/view/medicine_view.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/search_text_field.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/services_tab_bar.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/sliver_tab_bar_delegate.dart';
@@ -72,7 +73,7 @@ class _ServicesViewBodyState extends State<ServicesViewBody>
           children: [
             SoundsView(),
             Center(child: Text(S.of(context).doctors)),
-            Center(child: Text(S.of(context).medicines)),
+            MedicineView(),
             BlogView(),
           ],
         ),
