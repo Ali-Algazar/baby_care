@@ -1103,6 +1103,26 @@ class S {
   String get allSounds {
     return Intl.message('كل الأصوات', name: 'allSounds', desc: '', args: []);
   }
+
+  /// `لا يوجد اتصال بالإنترنت`
+  String get noInternetConnection {
+    return Intl.message(
+      'لا يوجد اتصال بالإنترنت',
+      name: 'noInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لا توجد أي أصوات حالياً`
+  String get noSoundsCurrently {
+    return Intl.message(
+      'لا توجد أي أصوات حالياً',
+      name: 'noSoundsCurrently',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

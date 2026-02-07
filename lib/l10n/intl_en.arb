@@ -134,5 +134,7 @@
 "medicines": "Medicines",
 "allArticles": "All Articles",
 "sounds": "Sounds",
-"allSounds": "All Sounds"
+"allSounds": "All Sounds",
+"noInternetConnection": "No Internet Connection",
+"noSoundsCurrently": "No sounds available currently"
 }

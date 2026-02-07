@@ -138,6 +138,8 @@
 "allArticles": "كل المقالات",
 "sounds": "الأصوات",
 "article": "مقالة",
-"allSounds": "كل الأصوات"
+"allSounds": "كل الأصوات",
+"noInternetConnection": "لا يوجد اتصال بالإنترنت",
+"noSoundsCurrently": "لا توجد أي أصوات حالياً"
 
 }

@@ -137,6 +137,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "nextVaccination": MessageLookupByLibrary.simpleMessage("التطعيم القادم"),
+    "noInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت",
+    ),
+    "noSoundsCurrently": MessageLookupByLibrary.simpleMessage(
+      "لا توجد أي أصوات حالياً",
+    ),
     "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "دليلك المعتمد لمتابعة تطعيمات طفلك ونموه الصحي، بكل سهولة وأمان.",
