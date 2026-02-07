@@ -28,10 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("Account"),
     "allArticles": MessageLookupByLibrary.simpleMessage("All Articles"),
+    "allSounds": MessageLookupByLibrary.simpleMessage("All Sounds"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
-    "article": MessageLookupByLibrary.simpleMessage("Article"),
     "articles": MessageLookupByLibrary.simpleMessage("Articles"),
     "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),

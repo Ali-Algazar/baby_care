@@ -1098,6 +1098,11 @@ class S {
   String get article {
     return Intl.message('مقالة', name: 'article', desc: '', args: []);
   }
+
+  /// `كل الأصوات`
+  String get allSounds {
+    return Intl.message('كل الأصوات', name: 'allSounds', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

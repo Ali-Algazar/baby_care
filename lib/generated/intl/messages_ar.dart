@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("الحساب"),
     "allArticles": MessageLookupByLibrary.simpleMessage("كل المقالات"),
+    "allSounds": MessageLookupByLibrary.simpleMessage("كل الأصوات"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
