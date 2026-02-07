@@ -6,6 +6,7 @@ import 'package:baby_care/features/home/presentation/view/widgets/custom_home_ap
 import 'package:baby_care/features/services/presentation/view/widgets/search_text_field.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/services_tab_bar.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/sliver_tab_bar_delegate.dart';
+import 'package:baby_care/features/sounds/presentation/view/sounds_view.dart';
 import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -69,7 +70,7 @@ class _ServicesViewBodyState extends State<ServicesViewBody>
         body: TabBarView(
           controller: tabController,
           children: [
-            Center(child: Text(S.of(context).sounds)),
+            SoundsView(),
             Center(child: Text(S.of(context).doctors)),
             Center(child: Text(S.of(context).medicines)),
             BlogView(),
