@@ -17,4 +17,5 @@ class Constants {
   static const String kArticlesBox = 'articlesBox';
   static const String kSoundsBox = 'soundsBox';
   static const String kMedicineBox = 'medicineBox';
+  static const String kDoctorsBox = 'doctorsBox';
 }
