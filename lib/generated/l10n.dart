@@ -1148,6 +1148,31 @@ class S {
       args: [],
     );
   }
+
+  /// `كل الأطباء`
+  String get allDoctors {
+    return Intl.message('كل الأطباء', name: 'allDoctors', desc: '', args: []);
+  }
+
+  /// `ابحث على أقرب طبيب لك`
+  String get findNearestDoctor {
+    return Intl.message(
+      'ابحث على أقرب طبيب لك',
+      name: 'findNearestDoctor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `حجز موعد`
+  String get bookAppointment {
+    return Intl.message(
+      'حجز موعد',
+      name: 'bookAppointment',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

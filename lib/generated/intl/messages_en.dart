@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("Account"),
     "allArticles": MessageLookupByLibrary.simpleMessage("All Articles"),
+    "allDoctors": MessageLookupByLibrary.simpleMessage("All Doctors"),
     "allMedicines": MessageLookupByLibrary.simpleMessage("All Medicines"),
     "allSounds": MessageLookupByLibrary.simpleMessage("All Sounds"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
@@ -35,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "articles": MessageLookupByLibrary.simpleMessage("Articles"),
     "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
+    "bookAppointment": MessageLookupByLibrary.simpleMessage("Book Appointment"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "changePhoto": MessageLookupByLibrary.simpleMessage("Change Photo"),
@@ -110,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter a valid 11-digit Egyptian phone number",
     ),
     "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
+    "findNearestDoctor": MessageLookupByLibrary.simpleMessage(
+      "Find the nearest doctor to you",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
       "Enter the name exactly as it appears on the National ID card",

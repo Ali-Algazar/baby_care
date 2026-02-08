@@ -143,6 +143,9 @@
 "noSoundsCurrently": "لا توجد أي أصوات حالياً",
 "allMedicines": "كل الأدوية",
 "noMedicinesAvailable": "لا توجد أي أدوية متاحة",
-"noArticlesAvailable": "لا توجد أي مقالات متاحة"
+"noArticlesAvailable": "لا توجد أي مقالات متاحة",
+"allDoctors": "كل الأطباء",
+"findNearestDoctor": "ابحث على أقرب طبيب لك",
+"bookAppointment": "حجز موعد"
 
 }

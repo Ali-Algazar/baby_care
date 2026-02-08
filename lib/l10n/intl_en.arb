@@ -139,5 +139,8 @@
 "noSoundsCurrently": "No sounds available currently",
 "allMedicines": "All Medicines",
 "noMedicinesAvailable": "No medicines available currently",
-"noArticlesAvailable": "No articles available currently"
+"noArticlesAvailable": "No articles available currently",
+"allDoctors": "All Doctors",
+"findNearestDoctor": "Find the nearest doctor to you",
+"bookAppointment": "Book Appointment"
 }

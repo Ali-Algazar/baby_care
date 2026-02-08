@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accountTitle": MessageLookupByLibrary.simpleMessage("الحساب"),
     "allArticles": MessageLookupByLibrary.simpleMessage("كل المقالات"),
+    "allDoctors": MessageLookupByLibrary.simpleMessage("كل الأطباء"),
     "allMedicines": MessageLookupByLibrary.simpleMessage("كل الأدوية"),
     "allSounds": MessageLookupByLibrary.simpleMessage("كل الأصوات"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
@@ -36,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "article": MessageLookupByLibrary.simpleMessage("مقالة"),
     "articles": MessageLookupByLibrary.simpleMessage("مقالات"),
     "backToHome": MessageLookupByLibrary.simpleMessage("العودة إلى الرئيسية"),
+    "bookAppointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير الرقم السري"),
     "changePhoto": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
@@ -107,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إدخال رقم هاتف مصري صحيح مكون من 11 رقماً",
     ),
     "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
+    "findNearestDoctor": MessageLookupByLibrary.simpleMessage(
+      "ابحث على أقرب طبيب لك",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fullNameHelperText": MessageLookupByLibrary.simpleMessage(
       "يكتب هنا الاسم كما هو مدون في بطاقة الرقم القومي",
