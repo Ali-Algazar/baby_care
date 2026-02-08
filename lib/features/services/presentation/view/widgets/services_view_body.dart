@@ -2,13 +2,13 @@ import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/features/blog/presentation/view/blog_view.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
+import 'package:baby_care/features/doctors/presentation/view/doctors_view.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/custom_home_app_bar.dart';
 import 'package:baby_care/features/medicine/presentation/view/medicine_view.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/search_text_field.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/services_tab_bar.dart';
 import 'package:baby_care/features/services/presentation/view/widgets/sliver_tab_bar_delegate.dart';
 import 'package:baby_care/features/sounds/presentation/view/sounds_view.dart';
-import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +23,7 @@ class ServicesViewBody extends StatefulWidget {
 class _ServicesViewBodyState extends State<ServicesViewBody>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
+  bool isDoctorsSelected = false;
 
   @override
   void initState() {
@@ -54,7 +55,9 @@ class _ServicesViewBodyState extends State<ServicesViewBody>
                       },
                     ),
                     24.height,
-                    SearchTextField(),
+                    isDoctorsSelected
+                        ? SearchDoctorTextField()
+                        : SearchTextField(),
                     24.height,
                   ],
                 ),
@@ -63,19 +66,29 @@ class _ServicesViewBodyState extends State<ServicesViewBody>
             SliverPersistentHeader(
               pinned: true,
               delegate: SliverTabBarDelegate(
-                ServicesTabBar(tabController: tabController),
+                ServicesTabBar(
+                  tabController: tabController,
+                  onTap: (value) {
+                    if (value == 1) {
+                      setState(() {
+                        isDoctorsSelected = true;
+                      });
+                    } else {
+                      if (isDoctorsSelected) {
+                        setState(() {
+                          isDoctorsSelected = false;
+                        });
+                      }
+                    }
+                  },
+                ),
               ),
             ),
           ];
         },
         body: TabBarView(
           controller: tabController,
-          children: [
-            SoundsView(),
-            Center(child: Text(S.of(context).doctors)),
-            MedicineView(),
-            BlogView(),
-          ],
+          children: [SoundsView(), DoctorsView(), MedicineView(), BlogView()],
         ),
       ),
     );

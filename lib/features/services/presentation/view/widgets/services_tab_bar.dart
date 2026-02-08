@@ -4,9 +4,14 @@ import 'package:baby_care/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ServicesTabBar extends StatelessWidget {
-  const ServicesTabBar({super.key, required this.tabController});
+  const ServicesTabBar({
+    super.key,
+    required this.tabController,
+    required this.onTap,
+  });
 
   final TabController tabController;
+  final ValueChanged<int> onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +32,7 @@ class ServicesTabBar extends StatelessWidget {
       child: TabBar(
         controller: tabController,
         dividerColor: Colors.transparent,
+        onTap: onTap,
         indicator: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: const Color(0xffFBFDFF),
