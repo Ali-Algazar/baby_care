@@ -4,6 +4,7 @@ import 'package:baby_care/features/auth/presentation/view/sign_up_view.dart';
 import 'package:baby_care/features/blog/presentation/view/articles_view.dart';
 import 'package:baby_care/features/chat_bot/presentation/view/chat_bot_view.dart';
 import 'package:baby_care/features/children/presentation/view/children_view.dart';
+import 'package:baby_care/features/doctors/presentation/view/book_doctor_view.dart';
 import 'package:baby_care/features/info/presentation/view/about_us_view.dart';
 import 'package:baby_care/features/info/presentation/view/policy_view.dart';
 import 'package:baby_care/features/main_layout/presentation/view/main_layout_view.dart';
@@ -50,6 +51,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case MedicineDetailsView.routeName:
       return MaterialPageRoute(
         builder: (context) => MedicineDetailsView(),
+        settings: settings,
+      );
+    case BookDoctorView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => BookDoctorView(),
         settings: settings,
       );
 
