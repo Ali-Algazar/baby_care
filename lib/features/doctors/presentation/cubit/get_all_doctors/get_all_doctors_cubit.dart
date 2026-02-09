@@ -15,7 +15,9 @@ class GetAllDoctorsCubit extends Cubit<GetAllDoctorsState> {
   Future<void> getAllDoctors() async {
     safeEmit(GetAllDoctorsLoading());
     final result = await doctorsRepository.getAllDoctors(cancelToken);
-    result.fold((failure) => safeEmit(GetAllDoctorsError()), (doctors) {
+    result.fold((failure) => safeEmit(GetAllDoctorsError(failure.message)), (
+      doctors,
+    ) {
       if (doctors.isEmpty) {
         safeEmit(GetAllDoctorsEmpty());
       } else {

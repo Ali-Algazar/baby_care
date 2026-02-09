@@ -13,6 +13,9 @@ final class GetAllDoctorsSuccess extends GetAllDoctorsState {
   GetAllDoctorsSuccess(this.doctors);
 }
 
-final class GetAllDoctorsError extends GetAllDoctorsState {}
+final class GetAllDoctorsError extends GetAllDoctorsState {
+  final String message;
+  GetAllDoctorsError(this.message);
+}
 
 final class GetAllDoctorsEmpty extends GetAllDoctorsState {}
