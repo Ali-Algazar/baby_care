@@ -3,9 +3,13 @@ import 'package:baby_care/core/utils/end_points.dart';
 import 'package:dio/dio.dart';
 
 abstract class DoctorsRemoteDataSource {
-  Future<Response> getAllDoctors();
+  Future<Response> getAllDoctors(CancelToken cancelToken);
 
-  Future<Response> getNearbyDoctors(String latitude, String longitude);
+  Future<Response> getNearbyDoctors(
+    String latitude,
+    String longitude,
+    CancelToken cancelToken,
+  );
 }
 
 class DoctorsRemoteDataSourceImpl implements DoctorsRemoteDataSource {
@@ -13,10 +17,11 @@ class DoctorsRemoteDataSourceImpl implements DoctorsRemoteDataSource {
   DoctorsRemoteDataSourceImpl({required this.apiHelper});
 
   @override
-  Future<Response<dynamic>> getAllDoctors() async {
+  Future<Response<dynamic>> getAllDoctors(CancelToken cancelToken) async {
     final response = await apiHelper.get(
       ApiEndpoints.doctors,
       requiresAuth: true,
+      cancelToken: cancelToken,
     );
     return response;
   }
@@ -25,10 +30,12 @@ class DoctorsRemoteDataSourceImpl implements DoctorsRemoteDataSource {
   Future<Response<dynamic>> getNearbyDoctors(
     String latitude,
     String longitude,
+    CancelToken cancelToken,
   ) async {
     final response = await apiHelper.get(
       '${ApiEndpoints.nearbyDoctors}?lat=$latitude&lng=$longitude',
       requiresAuth: true,
+      cancelToken: cancelToken,
     );
     return response;
   }

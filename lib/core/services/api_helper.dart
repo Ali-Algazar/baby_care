@@ -26,9 +26,9 @@ class ApiHelper {
 
   Future<Response> uploadFile(
     String endpoint, {
-    required File file, 
-    String fieldName = 'file',  
-    bool requiresAuth = false, 
+    required File file,
+    String fieldName = 'file',
+    bool requiresAuth = false,
   }) async {
     Options? options = await _createAuthOptions(requiresAuth);
 
@@ -49,6 +49,7 @@ class ApiHelper {
     String endpoint, {
     Map<String, dynamic>? data,
     bool requiresAuth = false,
+    CancelToken? cancelToken,
   }) async {
     Options? options = await _createAuthOptions(requiresAuth);
 
@@ -56,6 +57,7 @@ class ApiHelper {
       '$baseUrl$endpoint',
       queryParameters: data,
       options: options,
+      cancelToken: cancelToken,
     );
   }
 

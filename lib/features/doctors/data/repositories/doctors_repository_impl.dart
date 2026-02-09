@@ -30,10 +30,12 @@ class DoctorsRepositoryImpl implements DoctorsRepository {
   }
 
   @override
-  Future<Either<Failure, List<dynamic>>> getAllDoctors() async {
+  Future<Either<Failure, List<dynamic>>> getAllDoctors(
+    CancelToken cancelToken,
+  ) async {
     try {
       if (await hasConnection()) {
-        final response = await remoteDataSource.getAllDoctors();
+        final response = await remoteDataSource.getAllDoctors(cancelToken);
         if (response.statusCode == 200) {
           final remoteDoctors = (response.data['data'] as List)
               .map((e) => DoctorModel.fromJson(e))
@@ -58,13 +60,15 @@ class DoctorsRepositoryImpl implements DoctorsRepository {
   @override
   Future<Either<Failure, List<dynamic>>> getNearbyDoctors(
     String latitude,
-    String longitude,
-  ) async {
+    String longitude, {
+    required CancelToken cancelToken,
+  }) async {
     try {
       if (await hasConnection()) {
         final response = await remoteDataSource.getNearbyDoctors(
           latitude,
           longitude,
+          cancelToken,
         );
         if (response.statusCode == 200) {
           final remoteDoctors = (response.data['data'] as List)
