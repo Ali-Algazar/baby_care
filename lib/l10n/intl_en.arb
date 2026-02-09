@@ -144,5 +144,6 @@
 "findNearestDoctor": "Find the nearest doctor to you",
 "bookAppointment": "Book Appointment",
 "welcome": "Welcome",
-"appName": "Khatwa App"
+"appName": "Khatwa App",
+"noDoctorsAvailable": "No doctors available currently"
 }

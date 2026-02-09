@@ -1183,6 +1183,16 @@ class S {
   String get appName {
     return Intl.message('تطبيق خطوة', name: 'appName', desc: '', args: []);
   }
+
+  /// `لا يوجد أي أطباء متاحين`
+  String get noDoctorsAvailable {
+    return Intl.message(
+      'لا يوجد أي أطباء متاحين',
+      name: 'noDoctorsAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -148,6 +148,7 @@
 "findNearestDoctor": "ابحث على أقرب طبيب لك",
 "bookAppointment": "حجز موعد",
 "welcome": "مرحباً بك",
-"appName": "تطبيق خطوة"
+"appName": "تطبيق خطوة",
+"noDoctorsAvailable": "لا يوجد أي أطباء متاحين"
 
 }

@@ -150,6 +150,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noArticlesAvailable": MessageLookupByLibrary.simpleMessage(
       "No articles available currently",
     ),
+    "noDoctorsAvailable": MessageLookupByLibrary.simpleMessage(
+      "No doctors available currently",
+    ),
     "noInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet Connection",
     ),

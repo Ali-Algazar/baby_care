@@ -2,6 +2,7 @@ import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
+import 'package:baby_care/core/widgets/empty_home_app_bar.dart';
 import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
@@ -26,6 +27,9 @@ class ArticlesViewBody extends StatelessWidget {
               builder: (context, state) {
                 if (state is ChildrenLoaded) {
                   return CustomHomeAppBar(child: state.children);
+                }
+                if (state is ChildrenEmpty) {
+                  return EmptyHomeAppBar();
                 }
                 return SizedBox.shrink();
               },
