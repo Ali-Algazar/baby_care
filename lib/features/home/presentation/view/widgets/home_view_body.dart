@@ -1,6 +1,7 @@
 import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/cubit/cubit/current_child_cubit.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
+import 'package:baby_care/core/widgets/empty_home_app_bar.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
 import 'package:baby_care/features/home/presentation/view/widgets/articles_section.dart';
@@ -38,13 +39,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(microseconds: 400), () {
-      context.read<CurrentChildCubit>().state!.isEmpty
-          ? null
-          : context.read<VaccinationCubit>().getVaccinationHome(
-              context.read<CurrentChildCubit>().state!,
-            );
-    });
   }
 
   @override
@@ -102,6 +96,44 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           }
           if (state is ChildrenLoading) {
             return Center(child: Lottie.asset('assets/animation/loading.json'));
+          }
+          if (state is ChildrenError) {
+            return Center(child: Text(state.message));
+          }
+          if (state is ChildrenEmpty) {
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Constants.ktopPadding.height,
+
+                  EmptyHomeAppBar(),
+                  22.height,
+
+                  SoundsSection(),
+                  24.height,
+                  CommunitySection(
+                    controller: communityController,
+                    currentIndex: communityCurrentIndex,
+                    onPageChanged: (value) {
+                      setState(() {
+                        communityCurrentIndex = value;
+                      });
+                    },
+                  ),
+                  24.height,
+                  ArticlesSection(
+                    controller: articlesController,
+                    currentIndex: articlesCurrentIndex,
+                    onPageChanged: (value) {
+                      setState(() {
+                        articlesCurrentIndex = value;
+                      });
+                    },
+                  ),
+                  25.height,
+                ],
+              ),
+            );
           }
           return const SizedBox();
         },

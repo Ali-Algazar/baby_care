@@ -1,6 +1,5 @@
 import 'package:baby_care/features/auth/data/repositories/auth_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {

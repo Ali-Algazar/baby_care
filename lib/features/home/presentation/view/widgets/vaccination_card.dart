@@ -57,9 +57,9 @@ class VaccinationCard extends StatelessWidget {
                   ),
                 ),
                 4.width,
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Expanded(
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
                     child: Text(
                       formatArabicDate(
                         vaccineRecord.dueDate.toIso8601String(),

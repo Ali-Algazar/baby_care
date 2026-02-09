@@ -58,7 +58,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
     return BlocBuilder<NavigationCubit, int>(
       builder: (context, state) {
         return Scaffold(
-          body: pages[state],
+          body: IndexedStack(index: state, children: pages),
           bottomNavigationBar: CustomNavBar(
             navItems: navItems,
             selectedIndex: state,

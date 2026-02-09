@@ -23,7 +23,6 @@ class _CustomHomeAppBarState extends State<CustomHomeAppBar> {
   late ChildModel currentChild;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     currentChild = widget.child[0];
   }

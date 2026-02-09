@@ -29,6 +29,7 @@ class VaccinationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
           padding: Constants.khorizontalPadding.horizontal,
@@ -77,6 +78,7 @@ class VaccinationSection extends StatelessWidget {
                 );
               }
               return Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   VaccinationPageView(
                     vaccineRecords:
