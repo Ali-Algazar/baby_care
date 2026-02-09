@@ -1,4 +1,6 @@
+import 'package:baby_care/core/constants.dart';
 import 'package:baby_care/core/extensions/extensions.dart';
+import 'package:baby_care/core/widgets/empty_home_app_bar.dart';
 import 'package:baby_care/features/blog/presentation/view/blog_view.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_cubit.dart';
 import 'package:baby_care/features/children/presentation/cubit/children_state.dart';
@@ -42,25 +44,29 @@ class _ServicesViewBodyState extends State<ServicesViewBody>
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    BlocBuilder<ChildrenCubit, ChildrenState>(
-                      builder: (context, state) {
-                        if (state is ChildrenLoaded) {
-                          return CustomHomeAppBar(child: state.children);
-                        }
-                        return SizedBox();
-                      },
-                    ),
-                    24.height,
-                    isDoctorsSelected
+              child: Column(
+                children: [
+                  Constants.ktopPadding.height,
+                  BlocBuilder<ChildrenCubit, ChildrenState>(
+                    builder: (context, state) {
+                      if (state is ChildrenLoaded) {
+                        return CustomHomeAppBar(child: state.children);
+                      }
+                      if (state is ChildrenEmpty) {
+                        return EmptyHomeAppBar();
+                      }
+                      return SizedBox();
+                    },
+                  ),
+                  24.height,
+                  Padding(
+                    padding: Constants.khorizontalPadding.horizontal,
+                    child: isDoctorsSelected
                         ? SearchDoctorTextField()
                         : SearchTextField(),
-                    24.height,
-                  ],
-                ),
+                  ),
+                  24.height,
+                ],
               ),
             ),
             SliverPersistentHeader(
