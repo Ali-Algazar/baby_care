@@ -6,6 +6,7 @@ import 'package:baby_care/features/auth/data/datasources/auth_remote_data_source
 import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:hive/hive.dart';
 import 'auth_repository.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
@@ -51,6 +52,9 @@ class AuthRepositoryImpl extends AuthRepository {
     try {
       await localDataSource.clearCachedUser();
       await localDataSource.clearCachedUserToken();
+      await Hive.deleteFromDisk();
+      print('Hive box deleted successfully');
+
       return const Right(unit);
     } on DioException catch (e) {
       return Left(ServerFailure.fromDioError(e));

@@ -142,5 +142,7 @@
 "noArticlesAvailable": "No articles available currently",
 "allDoctors": "All Doctors",
 "findNearestDoctor": "Find the nearest doctor to you",
-"bookAppointment": "Book Appointment"
+"bookAppointment": "Book Appointment",
+"welcome": "Welcome",
+"appName": "Khatwa App"
 }

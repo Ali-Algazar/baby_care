@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
+    "appName": MessageLookupByLibrary.simpleMessage("تطبيق خطوة"),
     "article": MessageLookupByLibrary.simpleMessage("مقالة"),
     "articles": MessageLookupByLibrary.simpleMessage("مقالات"),
     "backToHome": MessageLookupByLibrary.simpleMessage("العودة إلى الرئيسية"),
@@ -255,6 +256,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "viewArticle": MessageLookupByLibrary.simpleMessage("عرض المقالة"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
+    "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("أهلا بعودتك!"),
     "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
       "نستخدمه لربط حسابك ببيانات طفلك المسجلة في الوحدات الصحية التابعة لوزارة الصحة",

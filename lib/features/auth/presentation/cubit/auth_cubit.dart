@@ -1,5 +1,6 @@
 import 'package:baby_care/features/auth/data/repositories/auth_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -17,10 +18,9 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> logout() async {
     emit(AuthLoading());
     final result = await authRepository.logout();
-    result.fold(
-      (failure) => emit(AuthError(failure.message)),
-      (_) => emit(Unauthenticated()),
-    );
+    result.fold((failure) => emit(AuthError(failure.message)), (_) async {
+      emit(Unauthenticated());
+    });
   }
 
   Future<void> register(

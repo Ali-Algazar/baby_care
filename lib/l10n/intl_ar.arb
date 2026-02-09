@@ -146,6 +146,8 @@
 "noArticlesAvailable": "لا توجد أي مقالات متاحة",
 "allDoctors": "كل الأطباء",
 "findNearestDoctor": "ابحث على أقرب طبيب لك",
-"bookAppointment": "حجز موعد"
+"bookAppointment": "حجز موعد",
+"welcome": "مرحباً بك",
+"appName": "تطبيق خطوة"
 
 }

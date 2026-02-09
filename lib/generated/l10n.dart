@@ -1173,6 +1173,16 @@ class S {
       args: [],
     );
   }
+
+  /// `مرحباً بك`
+  String get welcome {
+    return Intl.message('مرحباً بك', name: 'welcome', desc: '', args: []);
+  }
+
+  /// `تطبيق خطوة`
+  String get appName {
+    return Intl.message('تطبيق خطوة', name: 'appName', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

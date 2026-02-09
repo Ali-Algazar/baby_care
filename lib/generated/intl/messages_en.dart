@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
+    "appName": MessageLookupByLibrary.simpleMessage("Khatwa App"),
     "articles": MessageLookupByLibrary.simpleMessage("Articles"),
     "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
     "bookAppointment": MessageLookupByLibrary.simpleMessage("Book Appointment"),
@@ -262,6 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
     "viewArticle": MessageLookupByLibrary.simpleMessage("View Article"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
+    "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
     "whyNationalIdAnswer": MessageLookupByLibrary.simpleMessage(
       "We use it to link your account with your child\'s data registered at Ministry of Health units",
