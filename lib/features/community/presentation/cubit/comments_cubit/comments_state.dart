@@ -1,6 +1,10 @@
 part of 'comments_cubit.dart';
 
-@immutable
-sealed class CommentsState {}
+abstract class CommentsState {}
 
-final class CommentsInitial extends CommentsState {}
+class CommentsInitial extends CommentsState {}
+
+class CommentsLoaded extends CommentsState {
+  final List<CommentModel> comments;
+  CommentsLoaded(this.comments);
+}
