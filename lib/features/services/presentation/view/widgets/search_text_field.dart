@@ -76,6 +76,7 @@ class SearchDoctorTextField extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: TextField(
+                enabled: false,
                 decoration: InputDecoration(
                   hintText: S.of(context).findNearestDoctor,
                   hintStyle: AppTextStyles.body1Ragular.copyWith(
