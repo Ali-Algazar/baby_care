@@ -1,5 +1,5 @@
-import 'package:baby_care/features/community/data/model/post_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'post_model.dart';
 
 part 'post_details_model.g.dart';
 
@@ -19,6 +19,10 @@ class PostDetailsModel {
         (json['comments'] ?? []).map((e) => CommentModel.fromJson(e)),
       ),
     );
+  }
+
+  PostDetailsModel copyWithPost(PostModel updatedPost) {
+    return PostDetailsModel(post: updatedPost, comments: comments);
   }
 }
 
@@ -62,6 +66,19 @@ class CommentModel {
       dislikes: List<String>.from(json['dislikes'] ?? []),
       createdAt: DateTime.parse(json['createdAt']),
       updatedAt: DateTime.parse(json['updatedAt']),
+    );
+  }
+
+  CommentModel copyWith({List<String>? likes, List<String>? dislikes}) {
+    return CommentModel(
+      id: id,
+      content: content,
+      authorName: authorName,
+      postId: postId,
+      likes: likes ?? this.likes,
+      dislikes: dislikes ?? this.dislikes,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
     );
   }
 }

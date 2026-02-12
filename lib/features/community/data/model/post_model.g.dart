@@ -27,17 +27,18 @@ class PostModelAdapter extends TypeAdapter<PostModel> {
       saves: (fields[7] as List).cast<String>(),
       isLiked: fields[8] as bool,
       isSaved: fields[9] as bool,
-      createdAt: fields[10] as DateTime,
-      updatedAt: fields[11] as DateTime,
-      imageUrl: fields[12] as String?,
-      dislikes: (fields[13] as List).cast<String>(),
+      isDisliked: fields[10] as bool,
+      createdAt: fields[11] as DateTime,
+      updatedAt: fields[12] as DateTime,
+      imageUrl: fields[13] as String?,
+      dislikes: (fields[14] as List).cast<String>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, PostModel obj) {
     writer
-      ..writeByte(14)
+      ..writeByte(15)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -59,12 +60,14 @@ class PostModelAdapter extends TypeAdapter<PostModel> {
       ..writeByte(9)
       ..write(obj.isSaved)
       ..writeByte(10)
-      ..write(obj.createdAt)
+      ..write(obj.isDisliked)
       ..writeByte(11)
-      ..write(obj.updatedAt)
+      ..write(obj.createdAt)
       ..writeByte(12)
-      ..write(obj.imageUrl)
+      ..write(obj.updatedAt)
       ..writeByte(13)
+      ..write(obj.imageUrl)
+      ..writeByte(14)
       ..write(obj.dislikes);
   }
 
