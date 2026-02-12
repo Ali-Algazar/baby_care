@@ -77,8 +77,12 @@ class ApiEndpoints {
       "/posts/$postId/comments"; // POST: تعليق
   static String deleteComment(String commentId) =>
       "/comments/$commentId"; // DELETE: حذف تعليق
-  static String toggleLike(String postId) =>
-      "/posts/$postId/like"; // PUT: لايك/ديسلايك
+  static String actionComment(String commentId) =>
+      "/comments/$commentId/action"; // DELETE: حذف تعليق
+  static String toggleAction(String postId) =>
+      "/posts/$postId/action"; // PUT: اعجاب/إلغاء اعجاب بوست
+  static String savePost(String postId) =>
+      "/posts/$postId/save"; // PUT: حفظ/إلغاء حفظ بوست
 
   // ==============================================================================
   // 9. المحتوى الطبي (عرض فقط - View Only)
