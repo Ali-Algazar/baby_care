@@ -17,17 +17,6 @@ class PostDetailsCubit extends Cubit<PostDetailsState> {
       emit(PostDetailsLoaded(cached));
       return;
     }
-
-    // لو عندك Repository ممكن تعمل كده بدل التعليق:
-    // final result = await repository.getPostById(postId);
-    // result.fold(
-    //   (failure) => emit(PostDetailsError(failure.message)),
-    //   (postDetails) {
-    //     _box.put(postId, postDetails);
-    //     emit(PostDetailsLoaded(postDetails));
-    //   },
-    // );
-
     emit(PostDetailsError('Post not found locally'));
   }
 
@@ -87,14 +76,11 @@ class PostDetailsCubit extends Cubit<PostDetailsState> {
     updatePost(updated);
   }
 
-  // ======= التعليقات =======
-
   void addComment(CommentModel comment) {
     if (state is PostDetailsLoaded) {
       final current = (state as PostDetailsLoaded).postDetails;
       final updatedComments = List<CommentModel>.from(current.comments)
         ..insert(0, comment);
-      final updated = current.copyWithPost(current.post)..comments.clear();
       final newDetails = PostDetailsModel(
         post: current.post,
         comments: updatedComments,
