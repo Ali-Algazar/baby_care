@@ -1,3 +1,4 @@
+import 'package:baby_care/app_restart.dart';
 import 'package:baby_care/core/utils/app_colors.dart';
 import 'package:baby_care/core/utils/app_text_styles.dart';
 import 'package:baby_care/features/auth/presentation/cubit/auth_cubit.dart';
@@ -13,6 +14,7 @@ class LogoutConfirmButton extends StatelessWidget {
     return InkWell(
       onTap: () async {
         await BlocProvider.of<AuthCubit>(context).logout();
+        RestartWidget.restartApp(context);
       },
       child: Container(
         height: 46,

@@ -1,3 +1,4 @@
+import 'package:baby_care/app_restart.dart';
 import 'package:baby_care/baby_care_app.dart';
 import 'package:baby_care/core/helper/hive_helper.dart';
 import 'package:baby_care/core/services/get_it_service.dart';
@@ -18,5 +19,5 @@ void main() async {
 
   await NotificationService.init();
 
-  runApp(const BabyCareApp());
+  runApp(RestartWidget(child: const BabyCareApp()));
 }

@@ -1,3 +1,4 @@
+import 'package:baby_care/features/community/presentation/view/community_view.dart';
 import 'package:baby_care/features/home/presentation/view/home_view.dart';
 import 'package:baby_care/features/main_layout/data/navbar_item_model.dart';
 import 'package:baby_care/features/main_layout/presentation/cubit/navigation_cubit.dart';
@@ -22,7 +23,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
     const HomeView(),
     const Scaffold(body: Center(child: Text('Tracking Page'))),
     const ServicesView(),
-    const Scaffold(body: Center(child: Text('Community Page'))),
+    CommunityView(),
     ProfileViewBody(),
   ];
   @override

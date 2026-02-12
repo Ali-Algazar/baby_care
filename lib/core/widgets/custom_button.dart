@@ -5,10 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.title, required this.onTap});
+  const CustomButton({
+    super.key,
+    required this.title,
+    required this.onTap,
+    this.widget,
+  });
 
   final String title;
   final VoidCallback onTap;
+  final Widget? widget;
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +22,20 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: 46.h,
+        height: 40.h,
         decoration: BoxDecoration(
           gradient: AppColors.primaryL,
           borderRadius: BorderRadius.circular(
             Constants.kbuttonRadius.toDouble(),
           ),
         ),
-        child: Center(child: Text(title, style: AppTextStyles.btnsBold)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(title, style: AppTextStyles.btnsBold),
+            widget ?? SizedBox(),
+          ],
+        ),
       ),
     );
   }
