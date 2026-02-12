@@ -2,6 +2,7 @@ import 'package:baby_care/features/auth/data/model/user_model.dart';
 import 'package:baby_care/features/blog/data/model/article_model.dart';
 import 'package:baby_care/features/chat_bot/data/model/chat_bot_model.dart';
 import 'package:baby_care/features/children/data/model/child_model.dart';
+import 'package:baby_care/features/community/data/model/post_details_model.dart';
 import 'package:baby_care/features/community/data/model/post_model.dart';
 import 'package:baby_care/features/doctors/data/model/doctor_model.dart';
 import 'package:baby_care/features/medicine/data/model/medicine_model.dart';
@@ -64,6 +65,8 @@ class HiveHelper {
     Hive.registerAdapter(MedicineModelAdapter());
     Hive.registerAdapter(DoctorModelAdapter());
     Hive.registerAdapter(PostModelAdapter());
+    Hive.registerAdapter(PostDetailsModelAdapter());
+    Hive.registerAdapter(CommentModelAdapter());
   }
 
   static Future<bool> containsKey({

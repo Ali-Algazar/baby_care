@@ -29,6 +29,8 @@ class PostModel {
   final DateTime updatedAt;
   @HiveField(12)
   final String? imageUrl;
+  @HiveField(13)
+  final List<String> dislikes;
 
   PostModel({
     required this.id,
@@ -44,6 +46,7 @@ class PostModel {
     required this.createdAt,
     required this.updatedAt,
     this.imageUrl,
+    required this.dislikes,
   });
 
   factory PostModel.fromJson(Map<String, dynamic> json) {
@@ -61,6 +64,7 @@ class PostModel {
       createdAt: DateTime.parse(json['createdAt']),
       updatedAt: DateTime.parse(json['updatedAt']),
       imageUrl: json['imageUrl'],
+      dislikes: List<String>.from(json['dislikes'] ?? []),
     );
   }
 
@@ -79,6 +83,7 @@ class PostModel {
       'imageUrl': imageUrl,
       'createdAt': createdAt.toIso8601String(),
       'updatedAt': updatedAt.toIso8601String(),
+      'dislikes': dislikes,
     };
   }
 }
