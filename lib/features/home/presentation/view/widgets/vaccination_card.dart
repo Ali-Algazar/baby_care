@@ -135,7 +135,7 @@ class VaccinationCard extends StatelessWidget {
                   child: InkWell(
                     onTap: () {},
                     child: Container(
-                      height: 46.h,
+                      height: 40.h,
                       decoration: BoxDecoration(
                         color: AppColors.bG,
                         borderRadius: BorderRadius.circular(10),
